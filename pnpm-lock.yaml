@@ -20,6 +20,9 @@ importers:
 
   apps/portfolio:
     dependencies:
+      '@repo/interaction':
+        specifier: workspace:*
+        version: link:../../packages/interaction
       next:
         specifier: ^15.4.2
         version: 15.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
