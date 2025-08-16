@@ -17,6 +17,9 @@ This Turborepo includes the following packages/apps:
 ### Apps and Packages
 
 - `portfolio`: a [Next.js](https://nextjs.org/) app
-- `@repo/hds`: a Human Design System component library
+- `@repo/design`: a Design System component library
+- `@repo/interaction`: interaction utilities and hooks
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo# tech-blog
+- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+
+# tech-blog
