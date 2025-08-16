@@ -27,12 +27,30 @@ importers:
 
   apps/portfolio:
     dependencies:
+      '@gsap/react':
+        specifier: ^2.1.2
+        version: 2.1.2(gsap@3.13.0)(react@19.1.0)
       '@repo/interaction':
         specifier: workspace:*
         version: link:../../packages/interaction
+      '@vercel/analytics':
+        specifier: ^1.5.0
+        version: 1.5.0(next@15.4.2(@babel/core@7.28.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
+      '@vercel/speed-insights':
+        specifier: ^1.2.0
+        version: 1.2.0(next@15.4.2(@babel/core@7.28.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
+      jotai:
+        specifier: ^2.13.1
+        version: 2.13.1(@babel/core@7.28.3)(@babel/template@7.27.2)(@types/react@19.1.0)(react@19.1.0)
       next:
         specifier: ^15.4.2
         version: 15.4.2(@babel/core@7.28.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      next-themes:
+        specifier: ^0.4.6
+        version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -466,6 +484,12 @@ packages:
   '@eslint/plugin-kit@0.3.5':
     resolution: {integrity: sha512-Z5kJ+wU3oA7MMIqVR9tyZRtjYPr4OC004Q4Rw7pgOKUOKkJfZ3O24nz3WYfGRpMDNmcOi3TwQOmgm7B7Tpii0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@gsap/react@2.1.2':
+    resolution: {integrity: sha512-JqliybO1837UcgH2hVOM4VO+38APk3ECNrsuSM4MuXp+rbf+/2IG2K1YJiqfTcXQHH7XlA0m3ykniFYstfq0Iw==}
+    peerDependencies:
+      gsap: ^3.12.5
+      react: '>=17'
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -905,6 +929,55 @@ packages:
     resolution: {integrity: sha512-3Cx8DkbX3EeLHGbD049jjj6/bWB0VK4YFfWWsf8VXBI8dgf5SvEef1VfET22IOcT9GzLl8MqfsLr/XSo9iv67Q==}
     peerDependencies:
       webpack: ^4.30.0 || ^5.20.2
+
+  '@vercel/analytics@1.5.0':
+    resolution: {integrity: sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==}
+    peerDependencies:
+      '@remix-run/react': ^2
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@remix-run/react':
+        optional: true
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+
+  '@vercel/speed-insights@1.2.0':
+    resolution: {integrity: sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
@@ -1701,6 +1774,24 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
 
+  jotai@2.13.1:
+    resolution: {integrity: sha512-cRsw6kFeGC9Z/D3egVKrTXRweycZ4z/k7i2MrfCzPYsL9SIWcPXTyqv258/+Ay8VUEcihNiE/coBLE6Kic6b8A==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@babel/core': '>=7.0.0'
+      '@babel/template': '>=7.0.0'
+      '@types/react': '>=17.0.0'
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
     engines: {node: '>=10'}
@@ -1847,6 +1938,12 @@ packages:
 
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  next-themes@0.4.6:
+    resolution: {integrity: sha512-pZvgD5L0IEvX5/9GWyHMf3m8BKiVQwsCMHfoFosXtXBMnaS0ZnIJ9ST4b4NqLVKDEm8QBxoNNGNaBv2JNF6XNA==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
   next@15.4.2:
     resolution: {integrity: sha512-oH1rmFso+84NIkocfuxaGKcXIjMUTmnzV2x0m8qsYtB4gD6iflLMESXt5XJ8cFgWMBei4v88rNr/j+peNg72XA==}
@@ -2704,6 +2801,11 @@ snapshots:
       '@eslint/core': 0.15.2
       levn: 0.4.1
 
+  '@gsap/react@2.1.2(gsap@3.13.0)(react@19.1.0)':
+    dependencies:
+      gsap: 3.13.0
+      react: 19.1.0
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -3119,6 +3221,16 @@ snapshots:
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
+
+  '@vercel/analytics@1.5.0(next@15.4.2(@babel/core@7.28.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)':
+    optionalDependencies:
+      next: 15.4.2(@babel/core@7.28.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
+
+  '@vercel/speed-insights@1.2.0(next@15.4.2(@babel/core@7.28.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)':
+    optionalDependencies:
+      next: 15.4.2(@babel/core@7.28.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:
@@ -4077,6 +4189,13 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
+  jotai@2.13.1(@babel/core@7.28.3)(@babel/template@7.27.2)(@types/react@19.1.0)(react@19.1.0):
+    optionalDependencies:
+      '@babel/core': 7.28.3
+      '@babel/template': 7.27.2
+      '@types/react': 19.1.0
+      react: 19.1.0
+
   joycon@3.1.1: {}
 
   js-tokens@4.0.0: {}
@@ -4204,6 +4323,11 @@ snapshots:
   natural-compare@1.4.0: {}
 
   neo-async@2.6.2: {}
+
+  next-themes@0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   next@15.4.2(@babel/core@7.28.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
