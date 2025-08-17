@@ -11,7 +11,9 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/pretendard": "^5.2.5",
     "@gsap/react": "^2.1.2",
+    "@next/font": "^14.2.15",
     "@repo/interaction": "workspace:*",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",

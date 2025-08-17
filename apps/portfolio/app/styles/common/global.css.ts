@@ -1,4 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
+import { Colors } from './color-tokens';
 
 globalStyle('*', {
   margin: 0,
@@ -7,7 +8,7 @@ globalStyle('*', {
 });
 
 globalStyle('body', {
-  fontFamily: '"Pretendard", "Black Han Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+  fontFamily: '"Pretendard", -apple-system, sans-serif',
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
 });
@@ -41,9 +42,10 @@ globalStyle('button', {
 
 globalStyle('a', {
   textDecoration: 'none',
+  color: Colors.grey800,
 });
 
 globalStyle('@media (prefers-reduced-motion: reduce)', {
   animation: 'none !important',
   transition: 'none !important',
-});
+}); 

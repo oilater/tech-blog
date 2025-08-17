@@ -27,7 +27,7 @@ export default function Introduce() {
     <div ref={introduceScope} className={introduceWrapper}>
       <div className={mainDescription}>
         <p>React를 중심으로 웹 프론트엔드를 개발합니다.</p>
-        <p>UX와 성능 개선에 높은 가치를 두고 있습니다.</p>
+        <p>UX/DX에 높은 가치를 두고 개발합니다.</p>
       </div>
 
       <div className={`info-section ${infoSection}`}>
