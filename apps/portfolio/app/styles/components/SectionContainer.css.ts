@@ -1,8 +1,8 @@
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
-  margin: '0 auto',
-  maxWidth: '768px',
+  margin: '8.5rem auto',
+  maxWidth: '960px',
   padding: '0 16px',
   display: 'flex',
   flexDirection: 'column',
@@ -13,7 +13,7 @@ export const container = style({
       padding: '0 24px',
     },
     '(min-width: 1280px)': {
-      maxWidth: '1024px',
+      maxWidth: '980px',
       padding: '0',
     },
   },

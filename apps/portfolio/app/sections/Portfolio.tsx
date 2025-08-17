@@ -4,11 +4,10 @@ import { Content } from "./Content";
 import { Work } from "./Work";
 import { Education } from "./Education";
 import { Outro } from "./Outro";
-import { wrapper } from "../styles/sections/Portfolio.css";
 
 export default function Portfolio() {
   return (
-    <div className={wrapper}>
+    <div>
       <Intro />
       <Introduce />
       <Work />

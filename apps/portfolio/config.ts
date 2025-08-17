@@ -11,7 +11,7 @@ export const PortfolioConfig = {
       isExternal: false,
     },
     {
-      label: 'Posts',
+      label: 'feed',
       path: '/posts',
       isExternal: false,
     },

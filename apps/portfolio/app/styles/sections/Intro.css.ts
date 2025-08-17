@@ -5,7 +5,6 @@ import { mediaQueries } from '../common/breakpoints.css';
 export const introWrapper = style({
   width: '100%',
   height: '20vh',
-  marginTop: '5rem'
 });
 
 export const introTitleSection = style({
