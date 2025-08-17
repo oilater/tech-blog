@@ -13,7 +13,7 @@ export const container = style({
       padding: '0 24px',
     },
     '(min-width: 1280px)': {
-      maxWidth: '980px',
+      maxWidth: '960px',
       padding: '0',
     },
   },

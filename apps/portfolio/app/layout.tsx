@@ -2,7 +2,7 @@ import './styles/common/global.css';
 import type { Metadata } from "next";
 import Link from 'next/link';
 import Image from 'next/image';
-import { Layout } from "./components/Layout";
+import { LayoutWrapper } from "./components/LayoutWrapper";
 import { PortfolioConfig } from '../config';
 import { FloatingNav } from './components/FloatingNav';
 import { linkItem } from './styles/components/FloatingNav.css';
@@ -11,9 +11,23 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export const metadata: Metadata = {
-  title: "김성현 포트폴리오",
-  description: "김성현 포트폴리오",
-};
+  title: PortfolioConfig.title,
+  description: PortfolioConfig.description,
+  keywords: PortfolioConfig.keywords,
+  authors: [{name: PortfolioConfig.author.name}],
+  creator: PortfolioConfig.author.name,
+  publisher: PortfolioConfig.author.name,
+  metadataBase: new URL(PortfolioConfig.url),
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -34,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
           ))}
         </FloatingNav>
-        <Layout>{children}</Layout>
+        <LayoutWrapper>{children}</LayoutWrapper>
         <Footer />
         <Analytics />
         <SpeedInsights />
