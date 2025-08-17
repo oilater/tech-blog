@@ -40,48 +40,49 @@ export const postLink = style({
   color: colors.link,
   transition: 'color 0.2s ease',
   ':hover': {
-    color: '#2563eb',
+    color: colors.link,
+    textDecoration: 'underline',
   },
 });
 
 export const postHeading1 = style({
   fontSize: '40px',
-  fontWeight: '600',
+  fontWeight: '700',
   color: colors.text,
   margin: '24px 0 16px',
 });
 
 export const postHeading2 = style({
   fontSize: '32px',
-  fontWeight: '600',
+  fontWeight: '700',
   color: colors.text,
   margin: '24px 0 16px',
 });
 
 export const postHeading3 = style({
   fontSize: '24px',
-  fontWeight: '600',
+  fontWeight: '700',
   color: colors.text,
   margin: '24px 0 16px',
 });
 
 export const postHeading4 = style({
-  fontSize: '20px',
-  fontWeight: '600',
+  fontSize: '18px',
+  fontWeight: '700',
   color: colors.text,
-  margin: '24px 0 16px',
+  margin: '40px 0 16px',
 });
 
 export const postHeading5 = style({
   fontSize: '15px',
-  fontWeight: '600',
+  fontWeight: '700',
   color: colors.text,
   margin: '24px 0 16px',
 });
 
 export const postHeading6 = style({
   fontSize: '12px',
-  fontWeight: '600',
+  fontWeight: '700',
   color: colors.text,
   margin: '24px 0 16px',
 });
@@ -92,6 +93,8 @@ export const postList = style({
 });
 
 export const postListItem = style({
+  fontSize: '18px',
+  lineHeight: '1.7',
   margin: '4px 0',
 });
 

@@ -17,10 +17,6 @@ globalStyle('article, aside, details, figcaption, figure, footer, header, hgroup
   display: 'block',
 });
 
-globalStyle('ol, ul, li', {
-  listStyle: 'none',
-});
-
 globalStyle('table', {
   borderCollapse: 'collapse',
   borderSpacing: 0,
