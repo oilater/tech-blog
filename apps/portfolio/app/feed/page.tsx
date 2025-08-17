@@ -1,7 +1,12 @@
+"use client";
+
+import { FeedContent } from "../components/FeedContent";
+import { VelogProvider } from "../components/VelogProvider";
+
 export default function Feed() {
     return (
-        <div>
-            <h1>Feed</h1>
-        </div>
+        <VelogProvider>
+            <FeedContent />
+        </VelogProvider>
     )
 }
