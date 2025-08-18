@@ -125,8 +125,7 @@ export const postPreBlock = style({
 export const postCodeInPre = style({
   backgroundColor: 'transparent',
   padding: 0,
-  fontSize: '14px',
+  fontSize: '14px !important',
   lineHeight: '1.6',
-  fontFamily: 'monospace',
-  color: colors.preCode,
+  fontFamily: 'monospace !important',
 });

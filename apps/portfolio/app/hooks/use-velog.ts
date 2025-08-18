@@ -1,105 +1,89 @@
-import { QueryOptions, useQuery } from '@tanstack/react-query';
-import { Post } from "../types/post";
+import { marked } from 'marked';
+import { useState, useEffect } from 'react';
+import { Post } from '../types/post';
 import * as styles from '../styles/Velog.css';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism.css';
+import 'prismjs/components/prism-typescript';
 
-type UseVelogOptions = Omit<QueryOptions<Post[]>, 'queryKey' | 'queryFn'>;
+const getStyledMarkdown = async (body: string) => {
+  if (typeof window === "undefined" || !body) return body;
 
-const getParser = () => {
-  if (typeof window === "undefined") return null;
-  
-  return new DOMParser();
-};
+  const renderer = new marked.Renderer();
+  renderer.code = ({ text, lang }) => {
+    const language = lang || 'unsupported';
+    let highlightedCode = text;
+    if (Prism.languages[language]) {
+      highlightedCode = Prism.highlight(text, Prism.languages[language], language);
+    }
 
-const getTextContent = (item: Element, selector: string): string => {
-  return item.querySelector(selector)?.textContent ?? '';
-}
+    return `<pre class="${styles.postPreBlock}"><code class="${styles.postCodeInPre} language-${language}">${highlightedCode}</code></pre>`;
+  };
 
-const addStyleOnHtml = (html: string) => {
-  if (typeof window === "undefined") return null;
-  
-  const parser = getParser();
-  if (!parser) return null;
-  
-  const doc = parser.parseFromString(html, 'text/html');
-  const paragraphs = doc.querySelectorAll('p');
-  const spans = doc.querySelectorAll('span');
-  const strongs = doc.querySelectorAll('strong');
-  const ems = doc.querySelectorAll('em');
-  const links = doc.querySelectorAll('a');
-  const headings1 = doc.querySelectorAll('h1');
-  const headings2 = doc.querySelectorAll('h2');
-  const headings3 = doc.querySelectorAll('h3');
-  const headings4 = doc.querySelectorAll('h4');
-  const headings5 = doc.querySelectorAll('h5');
-  const headings6 = doc.querySelectorAll('h6');
-  const lists = doc.querySelectorAll('ul, ol');
-  const listItems = doc.querySelectorAll('li');
-  const blockquotes = doc.querySelectorAll('blockquote');
-  const preBlocks = doc.querySelectorAll('pre');  
-  const codes = doc.querySelectorAll('code:not(pre code)');
-  
-  paragraphs.forEach(p => p.className = styles.postParagraph);
-  spans.forEach(span => span.className = styles.postSpan);
-  strongs.forEach(strong => strong.className = styles.postStrong);
-  ems.forEach(em => em.className = styles.postEm);
-  links.forEach(link => link.className = styles.postLink);
-  headings1.forEach(heading => heading.className = styles.postHeading1);
-  headings2.forEach(heading => heading.className = styles.postHeading2);
-  headings3.forEach(heading => heading.className = styles.postHeading3);
-  headings4.forEach(heading => heading.className = styles.postHeading4);
-  headings5.forEach(heading => heading.className = styles.postHeading5);
-  headings6.forEach(heading => heading.className = styles.postHeading6);
-  lists.forEach(list => list.className = styles.postList);
-  listItems.forEach(item => item.className = styles.postListItem);
-  blockquotes.forEach(quote => quote.className = styles.postBlockquote);
-  codes.forEach(code => code.className = styles.postCode);
-
-  preBlocks.forEach(pre => {
-    pre.className = styles.postPreBlock;
-    const codeInPre = pre.querySelector('code');
-    if (codeInPre) codeInPre.className = styles.postCodeInPre;
-    pre.parentNode?.insertBefore(doc.createElement('div'), pre);
+  const htmlContent = await marked(body, {
+    gfm: true,
+    breaks: true,
+    renderer: renderer,
   });
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlContent, 'text/html');
+  doc.querySelectorAll('p').forEach(p => p.classList.add(styles.postParagraph));
+  doc.querySelectorAll('span').forEach(span => span.classList.add(styles.postSpan));
+  doc.querySelectorAll('strong').forEach(strong => strong.classList.add(styles.postStrong));
+  doc.querySelectorAll('em').forEach(em => em.classList.add(styles.postEm));
+  doc.querySelectorAll('a').forEach(link => link.classList.add(styles.postLink));
+  doc.querySelectorAll('h1').forEach(h => h.classList.add(styles.postHeading1));
+  doc.querySelectorAll('h2').forEach(h => h.classList.add(styles.postHeading2));
+  doc.querySelectorAll('h3').forEach(h => h.classList.add(styles.postHeading3));
+  doc.querySelectorAll('h4').forEach(h => h.classList.add(styles.postHeading4));
+  doc.querySelectorAll('h5').forEach(h => h.classList.add(styles.postHeading5));
+  doc.querySelectorAll('h6').forEach(h => h.classList.add(styles.postHeading6));
+  doc.querySelectorAll('ul, ol').forEach(list => list.classList.add(styles.postList));
+  doc.querySelectorAll('li').forEach(item => item.classList.add(styles.postListItem));
+  doc.querySelectorAll('blockquote').forEach(quote => quote.classList.add(styles.postBlockquote));
+  doc.querySelectorAll('code:not(pre code)').forEach(code => code.classList.add(styles.postCode));
 
   return doc.body.innerHTML;
 };
 
-export function useVelog(options?: UseVelogOptions) {
-  const {data, error, isLoading, isError} = useQuery({
-    queryKey: ['velog'],
-    queryFn: async (): Promise<Post[]> => {
-      const response = await fetch('/api/velog')
-      if (!response.ok) throw new Error('Velog 포스트를 가져오는데 실패했어요 🥲 ' + response.statusText);
-      
-      const xmlText = await response.text();
-      
-      const parser = getParser();
-      if (!parser) return [];
-      
-      const xml = parser.parseFromString(xmlText, 'application/xml');
-      const posts = xml.querySelectorAll('item');
-      
-      const allHtml = Array.from(posts).map(post => ({
-        description: getTextContent(post, 'description'),
-        content: getTextContent(post, 'content'),
-      }));
-      
-      const processedHtml = allHtml.map(html => ({
-        description: addStyleOnHtml(html.description),
-        content: addStyleOnHtml(html.content),
-      }));
-      
-      return Array.from(posts).map((post, index) => ({
-        id: getTextContent(post, 'guid'),
-        title: getTextContent(post, 'title'),
-        description: processedHtml[index]?.description ?? '',
-        content: processedHtml[index]?.content ?? '',
-        createdAt: getTextContent(post, 'pubDate'),
-        tags: getTextContent(post, 'category').split(',').filter(Boolean),
-      }));
-    },
-    ...options,
-  });
+export function useVelog(username: string, cursor?: string, limit?: string) {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
-  return {data, error, isLoading, isError};
+  const fetchPosts = async () => {
+    try {
+      const params = new URLSearchParams({ username });
+      if (cursor) params.append('cursor', cursor);
+      if (limit) params.append('limit', limit);
+
+      const response = await fetch(`/api/post?${params}`);
+      if (!response.ok) {
+        throw new Error('포스트를 가져오는데 실패했습니다');
+      }
+
+      const posts = await response.json();
+      const transformedPosts: Post[] = await Promise.all(
+        posts.map(async (post: Post) => ({
+          id: post.id,
+          title: post.title,
+          description: post.description,
+          body: await getStyledMarkdown(post.body),
+          createdAt: post.createdAt,
+          tags: post.tags,
+        }))
+      );
+
+      setPosts(transformedPosts);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : '에러가 발생했습니다');
+    }
+  };
+
+  useEffect(() => {
+    if (!username) return;
+    fetchPosts();
+  }, [username, cursor, limit]);
+
+  return { posts, error };
 }
