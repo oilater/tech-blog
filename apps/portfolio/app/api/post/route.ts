@@ -22,10 +22,7 @@ export async function GET(req: Request) {
           body
           url_slug
           tags
-          likes
-          comments_count
           released_at
-          updated_at
         }
       }
     `;

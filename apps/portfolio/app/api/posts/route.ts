@@ -17,15 +17,12 @@ export async function GET(req: Request) {
     const query = `
       query {
         posts(username: "${username}") {
-          id
           title
           short_description
           url_slug
           tags
           likes
-          comments_count
           released_at
-          updated_at
         }
       }
     `;

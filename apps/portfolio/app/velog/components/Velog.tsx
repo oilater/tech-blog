@@ -8,7 +8,5 @@ type Props = {
 export function Velog({posts}: Props) {
     if (!posts) return null;
     
-    return (
-      <PostList posts={posts} />
-  );
+    return <PostList posts={posts} />;
 }
