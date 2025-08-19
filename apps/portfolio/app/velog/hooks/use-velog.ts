@@ -47,22 +47,27 @@ const getStyledMarkdown = async (body: string) => {
   return doc.body.innerHTML;
 };
 
-export function useVelog(username: string, cursor?: string, limit?: string) {
+type UseVelogProps = {
+  username: string;
+  cursor?: string;
+}
+
+export function useVelog({username, cursor }: UseVelogProps) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const fetchPosts = async () => {
     try {
-      const params = new URLSearchParams({ username });
+      const params = new URLSearchParams({ username});
       if (cursor) params.append('cursor', cursor);
-      if (limit) params.append('limit', limit);
-
       const response = await fetch(`/api/post?${params}`);
+
       if (!response.ok) {
-        throw new Error('포스트를 가져오는데 실패했습니다');
+        throw new Error('포스트를 불러오지 못했어요 🥲');
       }
 
       const posts = await response.json();
+      
       const transformedPosts: Post[] = await Promise.all(
         posts.map(async (post: Post) => ({
           id: post.id,
@@ -76,14 +81,14 @@ export function useVelog(username: string, cursor?: string, limit?: string) {
 
       setPosts(transformedPosts);
     } catch (err) {
-      setError(err instanceof Error ? err.message : '에러가 발생했습니다');
+      setError(err instanceof Error ? err.message : '에러가 발생했어요 🥲');
     }
   };
 
   useEffect(() => {
     if (!username) return;
     fetchPosts();
-  }, [username, cursor, limit]);
+  }, [username, cursor]);
 
   return { posts, error };
 }

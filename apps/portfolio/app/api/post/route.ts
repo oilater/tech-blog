@@ -1,10 +1,19 @@
 import { NextResponse } from "next/server";
 
+const VELOG_API = {
+  METHOD: "POST",
+  ENDPOINT: "https://v2.velog.io/graphql",
+  HEADERS: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  },
+}
+
 export async function GET(req: Request) {
   try {
     const url = new URL(req.url);
     const username = url.searchParams.get("username");
-    const cursor = url.searchParams.get("cursor");
+    const cursor = url.searchParams.get("cursor") ?? null;
 
     if (!username) {
       return NextResponse.json(
@@ -15,10 +24,9 @@ export async function GET(req: Request) {
 
     const query = `
       query {
-        posts(username: "${username}") {
+        posts(username: "${username}", cursor: ${cursor}) {
           id
           title
-          short_description
           body
           url_slug
           tags
@@ -26,18 +34,13 @@ export async function GET(req: Request) {
         }
       }
     `;
-
-    const response = await fetch("https://v2.velog.io/graphql", {
-      method: "POST",
-      headers: { 
-        "Content-Type": "application/json",
-        "User-Agent": "Portfolio-App/1.0",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        query,
-      })
+  
+    const response = await fetch(VELOG_API.ENDPOINT, {
+      method: VELOG_API.METHOD,
+      headers: VELOG_API.HEADERS,
+      body: JSON.stringify({ query })
     });
+
 
     if (!response.ok) {
       console.error(`Velog API error: ${response.status} ${response.statusText}`);
@@ -53,7 +56,7 @@ export async function GET(req: Request) {
       console.error("GraphQL errors:", data.errors);
       return NextResponse.json(
         { error: "GraphQL query failed", details: data.errors }, 
-        { status: 400 }
+        { status: data.errors[0].extensions.code }
       );
     }
 
@@ -61,6 +64,7 @@ export async function GET(req: Request) {
 
   } catch (error) {
     console.error("Velog API route error:", error);
+    
     return NextResponse.json(
       { error: "Internal server error" }, 
       { status: 500 }
