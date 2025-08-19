@@ -1,10 +1,12 @@
-import { Velog } from "../velog/components/Velog";
+"use client";
 
-export default function Feed() {
-    return (
-        <div>
-            <h1>Feed</h1>
-            <Velog />
-        </div>
-    )
+import { VelogProvider } from "../velog/components/VelogProvider";
+import { Feed } from "./components/Feed";
+
+export default function FeedContainer() {
+  return (
+    <VelogProvider>
+      <Feed />
+    </VelogProvider>
+  );
 }

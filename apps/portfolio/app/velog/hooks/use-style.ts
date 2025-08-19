@@ -1,11 +1,12 @@
-import * as styles from '../styles/Velog.css';
+import * as styles from '../styles/Markdown.css';
+import { useCallback } from 'react';
 import { marked } from 'marked';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import 'prismjs/components/prism-typescript';
 
 export function useVelogStyle() {
-  const setVelogStyle = async (html: string) => {
+  const setVelogStyle = useCallback(async (html: string) => {
     if (typeof window === "undefined" || !html) return html;
 
     const renderer = new marked.Renderer();
@@ -44,7 +45,7 @@ export function useVelogStyle() {
     doc.querySelectorAll('code:not(pre code)').forEach(code => code.classList.add(styles.postCode));
 
     return doc.body.innerHTML;
-  };
+  }, []);
 
   return { setVelogStyle };
 }

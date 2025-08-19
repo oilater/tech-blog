@@ -15,6 +15,7 @@
     "@gsap/react": "^2.1.2",
     "@next/font": "^14.2.15",
     "@repo/interaction": "workspace:*",
+    "@tanstack/react-query": "^5.85.5",
     "@tanstack/react-query-devtools": "^5.85.3",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",

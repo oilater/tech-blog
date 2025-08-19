@@ -1,24 +1,26 @@
+import { useQuery } from "@tanstack/react-query";
+
 type FetchPostsProps = {
-    username: string;
-    cursor?: string;
-}
+  target: "posts" | "post";
+  username: string;
+  cursor?: string;
+};
 
-export function useVelogFetch() {
-    const fetchPosts = async ({username, cursor}: FetchPostsProps) => {
-        try {
-          const params = new URLSearchParams({ username });
-          if (cursor) params.append('cursor', cursor);
-          const response = await fetch(`/api/post?${params}`);
-    
-          if (!response.ok) {
-            throw new Error('포스트를 불러오지 못했어요 🥲');
-          }
-          return await response.json();
-        } catch (err) {
-          throw new Error('에러가 발생했어요 🥲');
-        }
-      };
+export function useVelogFetch({ target, username, cursor }: FetchPostsProps) {
+  return useQuery({
+    queryKey: [target, username, cursor],
+    queryFn: async () => {
+      const params = new URLSearchParams({ username });
+      if (cursor) params.append("cursor", cursor);
 
-      return { fetchPosts };
-    
+      const response = await fetch(`/api/${target}?${params}`);
+      if (!response.ok) {
+        throw new Error("포스트를 불러오지 못했어요 🥲");
+      }
+      return response.json();
+    },
+    staleTime: 1000 * 60 * 5,
+    gcTime: 1000 * 60 * 5,
+    enabled: !!username,
+  });
 }

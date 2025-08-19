@@ -12,13 +12,15 @@ export const PortfolioConfig = {
       isExternal: false,
     },
     {
-      label: 'feed',
+      label: '피드',
       path: '/feed',
+      icon: '/images/book.png',
       isExternal: false,
     },
     {
-      label: 'about',
+      label: '음악',
       path: '/about',
+      icon: '/images/music.png',
       isExternal: false,
     },
   ],

@@ -1,16 +1,19 @@
-"use client";
+import { ulid } from "ulid";
+import { Blog } from "./Blog";
+import { Post } from "../types/post";
 
-import { PortfolioConfig } from "../../../config";
-import { useVelog } from "../hooks/use-velog";
-import { PostList } from "./PostList";
-
-export function Velog() {
-    const { posts, error } = useVelog({
-        username: PortfolioConfig.velogId,
-    });
-    
-    if (error) return <div>에러: {error}</div>;
-    if (!posts) return null;
-    
-    return <PostList posts={posts} />;
+export function Velog({ value }: { value: Post[] }) {
+  return (
+    <Blog>
+      <Blog.List>
+        {value?.map((post) => (
+          <Blog.Card
+            key={ulid()}
+            post={post}
+            link={`/${post.url_slug}`}
+          />
+        ))}
+      </Blog.List>
+    </Blog>
+  );
 }

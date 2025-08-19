@@ -1,11 +1,19 @@
 import { NextResponse } from "next/server";
 
+const VELOG_API = {
+  METHOD: "POST",
+  ENDPOINT: "https://v2.velog.io/graphql",
+  HEADERS: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  },
+}
+
 export async function GET(req: Request) {
   try {
     const url = new URL(req.url);
     const username = url.searchParams.get("username");
-    const cursor = url.searchParams.get("cursor");
-    const limit = url.searchParams.get("limit");
+    const cursor = url.searchParams.get("cursor") ?? null;
 
     if (!username) {
       return NextResponse.json(
@@ -16,34 +24,39 @@ export async function GET(req: Request) {
 
     const query = `
       query {
-        posts(username: "${username}") {
+        posts(username: "${username}", cursor: ${cursor}) {
+          id
           title
-          short_description
           url_slug
+          short_description
           tags
-          likes
           released_at
         }
       }
     `;
-
-    const response = await fetch("https://v2.velog.io/graphql", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+  
+    const response = await fetch(VELOG_API.ENDPOINT, {
+      method: VELOG_API.METHOD,
+      headers: VELOG_API.HEADERS,
       body: JSON.stringify({ query })
     });
 
+
     if (!response.ok) {
-      throw new Error("Velog API 호출 실패");
+      console.error(`Velog API error: ${response.status} ${response.statusText}`);
+      return NextResponse.json(
+        { error: "Failed to fetch from Velog API" }, 
+        { status: response.status }
+      );
     }
 
     const data = await response.json();
-    
+
     if (data.errors) {
       console.error("GraphQL errors:", data.errors);
       return NextResponse.json(
-        { error: "GraphQL query failed" }, 
-        { status: 400 }
+        { error: "GraphQL query failed", details: data.errors }, 
+        { status: data.errors[0].extensions.code }
       );
     }
 
@@ -51,6 +64,7 @@ export async function GET(req: Request) {
 
   } catch (error) {
     console.error("Velog API route error:", error);
+    
     return NextResponse.json(
       { error: "Internal server error" }, 
       { status: 500 }

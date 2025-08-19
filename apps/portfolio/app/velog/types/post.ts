@@ -1,8 +1,9 @@
 export interface Post {
   id: string;
   title: string;
-  description: string;
+  url_slug: string;
+  short_description: string;
   body: string;
   tags: string[];
-  createdAt: string;
+  released_at: string;
 }

@@ -1,14 +1,11 @@
 import './styles/common/global.css';
 import type { Metadata } from "next";
-import Link from 'next/link';
-import Image from 'next/image';
 import { LayoutWrapper } from "./components/LayoutWrapper";
 import { PortfolioConfig } from '../config';
-import { FloatingNav } from './components/FloatingNav';
-import { linkItem } from './styles/components/FloatingNav.css';
 import { Footer } from './components/Footer';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { FloatingNav, NavItem } from './components/FloatingNav';
 
 export const metadata: Metadata = {
   title: PortfolioConfig.title,
@@ -31,21 +28,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" suppressHydrationWarning>
+    <html lang="ko">
       <body>
         <FloatingNav>
           {PortfolioConfig.menu.map((link) => (
-            <Link
-              key={link.label}
-              href={link.path}
-              className={linkItem}
-              target={link.isExternal ? '_blank' : '_self'}
-            >
-              {link.icon
-                ? <Image src={link.icon} alt={link.label} width={24} height={24} />
-                : link.label
-              }
-            </Link>
+            <NavItem key={link.label} href={link.path} label={link.label} icon={link.icon || ''} />
           ))}
         </FloatingNav>
         <LayoutWrapper>{children}</LayoutWrapper>

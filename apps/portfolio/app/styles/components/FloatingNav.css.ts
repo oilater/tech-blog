@@ -13,6 +13,7 @@ export const header = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  height: '50px',
   padding: '10px 24px 10px 24px',
   transition: 'opacity 0.3s ease-in-out',
   selectors: {
@@ -26,7 +27,7 @@ export const innerNav = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  gap: '42px',
+  gap: '24px',
 });
 
 export const linkItem = style({
@@ -34,8 +35,21 @@ export const linkItem = style({
   fontWeight: '500',
   color: Colors.grey800,
   cursor: 'pointer',
-  transition: 'color 0.4s ease',
+  transition: 'all 0.4s ease',
+  padding: '6px 6px',
+  borderRadius: '20px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  
   ':hover': {
     color: Colors.blue700,
+  },
+
+  selectors: {
+    '&.active': {
+      backgroundColor: 'white',
+      color: Colors.grey800,
+    }
   }
 });

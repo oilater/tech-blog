@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { useAtom } from "jotai";
 import { useGSAP } from "@gsap/react";
-// import { useNavigate } from 'react-router-dom';
 import { useScrollTrigger } from "@repo/interaction";
 import { contentTimeline } from "../timelines/contentTimeline";
 import { animationPlayStateAtom } from "../stores/timelineStore";
@@ -18,7 +17,6 @@ import {
 } from "../styles/sections/Work.css";
 
 export function Work() {
-  // const navigate = useNavigate();
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);
   const { animateScroll } = useScrollTrigger();
   const contentContainer = useRef<HTMLDivElement>(null!);
