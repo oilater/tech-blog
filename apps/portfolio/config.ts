@@ -9,19 +9,16 @@ export const PortfolioConfig = {
       label: '홈',
       path: '/',
       icon: '/images/HomeIcon.png',
-      isExternal: false,
     },
     {
       label: '피드',
       path: '/feed',
       icon: '/images/book.png',
-      isExternal: false,
     },
     {
       label: '음악',
       path: '/about',
       icon: '/images/music.png',
-      isExternal: false,
     },
   ],
   author: {
