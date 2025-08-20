@@ -4,11 +4,11 @@ import { useRef } from "react";
 import { useAtom } from "jotai";
 import { useGSAP } from "@gsap/react";
 import { useScrollTrigger } from "@repo/interaction";
-import { contentTimeline } from "../timelines/contentTimeline";
+import { contentTimeline } from "../../home/timelines/contentTimeline";
 import { animationPlayStateAtom } from "../../stores/timeline";
-import { CONTENT_DATA } from "../../constants/content-data";
+import { CONTENT_DATA } from "../data";
 import { Top } from "../../components/Top";
-import { ContentCard } from "../../components/molecules/ContentCard";
+import { ContentCard } from "./ContentCard";
 import {
   wrapper,
   contentSection,
@@ -17,10 +17,9 @@ import {
 } from "../../styles/sections/Content.css";
 
 export function Content() {
-  // const navigate = useNavigate();
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);
   const { animateScroll } = useScrollTrigger();
-  const contentContainer = useRef<HTMLDivElement>(null!);
+  const containerRef = useRef<HTMLDivElement>(null!);
   let contentTl: gsap.core.Timeline;
 
   useGSAP(() => {
@@ -35,10 +34,10 @@ export function Content() {
         end: 'bottom 100%',
       },
     });
-  }, {scope: contentContainer});
+  }, {scope: containerRef});
 
   return (
-    <div ref={contentContainer} className={wrapper}>
+    <div ref={containerRef} className={wrapper}>
       <hr className={`topHr ${hr}`} />
       <Top.Root 
         title={
@@ -54,7 +53,7 @@ export function Content() {
 
       <div className={`contentSection ${contentSection}`}>
         {CONTENT_DATA.map((content) => (
-          <ContentCard key={content.id} content={content} />
+          <ContentCard key={content.id} content={content}/>
         ))}
       </div>
     </div>

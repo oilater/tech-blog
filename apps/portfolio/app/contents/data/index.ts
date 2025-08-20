@@ -1,7 +1,7 @@
-import { CDN_IMAGES } from "../cdn";
-import { LINK_URL } from "./url";
+import { CDN_IMAGES } from "../../cdn";
+import { LINK_URL } from "../../constants/url";
 
-type ContentData = {
+export type ContentData = {
   id: string;
   title: string;
   description: string;
