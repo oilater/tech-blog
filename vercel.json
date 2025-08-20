@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm --filter=portfolio build",
+  "buildCommand": "pnpm build --filter=@repo/interaction && pnpm build --filter=portfolio",
   "installCommand": "pnpm install",
   "outputDirectory": "apps/portfolio/.next",
   "framework": "nextjs"
