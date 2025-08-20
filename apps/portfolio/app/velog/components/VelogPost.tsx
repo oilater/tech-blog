@@ -11,11 +11,12 @@ type VelogPostProps = {
 };
 
 export function VelogPost({ post }: VelogPostProps) {
-  const [processedPost, setProcessedPost] = useState<string>("");
+  const [styledContent, setStyledContent] = useState<string>("");
   const { getVelogStyleAsync } = useVelogStyle();
 
   useEffect(() => {
-    getVelogStyleAsync(post.body).then((res) => setProcessedPost(res));
+    getVelogStyleAsync(post.body)
+    .then((res) => setStyledContent(res));
   }, [post.body]);
 
   return (
@@ -23,7 +24,7 @@ export function VelogPost({ post }: VelogPostProps) {
       <Post.Title title={post.title} />
       <Post.Description author="김성현" postedAt={getRelativeDays(post.released_at)} />
       <Post.Tags tags={post.tags} />
-      <Post.Content body={processedPost} />
+      <Post.Content body={styledContent} />
     </Post>
   );
 }
