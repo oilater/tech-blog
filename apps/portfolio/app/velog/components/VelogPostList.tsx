@@ -2,7 +2,11 @@ import { ulid } from "ulid";
 import { Blog } from "./Blog";
 import { PostType } from "../types/post";
 
-export function VelogPostList({ posts }: { posts: PostType[] }) {
+type VelogPostListProps = {
+  posts: PostType[];
+};
+
+export function VelogPostList({ posts }: VelogPostListProps) {
   return (
     <Blog>
       <Blog.List>

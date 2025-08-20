@@ -1,7 +1,8 @@
 import { PostType } from "../types/post";
-import * as styles from "../styles/PostCard.css";
+import * as styles from "../styles/ListRow.css";
 import Link from "next/link";
 import { getRelativeDays } from "../utils/day";
+import { Tag } from "./Tag";
 
 type ListRowProps = {
   post: PostType;
@@ -19,13 +20,7 @@ export function ListRow({ post, link }: ListRowProps) {
       </div>
 
       {hasTags && (
-        <div className={styles.cardTags}>
-          {post.tags.map((tag) => (
-            <span key={tag} className={styles.cardTag}>
-              {tag}
-            </span>
-          ))}
-        </div>
+        <Tag tags={post.tags} />
       )}
 
       <div className={styles.cardFooter}>

@@ -1,25 +1,27 @@
+import * as styles from '../styles/Post.css';
+import { Tag } from './Tag';
+
 export function Post({ children }: { children: React.ReactNode }) {
-  return <div>{children}</div>;
+  return <div style={{ maxWidth: '768px', margin: '0 auto' }}>{children}</div>;
 }
 
 function Title({ title }: { title: string }) {
-  return <h1>{title}</h1>;
+  return <p className={styles.postTitle}>{title}</p>;
+}
+
+function Description({ author, postedAt }: { author: string; postedAt: string }) {
+  return <p className={styles.description}><span className={styles.author}>{author}</span> ∙ <span className={styles.postedAt}>{postedAt}</span></p>;
 }
 
 function Tags({ tags }: { tags: string[] }) {
-  return (
-    <div>
-      {tags.map((tag) => (
-        <span key={tag}>{tag}</span>
-      ))}
-    </div>
-  );
+  return <Tag tags={tags} />;
 }
 
 function Content({ body }: { body: string }) {
-  return <div dangerouslySetInnerHTML={{ __html: body }} />;
+  return <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: body }} />;
 }
 
 Post.Title = Title;
+Post.Description = Description;
 Post.Tags = Tags;
 Post.Content = Content;

@@ -1,9 +1,9 @@
 "use client";
 
+import Loading from "./loading";
 import { useAtomValue } from "jotai";
 import { getPostBySlug } from "../stores/post";
 import { useParams } from "next/navigation";
-import Loading from "./loading";
 import { VelogPost } from "../velog/components/VelogPost";
 
 export default function DetailPage() {

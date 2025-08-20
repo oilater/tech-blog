@@ -28,26 +28,6 @@ export const cardDescription = style({
   margin: '8px 0 32px',
 });
 
-export const cardTags = style({
-  display: 'flex',
-  flexWrap: 'wrap',
-  gap: '8px',
-  marginBottom: '16px',
-});
-
-export const cardTag = style({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: '32px',
-  backgroundColor: '#f8f9fa',
-  color: '#007bff',
-  fontSize: '16px',
-  fontWeight: '500',
-  padding: '2px 16px',
-  borderRadius: '16px',
-});
-
 export const cardFooter = style({
   paddingTop: '14px',
   display: 'flex',
