@@ -7,7 +7,7 @@ export function VelogPostList({ posts }: { posts: PostType[] }) {
     <Blog>
       <Blog.List>
         {posts?.map((post) => (
-          <Blog.Card
+          <Blog.Row
             key={ulid()}
             post={post}
             link={`/${post.url_slug}`}

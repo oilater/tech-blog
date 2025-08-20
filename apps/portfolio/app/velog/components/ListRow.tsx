@@ -3,12 +3,12 @@ import * as styles from "../styles/PostCard.css";
 import Link from "next/link";
 import { getRelativeDays } from "../utils/day";
 
-type PostCardProps = {
+type ListRowProps = {
   post: PostType;
   link: string;
 };
 
-export function PostCard({ post, link }: PostCardProps) {
+export function ListRow({ post, link }: ListRowProps) {
   const hasTags = post?.tags && post.tags.length > 0;
 
   return (

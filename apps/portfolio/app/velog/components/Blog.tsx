@@ -1,4 +1,4 @@
-import { PostCard } from "./PostCard";
+import { ListRow } from "./ListRow";
 
 type BlogProps = {
   children: React.ReactNode;
@@ -19,4 +19,4 @@ function List({ children }: { children: React.ReactNode }) {
 }
 
 Blog.List = List;
-Blog.Card = PostCard;
+Blog.Row = ListRow;
