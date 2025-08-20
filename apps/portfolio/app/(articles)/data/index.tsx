@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
-import FivaArticle from './FivaArticle';
-import PortfolioArticle from './PortfolioArticle';
-import { CDN_IMAGES } from '../cdn';
+import FivaArticle from '../FivaArticle';
+import PortfolioArticle from '../PortfolioArticle';
+import { CDN_IMAGES } from '../../cdn';
 
 const ARTICLE_KEYS = {
   FIVA: "fiva",

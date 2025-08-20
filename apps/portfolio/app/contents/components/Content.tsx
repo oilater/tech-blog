@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useAtom } from "jotai";
 import { useGSAP } from "@gsap/react";
 import { useScrollTrigger } from "@repo/interaction";
-import { contentTimeline } from "../../home/timelines/contentTimeline";
+import { contentTimeline } from "../../(home)/timelines/contentTimeline";
 import { animationPlayStateAtom } from "../../stores/timeline";
 import { CONTENT_DATA } from "../data";
 import { Top } from "../../components/Top";
