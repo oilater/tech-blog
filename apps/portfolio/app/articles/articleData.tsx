@@ -1,8 +1,13 @@
 import type { ReactNode } from 'react';
-import { ARTICLE_KEYS } from '../constants/article';
 import FivaArticle from './FivaArticle';
 import PortfolioArticle from './PortfolioArticle';
 import { CDN_IMAGES } from '../cdn';
+
+const ARTICLE_KEYS = {
+  FIVA: "fiva",
+  PORTFOLIO: "rally-portfolio",
+  RALLY_REFACTORING: "rally-refactoring",
+} as const;
 
 export type ArticleData = {
   title: string;

@@ -2,7 +2,7 @@
 
 import { useAtomValue, useSetAtom } from "jotai";
 import { VelogPostList } from "../../velog/components/VelogPostList";
-import { ListSkeleton } from "../../skeletons/ListSkeleton";
+import { ListSkeleton } from "../../velog/skeletons/ListSkeleton";
 import { postsStoreAtom } from "../../stores/post";
 import * as styles from "../styles/Feed.css";
 import { useVelog } from "../../velog/hooks/use-velog";
