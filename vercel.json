@@ -1,6 +1,6 @@
 {
   "buildCommand": "npx turbo build --filter=portfolio",
   "installCommand": "pnpm install",
-  "outputDirectory": "apps/portfolio/.next",
+  "outputDirectory": ".next",
   "framework": "nextjs"
 }
