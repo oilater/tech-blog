@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm build --filter=@repo/interaction && pnpm build --filter=portfolio",
+  "buildCommand": "npx turbo build --filter=portfolio",
   "installCommand": "pnpm install",
   "outputDirectory": "apps/portfolio/.next",
   "framework": "nextjs"
