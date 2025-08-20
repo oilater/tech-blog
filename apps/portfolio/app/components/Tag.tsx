@@ -5,7 +5,7 @@ type TagProps = {
     text: string;
 }
 
-export default function Tag({ text }: TagProps) {
+export function Tag({ text }: TagProps) {
     const tagColor = getTagColor(text);
 
     return (

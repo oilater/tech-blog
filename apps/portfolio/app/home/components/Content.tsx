@@ -8,8 +8,7 @@ import { contentTimeline } from "../timelines/contentTimeline";
 import { animationPlayStateAtom } from "../../stores/timeline";
 import { CONTENT_DATA } from "../../constants/content-data";
 import { Top } from "../../components/Top";
-import { Card } from "../../components/Card";
-import Tag from "../../components/Tag";
+import { ContentCard } from "../../components/molecules/ContentCard";
 import {
   wrapper,
   contentSection,
@@ -54,29 +53,9 @@ export function Content() {
       </div>
 
       <div className={`contentSection ${contentSection}`}>
-        {CONTENT_DATA.map((content) => {
-          if (!content) return null;
-          return (
-          <Card.Root 
-            key={content.id}
-            image={content.image}
-            onClick={() => {
-              if (content.isInternal) {
-                // navigate(content.link);
-              } else {
-                window.open(content.link, "_blank");
-              }
-            }}
-          >
-            <Card.Title>{content.title}</Card.Title>
-            <Card.Description>{content.description}</Card.Description>
-            <Card.Tags>
-              {content.tags.map((tag) => (
-                <Tag key={tag} text={tag} />
-              ))}
-            </Card.Tags>
-          </Card.Root>
-        )})}
+        {CONTENT_DATA.map((content) => (
+          <ContentCard key={content.id} content={content} />
+        ))}
       </div>
     </div>
   );

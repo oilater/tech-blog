@@ -6,8 +6,8 @@ import { Footer } from './components/Footer';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { FloatingNav } from './components/FloatingNav';
-import { NavItem } from './components/NavItem';
-import { QueryProvider } from './components/QueryProvider';
+import { NavIcon } from './components/NavItem';
+import { QueryProvider } from './components/providers/QueryProvider';
 import { VelogPostLoader } from './velog/components/VelogPostLoader';
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <FloatingNav>
           {PortfolioConfig.menu.map((link) => (
-            <NavItem key={link.label} href={link.path} label={link.label} icon={link.icon || ''} />
+            <NavIcon key={link.label} href={link.path} label={link.label} icon={link.icon || ''} />
           ))}
         </FloatingNav>
         <LayoutWrapper>{children}</LayoutWrapper>
