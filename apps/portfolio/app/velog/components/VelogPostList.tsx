@@ -4,9 +4,10 @@ import { PostType } from "../types/post";
 
 type VelogPostListProps = {
   posts: PostType[];
+  ref?: React.RefObject<HTMLDivElement | null>;
 };
 
-export function VelogPostList({ posts }: VelogPostListProps) {
+export function VelogPostList({ posts, ref }: VelogPostListProps) {
   return (
     <Blog>
       <Blog.List>
@@ -17,6 +18,7 @@ export function VelogPostList({ posts }: VelogPostListProps) {
             link={`/${post.url_slug}`}
           />
         ))}
+        {ref && <div ref={ref} />}
       </Blog.List>
     </Blog>
   );
