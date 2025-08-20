@@ -5,17 +5,17 @@ import { useAtom } from "jotai";
 import { useGSAP } from "@gsap/react";
 import { useScrollTrigger } from "@repo/interaction";
 import { contentTimeline } from "../timelines/contentTimeline";
-import { animationPlayStateAtom } from "../stores/timeline";
-import { CONTENT_DATA } from "../constants/content-data";
-import { Top } from "../components/Top";
-import { Card } from "../components/Card";
-import Tag from "../components/Tag";
+import { animationPlayStateAtom } from "../../stores/timeline";
+import { CONTENT_DATA } from "../../constants/content-data";
+import { Top } from "../../components/Top";
+import { Card } from "../../components/Card";
+import Tag from "../../components/Tag";
 import {
   wrapper,
   contentSection,
   mainDescription,
   hr
-} from "../styles/sections/Content.css";
+} from "../../styles/sections/Content.css";
 
 export function Content() {
   // const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import type { ArticleData } from "../articles/articleData.ts";
+import type { ArticleData } from "../articles/articleData.jsx";
 import { lazy, Suspense, useEffect } from 'react';
 import { Button } from "./Button";
-import { ArrowDownIcon } from "./ArrowDownIcon";
+import { ArrowDownIcon } from "./icons/ArrowDownIcon.jsx";
 import {
   articleRoot,
   articleHeader,

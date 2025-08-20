@@ -1,0 +1,6 @@
+{
+  "buildCommand": "pnpm build --filter=portfolio",
+  "installCommand": "pnpm install",
+  "outputDirectory": "apps/portfolio/.next",
+  "framework": "nextjs"
+}

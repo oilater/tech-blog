@@ -4,9 +4,9 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { useAtom } from "jotai";
 import { useScrollTrigger } from "@repo/interaction";
-import { animationPlayStateAtom } from "../stores/timeline";
+import { animationPlayStateAtom } from "../../stores/timeline";
 import { contentTimeline } from "../timelines/contentTimeline";
-import { Top } from "../components/Top";
+import { Top } from "../../components/Top";
 import {
   wrapper,
   contentSection,
@@ -19,7 +19,7 @@ import {
   educationDescription,
   dot,
   activeDot
-} from "../styles/sections/Education.css";
+} from "../../styles/sections/Education.css";
 
 export function Education() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);

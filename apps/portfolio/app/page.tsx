@@ -1,9 +1,5 @@
-import Portfolio from "./sections/Portfolio";
+import Portfolio from "./home/Portfolio";
 
 export default function Home() {
-  return (
-    <main>
-      <Portfolio />
-    </main> 
-  );
+  return <Portfolio />;
 }

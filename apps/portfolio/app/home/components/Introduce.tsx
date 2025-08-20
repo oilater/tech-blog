@@ -3,17 +3,17 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { useAtom } from "jotai";
-import { animationPlayStateAtom } from "../stores/timeline";
+import { animationPlayStateAtom } from "../../stores/timeline";
 import { introduceTimeline } from "../timelines/introduceTimeline";
-import { InfoCard } from "../components/InfoCard";
-import { CDN_IMAGES } from "../cdn";
+import { InfoCard } from "../../components/InfoCard";
+import { CDN_IMAGES } from "../../cdn";
 import {
   introduceWrapper,
   infoSection,
   mainDescription
-} from "../styles/sections/Introduce.css";
+} from "../../styles/sections/Introduce.css";
 
-export default function Introduce() {
+export function Introduce() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);
   const introduceScope = useRef<HTMLDivElement>(null!);
 

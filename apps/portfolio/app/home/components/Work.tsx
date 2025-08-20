@@ -5,16 +5,16 @@ import { useAtom } from "jotai";
 import { useGSAP } from "@gsap/react";
 import { useScrollTrigger } from "@repo/interaction";
 import { contentTimeline } from "../timelines/contentTimeline";
-import { animationPlayStateAtom } from "../stores/timeline";
-import { Top } from "../components/Top";
-import { WideCard } from "../components/WideCard";
-import { WORK_DATA } from "../constants/work-data";
+import { animationPlayStateAtom } from "../../stores/timeline";
+import { Top } from "../../components/Top";
+import { WideCard } from "../../components/WideCard";
+import { WORK_DATA } from "../../constants/work-data";
 import {
   wrapper,
   contentSection,
   mainDescription,
   hr
-} from "../styles/sections/Work.css";
+} from "../../styles/sections/Work.css";
 
 export function Work() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);

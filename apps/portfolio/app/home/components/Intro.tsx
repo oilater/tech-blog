@@ -10,9 +10,9 @@ import {
   titleOrigin,
   title,
   subTitle
-} from "../styles/sections/Intro.css";
+} from "../../styles/sections/Intro.css";
 
-export default function Intro() {
+export function Intro() {
   const introScope = useRef<HTMLDivElement>(null!);
 
   useGSAP(() => {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { footer } from "../styles/components/Footer.css";
-import { VelogIcon } from "./VelogIcon";
-import { GithubIcon } from "./GithubIcon";
+import { VelogIcon } from "./icons/VelogIcon";
+import { GithubIcon } from "./icons/GithubIcon";
 
 export function Footer() {
   return (

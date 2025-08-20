@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { animationPlayStateAtom } from "../stores/timeline";
+import { animationPlayStateAtom } from "../../stores/timeline";
 import { useAtom } from "jotai";
 import { useScrollTrigger } from "@repo/interaction";
 import { outroTimeline } from "../timelines/outroTimeline";
@@ -14,7 +14,7 @@ import {
   contactItem,
   contactLabel,
   contactValue
-} from "../styles/sections/Outro.css";
+} from "../../styles/sections/Outro.css";
 
 export function Outro() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);

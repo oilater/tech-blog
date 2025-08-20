@@ -1,4 +1,4 @@
-import { SectionContainer } from '../sections/SectionContainer';
+import { SectionContainer } from './SectionContainer';
 
 export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   return (
