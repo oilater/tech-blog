@@ -7,7 +7,7 @@ import { useVelog } from "../hooks/use-velog";
 
 export function VelogPostLoader() {
   const setPostMap = useSetAtom(postsStoreAtom);
-  const { posts } = useVelog({ username: 'oilater', target: 'posts' });
+  const { posts } = useVelog({ username: 'oilater', endpoint: 'posts' });
 
   useEffect(() => {
     setPostMap(posts ?? []);

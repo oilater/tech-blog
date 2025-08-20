@@ -1,19 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 
 type FetchPostsProps = {
-  target: "posts" | "post";
+  endpoint: "posts" | "post";
   username: string;
   cursor?: string;
 };
 
-export function useVelogFetch({ target, username, cursor }: FetchPostsProps) {
+export function useVelogFetch({ endpoint, username, cursor }: FetchPostsProps) {
   return useQuery({
-    queryKey: [target, username, cursor],
+    queryKey: [endpoint, username, cursor],
     queryFn: async () => {
       const params = new URLSearchParams({ username });
       if (cursor) params.append("cursor", cursor);
 
-      const response = await fetch(`/api/${target}?${params}`);
+      const response = await fetch(`/api/${endpoint}?${params}`);
       if (!response.ok) {
         throw new Error("포스트를 불러오지 못했어요 🥲");
       }

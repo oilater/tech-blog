@@ -1,20 +1,12 @@
 "use client";
 
-import * as styles from "./styles/Feed.css";
-import { useAtomValue } from "jotai";
-import { postsStoreAtom } from "../stores/post";
-import { VelogPostList } from "../velog/components/VelogPostList";
-import { ListSkeleton } from "../skeletons/ListSkeleton";
+import { QueryProvider } from "../components/QueryProvider";
+import { Feed } from "./components/FeedWrapper";
 
-export default function Feed() {
-  const posts = useAtomValue(postsStoreAtom);
-
-  if (posts.length === 0) return <ListSkeleton />;
-
+export default function FeedWrapper() {
   return (
-    <div className={styles.wrapper}>
-      <h1 className={styles.feedContainer}>Feed</h1>
-      <VelogPostList posts={posts} />
-    </div>
+    <QueryProvider>
+      <Feed />
+    </QueryProvider>
   );
 }

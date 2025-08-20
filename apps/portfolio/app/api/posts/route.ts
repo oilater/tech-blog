@@ -23,8 +23,8 @@ export async function GET(req: Request) {
     }
 
     const query = `
-      query {
-        posts(username: "${username}", cursor: ${cursor}) {
+      query Posts($username: String!, $cursor: ID) {
+        posts(username: $username, cursor: $cursor) {
           id
           title
           short_description
@@ -35,11 +35,22 @@ export async function GET(req: Request) {
         }
       }
     `;
-  
+
+    const variables = {
+      username,
+      cursor: cursor || null
+    };
+
+    console.log('GraphQL Query:', query);
+    console.log('GraphQL Variables:', variables);
+
     const response = await fetch(VELOG_API.ENDPOINT, {
       method: VELOG_API.METHOD,
       headers: VELOG_API.HEADERS,
-      body: JSON.stringify({ query })
+      body: JSON.stringify({ 
+        query,
+        variables
+      })
     });
 
 

@@ -4,7 +4,7 @@ import { useVelogFetch } from './use-fetch';
 type UseVelogProps = {
   username: string;
   cursor?: string;
-  target: "posts" | "post";
+  endpoint: "posts" | "post";
 };
 
 type UseVelogReturn = {
@@ -17,8 +17,8 @@ type UseVelogReturn = {
   isError: boolean;
 };
 
-export function useVelog({ username, cursor, target }: UseVelogProps): UseVelogReturn {
-  const { data, isLoading, isError } = useVelogFetch({ target, username, cursor });
+export function useVelog({ username, cursor, endpoint }: UseVelogProps): UseVelogReturn {
+  const { data, isLoading, isError } = useVelogFetch({ endpoint, username, cursor });
   
   if (isLoading) {
     return { posts: null, isLoading: true, isError: false };
