@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { useGSAP } from "@gsap/react";
 import { useScrollTrigger } from "@repo/interaction";
 import { contentTimeline } from "../timelines/contentTimeline";
-import { animationPlayStateAtom } from "../stores/timelineStore";
+import { animationPlayStateAtom } from "../stores/timeline";
 import { Top } from "../components/Top";
 import { WideCard } from "../components/WideCard";
 import { WORK_DATA } from "../constants/work-data";

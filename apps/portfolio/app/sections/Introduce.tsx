@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { useAtom } from "jotai";
-import { animationPlayStateAtom } from "../stores/timelineStore";
+import { animationPlayStateAtom } from "../stores/timeline";
 import { introduceTimeline } from "../timelines/introduceTimeline";
 import { InfoCard } from "../components/InfoCard";
 import { CDN_IMAGES } from "../cdn";

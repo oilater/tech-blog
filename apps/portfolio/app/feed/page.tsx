@@ -1,12 +1,17 @@
 "use client";
 
-import { VelogProvider } from "../velog/components/VelogProvider";
-import { Feed } from "./components/Feed";
+import { useAtomValue } from "jotai";
+import { postsStoreAtom } from "../stores/post";
+import { VelogPostList } from "../velog/components/VelogPostList";
+import * as styles from "./styles/Feed.css";
 
-export default function FeedContainer() {
+export default function Feed() {
+  const posts = useAtomValue(postsStoreAtom);
+
   return (
-    <VelogProvider>
-      <Feed />
-    </VelogProvider>
+    <div>
+      <h1 className={styles.feedContainer}>Feed</h1>
+      <VelogPostList posts={posts} />
+    </div>
   );
 }

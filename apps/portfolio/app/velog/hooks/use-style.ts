@@ -5,23 +5,46 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import 'prismjs/components/prism-typescript';
 
+const LANGUAGE_MAPPING: Record<string, string> = {
+  'tsx': 'ts',
+  'jsx': 'js',
+};
+
 export function useVelogStyle() {
-  const setVelogStyle = useCallback(async (html: string) => {
+  const getVelogStyleAsync = useCallback(async (html: string) => {
     if (typeof window === "undefined" || !html) return html;
 
+    const decodedHtml = html
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&amp;/g, '&')
+      .replace(/&#39;/g, "'")
+      .replace(/&#x27;/g, "'")
+      .replace(/&#x2F;/g, '/');
+
     const renderer = new marked.Renderer();
+
     renderer.code = ({ text, lang }) => {
-      const language = lang || 'unsupported';
-      let highlightedCode = text;
+      const language = lang && LANGUAGE_MAPPING[lang] ? LANGUAGE_MAPPING[lang] : lang ?? 'ts';      
+      
+      let highlightedCode;
       if (Prism.languages[language]) {
         highlightedCode = Prism.highlight(text, Prism.languages[language], language);
+      } else {
+        highlightedCode = text;
       }
-      return `<pre class="${styles.postPreBlock}"><code class="${styles.postCodeInPre} language-${language}">${highlightedCode}</code></pre>`;
+
+      return `<pre class="${styles.postPreBlock}">
+<code class="${styles.postCodeInPre} language-${language}">${highlightedCode}</code>
+</pre>`;
     };
 
-    const htmlContent = await marked(html, {
+    const htmlContent = await marked(decodedHtml, {
+      pedantic: false,
       gfm: true,
       breaks: true,
+      silent: false,
       renderer: renderer,
     });
 
@@ -42,10 +65,9 @@ export function useVelogStyle() {
     doc.querySelectorAll('ul, ol').forEach(list => list.classList.add(styles.postList));
     doc.querySelectorAll('li').forEach(item => item.classList.add(styles.postListItem));
     doc.querySelectorAll('blockquote').forEach(quote => quote.classList.add(styles.postBlockquote));
-    doc.querySelectorAll('code:not(pre code)').forEach(code => code.classList.add(styles.postCode));
 
     return doc.body.innerHTML;
   }, []);
 
-  return { setVelogStyle };
+  return { getVelogStyleAsync };
 }

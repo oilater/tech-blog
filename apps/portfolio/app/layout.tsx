@@ -5,7 +5,10 @@ import { PortfolioConfig } from '../config';
 import { Footer } from './components/Footer';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { FloatingNav, NavItem } from './components/FloatingNav';
+import { FloatingNav } from './components/FloatingNav';
+import { NavItem } from './components/NavItem';
+import { QueryProvider } from './components/QueryProvider';
+import { VelogPostLoader } from './velog/components/VelogPostLoader';
 
 export const metadata: Metadata = {
   title: PortfolioConfig.title,
@@ -37,6 +40,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </FloatingNav>
         <LayoutWrapper>{children}</LayoutWrapper>
         <Footer />
+        <QueryProvider>
+          <VelogPostLoader />
+        </QueryProvider>
         <Analytics />
         <SpeedInsights />
       </body>

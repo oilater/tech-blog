@@ -1,4 +1,4 @@
-export interface Post {
+export type PostType = {
   id: string;
   title: string;
   url_slug: string;

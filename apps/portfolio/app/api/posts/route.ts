@@ -27,8 +27,9 @@ export async function GET(req: Request) {
         posts(username: "${username}", cursor: ${cursor}) {
           id
           title
-          url_slug
           short_description
+          body
+          url_slug
           tags
           released_at
         }

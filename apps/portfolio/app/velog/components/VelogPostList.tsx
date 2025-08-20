@@ -1,12 +1,12 @@
 import { ulid } from "ulid";
 import { Blog } from "./Blog";
-import { Post } from "../types/post";
+import { PostType } from "../types/post";
 
-export function Velog({ value }: { value: Post[] }) {
+export function VelogPostList({ posts }: { posts: PostType[] }) {
   return (
     <Blog>
       <Blog.List>
-        {value?.map((post) => (
+        {posts?.map((post) => (
           <Blog.Card
             key={ulid()}
             post={post}

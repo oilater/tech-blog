@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { animationPlayStateAtom } from "../stores/timelineStore";
+import { animationPlayStateAtom } from "../stores/timeline";
 import { useAtom } from "jotai";
 import { useScrollTrigger } from "@repo/interaction";
 import { outroTimeline } from "../timelines/outroTimeline";

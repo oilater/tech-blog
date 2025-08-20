@@ -1,10 +1,10 @@
-import { Post } from "../types/post";
+import { PostType } from "../types/post";
 import * as styles from "../styles/PostCard.css";
 import Link from "next/link";
 import { getRelativeDays } from "../utils/day";
 
 type PostCardProps = {
-  post: Post;
+  post: PostType;
   link: string;
 };
 
