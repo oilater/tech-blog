@@ -1,0 +1,5 @@
+User-agent: *
+disallow: /LCP/*
+disallow: /generate-screenshot
+Allow: /
+Sitemap: https://tech-blog-portfolio.vercel.app/sitemap.xml
