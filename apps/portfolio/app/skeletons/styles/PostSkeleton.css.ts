@@ -6,15 +6,28 @@ export const wrapper = style({
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
-  gap: '24px',
+});
+
+export const header = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '20px',
 });
 
 export const title = style({
-  width: '60%',
-  height: '48px',
+  width: '80%',
+  height: '60px',
   backgroundColor: '#f3f3f3',
   borderRadius: '8px',
-  marginBottom: '32px',
+  marginBottom: '10px',
+  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+});
+
+export const description = style({
+  width: '100px',
+  height: '20px',
+  backgroundColor: '#f3f3f3',
+  borderRadius: '6px',
   animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 });
 
@@ -23,47 +36,19 @@ export const author = style({
   height: '24px',
   backgroundColor: '#f3f3f3',
   borderRadius: '6px',
-  marginBottom: '8px',
-  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-});
-
-export const postedAt = style({
-  width: '60%',
-  height: '20px',
-  backgroundColor: '#f3f3f3',
-  borderRadius: '6px',
-  marginBottom: '24px',
-  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-});
-
-export const content = style({
-  width: '100%',
-  height: '600px',
-  backgroundColor: '#f3f3f3',
-  borderRadius: '8px',
-  marginTop: '5rem',
   animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 });
 
 export const tags = style({
   display: 'flex',
   gap: '8px',
-  marginBottom: '24px',
+  marginBottom: '6px',
 });
 
 export const tag = style({
-  width: '60px',
-  height: '24px',
+  height: '32px',
+  width: '75px',
   backgroundColor: '#f3f3f3',
-  borderRadius: '12px',
-  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-});
-
-export const description = style({
-  width: '100%',
-  height: '20px',
-  backgroundColor: '#f3f3f3',
-  borderRadius: '6px',
-  marginBottom: '14px',
+  borderRadius: '16px',
   animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 });

@@ -2,7 +2,7 @@ import * as styles from '../styles/Post.css';
 import { Tag } from './Tag';
 
 export function Post({ children }: { children: React.ReactNode }) {
-  return <div style={{ maxWidth: '768px', margin: '0 auto' }}>{children}</div>;
+  return <div className={styles.wrapper}>{children}</div>;
 }
 
 function Title({ title }: { title: string }) {

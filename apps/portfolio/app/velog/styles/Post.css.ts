@@ -1,5 +1,12 @@
 import { style } from '@vanilla-extract/css';
 
+export const wrapper = style({
+  maxWidth: '768px',
+  minHeight: '90vh',
+  margin: '0 auto',
+  width: '100%',
+});
+
 export const post = style({
   display: 'flex',
   flexDirection: 'column',

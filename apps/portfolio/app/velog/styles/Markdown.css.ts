@@ -129,3 +129,9 @@ export const postCodeInPre = style({
   lineHeight: '1.6',
   fontFamily: 'monospace !important',
 });
+
+export const postHr = style({
+  border: 'none',
+  borderTop: '1px solid #e9ecef',
+  margin: '4px 0 24px',
+});

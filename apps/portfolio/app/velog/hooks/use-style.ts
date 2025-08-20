@@ -64,6 +64,7 @@ export function useVelogStyle() {
     doc.querySelectorAll('h6').forEach(h => h.classList.add(styles.postHeading6));
     doc.querySelectorAll('ul, ol').forEach(list => list.classList.add(styles.postList));
     doc.querySelectorAll('li').forEach(item => item.classList.add(styles.postListItem));
+    doc.querySelectorAll('hr').forEach(hr => hr.classList.add(styles.postHr));
     doc.querySelectorAll('blockquote').forEach(quote => quote.classList.add(styles.postBlockquote));
 
     return doc.body.innerHTML;
