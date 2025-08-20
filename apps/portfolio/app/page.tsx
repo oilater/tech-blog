@@ -1,5 +1,16 @@
-import Portfolio from "./home/Portfolio";
+import { Intro, Introduce, Content, Work, Education, Outro } from './home/components';
 
 export default function Home() {
-  return <Portfolio />;
+  return (
+    <main>
+      <section>
+        <Intro />
+        <Introduce />
+        <Work />
+        <Content />
+        <Education />
+        <Outro />
+      </section>
+    </main>
+  );
 }
