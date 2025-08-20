@@ -41,9 +41,10 @@ export const linkItem = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  
+  willChange: 'transform',
+  msTransition: 'all 0.1s ease-out',
   ':hover': {
-    color: Colors.blue700,
+    scale: '1.15',
   },
 
   selectors: {
