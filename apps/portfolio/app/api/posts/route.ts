@@ -7,7 +7,9 @@ const VELOG_API = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
   },
-}
+};
+
+const LIMIT_PER_REQUEST = 10;
 
 export async function GET(req: Request) {
   try {
@@ -17,14 +19,14 @@ export async function GET(req: Request) {
 
     if (!username) {
       return NextResponse.json(
-        { error: "username is required" }, 
+        { error: "username is required" },
         { status: 400 }
       );
     }
 
     const query = `
-      query Posts($username: String!, $cursor: ID) {
-        posts(username: $username, cursor: $cursor) {
+      query Posts($username: String!, $cursor: ID, $limit: Int) {
+        posts(username: $username, cursor: $cursor, limit: $limit) {
           id
           title
           short_description
@@ -38,26 +40,25 @@ export async function GET(req: Request) {
 
     const variables = {
       username,
-      cursor: cursor || null
+      cursor: cursor || null,
+      limit: LIMIT_PER_REQUEST,
     };
-
-    console.log('GraphQL Query:', query);
-    console.log('GraphQL Variables:', variables);
 
     const response = await fetch(VELOG_API.ENDPOINT, {
       method: VELOG_API.METHOD,
       headers: VELOG_API.HEADERS,
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         query,
-        variables
-      })
+        variables,
+      }),
     });
 
-
     if (!response.ok) {
-      console.error(`Velog API error: ${response.status} ${response.statusText}`);
+      console.error(
+        `Velog API error: ${response.status} ${response.statusText}`
+      );
       return NextResponse.json(
-        { error: "Failed to fetch from Velog API" }, 
+        { error: "Failed to fetch from Velog API" },
         { status: response.status }
       );
     }
@@ -67,18 +68,16 @@ export async function GET(req: Request) {
     if (data.errors) {
       console.error("GraphQL errors:", data.errors);
       return NextResponse.json(
-        { error: "GraphQL query failed", details: data.errors }, 
+        { error: "GraphQL query failed", details: data.errors },
         { status: data.errors[0].extensions.code }
       );
     }
 
     return NextResponse.json(data.data.posts);
-
   } catch (error) {
     console.error("Velog API route error:", error);
-    
     return NextResponse.json(
-      { error: "Internal server error" }, 
+      { error: "Internal server error" },
       { status: 500 }
     );
   }
