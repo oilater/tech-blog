@@ -15,7 +15,7 @@ export function VelogPostList({ posts, ref }: VelogPostListProps) {
           <Blog.Row
             key={ulid()}
             post={post}
-            link={`/${post.url_slug}`}
+            link={`/feed/${post.url_slug}`}
           />
         ))}
         {ref && <div ref={ref} />}
