@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const rootStyle = style({
   width: '100%',
@@ -13,5 +13,5 @@ export const paragraphStyle = style({
   height: '100%',
   fontSize: '2.5rem',
   fontWeight: '700',
-  color: Colors.grey700
+  color: vars.colors.grey700
 });

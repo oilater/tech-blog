@@ -1,4 +1,4 @@
-import { Colors } from "../styles/common/color-tokens";
+import { vars } from "../styles/common/color-tokens.css";
 import { tag } from "../styles/components/Tag.css";
 
 type TagProps = {
@@ -18,42 +18,42 @@ export function Tag({ text }: TagProps) {
 const getTagColor = (text: string) => {
   switch (text) {
     case "React":
-      return Colors.blue300;
+      return vars.colors.blue300;
     case "TypeScript":
-      return Colors.blue500;
+      return vars.colors.blue500;
     case "HTML5":
-      return Colors.red300;
+      return vars.colors.red300;
     case "CSS3":
-      return Colors.orange500;
+      return vars.colors.orange500;
     case "JavaScript":
-      return Colors.teal500;
+      return vars.colors.teal500;
     case "NextJS":
-      return Colors.grey700;
+      return vars.colors.grey700;
     case "Emotion":
-      return Colors.pink400;
+      return vars.colors.pink400;
     case "GSAP":
-      return Colors.green300;
+      return vars.colors.green300;
     case "Jotai":
-      return Colors.purple300;
+      return vars.colors.purple300;
     case "SCSS":
-      return Colors.green500;
+      return vars.colors.green500;
     case "Firebase":
-      return Colors.red400;
+      return vars.colors.red400;
     case "SocketIO":
-      return Colors.purple400;
+      return vars.colors.purple400;
     case "SwiftUI":
-      return Colors.blue900;
+        return vars.colors.blue900;
     case "SwiftData":
-      return Colors.blue800;
+      return vars.colors.blue800;
     case "Recoil":
-      return Colors.purple400;
+      return vars.colors.purple400;
     case "Lighthouse":
-      return Colors.red300;
+      return vars.colors.red300;
     case "Performance Tab":
-      return Colors.orange500;
+      return vars.colors.orange500;
     case "WebPageTest":
-      return Colors.teal500;
+      return vars.colors.teal500;
     default:
-      return Colors.grey500;
+      return vars.colors.grey500;
   }
 };

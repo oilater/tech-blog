@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 import { mediaQueries } from '../common/breakpoints.css';
 
 export const introWrapper = style({
@@ -44,7 +44,7 @@ export const baseTitle = style({
 });
 
 export const titleOrigin = style({
-  color: Colors.grey400
+  color: vars.colors.grey400
 });
 
 export const title = style({
@@ -53,5 +53,5 @@ export const title = style({
 });
 
 export const subTitle = style({
-  color: Colors.blue500
+  color: vars.colors.blue500
 });

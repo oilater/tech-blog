@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 import { mediaQueries } from '../common/breakpoints.css';
 
 export const introduceWrapper = style({
@@ -32,7 +32,7 @@ export const mainDescription = style({
   alignItems: 'center',
   fontSize: '1.3rem',
   fontWeight: '500',
-  color: Colors.grey500,
+  color: vars.colors.grey500,
   padding: '10px 16px',
   lineHeight: '1.4'
 });

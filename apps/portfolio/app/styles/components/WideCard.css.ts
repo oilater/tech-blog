@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 import { mediaQueries } from '../common/breakpoints.css';
 
 export const wideCard = style({
@@ -7,7 +7,7 @@ export const wideCard = style({
   width: '100%',
   height: 'auto',
   background: 'inherit',
-  color: Colors.grey700,
+  color: vars.colors.grey700,
   transition: 'background 0.2s ease',
   cursor: 'pointer',
   overflow: 'hidden',
@@ -75,7 +75,7 @@ export const cardContent = style({
 export const categoryText = style({
   fontSize: '20px',
   fontWeight: '500',
-  color: Colors.grey700,
+  color: vars.colors.grey700,
   margin: 0,
   lineHeight: '1.2',
   transition: 'color 0.2s ease',
@@ -89,7 +89,7 @@ export const categoryText = style({
 export const cardTitle = style({
   fontSize: '32px',
   fontWeight: '600',
-  color: Colors.grey700,
+  color: vars.colors.grey700,
   margin: 0,
   lineHeight: '1.3',
   transition: 'color 0.2s ease',
@@ -103,7 +103,7 @@ export const cardTitle = style({
 export const cardDescription = style({
   fontSize: '1.1rem',
   fontWeight: '400',
-  color: Colors.grey700,
+  color: vars.colors.grey700,
   margin: 0,
   lineHeight: '1.6',
   transition: 'color 0.2s ease',
@@ -117,7 +117,7 @@ export const cardDescription = style({
 export const categoryTextHover = style({
   selectors: {
     [`${wideCard}:hover &`]: {
-      color: Colors.blue500
+      color: vars.colors.blue500
     }
   }
 });
@@ -125,7 +125,7 @@ export const categoryTextHover = style({
 export const cardTitleHover = style({
   selectors: {
     [`${wideCard}:hover &`]: {
-      color: Colors.blue500
+      color: vars.colors.blue500
     }
   }
 });
@@ -133,7 +133,7 @@ export const cardTitleHover = style({
 export const cardDescriptionHover = style({
   selectors: {
     [`${wideCard}:hover &`]: {
-      color: Colors.blue500
+      color: vars.colors.blue500
     }
   }
 });

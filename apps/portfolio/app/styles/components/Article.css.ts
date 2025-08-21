@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 import { mediaQueries } from '../common/breakpoints.css';
 
 export const articleRoot = style({
@@ -8,7 +8,7 @@ export const articleRoot = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '20px',
-  color: Colors.grey800
+  color: vars.colors.grey800
 });
 
 export const articleHeader = style({

@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const header = style({
   zIndex: 100,
@@ -18,7 +18,7 @@ export const header = style({
   transition: 'opacity 0.3s ease-in-out',
   selectors: {
     'body.active-border &': {
-      borderBottom: `1px solid ${Colors.grey300}`
+      borderBottom: `1px solid ${vars.colors.grey300}`
     }
   }
 });
@@ -33,7 +33,7 @@ export const innerNav = style({
 export const linkItem = style({
   fontSize: '17px',
   fontWeight: '500',
-  color: Colors.grey800,
+  color: vars.colors.grey800,
   cursor: 'pointer',
   transition: 'all 0.4s ease',
   padding: '6px 6px',
@@ -50,7 +50,7 @@ export const linkItem = style({
   selectors: {
     '&.active': {
       backgroundColor: 'white',
-      color: Colors.grey800,
+      color: vars.colors.grey800,
     }
   }
 });

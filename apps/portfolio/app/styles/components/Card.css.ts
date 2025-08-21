@@ -1,17 +1,17 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const card = style({
   display: 'flex',
   flexDirection: 'column',
   verticalAlign: 'top',
   background: 'inherit',
-  border: `1px solid ${Colors.grey300}`,
+  border: `1px solid ${vars.colors.grey300}`,
   borderRadius: '16px',
   transition: 'background 0.2s ease',
   cursor: 'pointer',
   ':hover': {
-    background: Colors.opacity50
+    background: vars.colors.opacity50
   }
 });
 
@@ -49,13 +49,13 @@ export const cardContent = style({
 export const cardTitle = style({
   fontSize: '20px',
   fontWeight: '600',
-  color: Colors.grey800
+  color: vars.colors.grey800
 });
 
 export const cardDescription = style({
   fontSize: '15px',
   fontWeight: '400',
-  color: Colors.grey600
+  color: vars.colors.grey600
 });
 
 export const cardTags = style({

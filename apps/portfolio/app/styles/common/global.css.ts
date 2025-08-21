@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
-import { Colors } from './color-tokens';
+import { vars } from './color-tokens.css';
 
 globalStyle('*', {
   margin: 0,
@@ -38,7 +38,7 @@ globalStyle('button', {
 
 globalStyle('a', {
   textDecoration: 'none',
-  color: Colors.grey800,
+  color: vars.colors.grey800,
 });
 
 globalStyle('@media (prefers-reduced-motion: reduce)', {

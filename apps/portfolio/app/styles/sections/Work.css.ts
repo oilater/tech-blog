@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const wrapper = style({
   width: '100%',
@@ -17,7 +17,7 @@ export const contentSection = style({
 export const mainDescription = style({
   fontSize: '1.2rem',
   fontWeight: '500',
-  color: Colors.grey500,
+  color: vars.colors.grey500,
   padding: '0 16px',
   lineHeight: '1.65',
   marginBottom: '3.5rem'

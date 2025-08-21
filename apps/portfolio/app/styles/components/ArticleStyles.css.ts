@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const section = style({
   marginBottom: '4rem'
@@ -9,11 +9,11 @@ export const sectionTitle = style({
   margin: '36px 0 36px',
   fontSize: '25px',
   marginBottom: '20px',
-  color: Colors.grey800
+  color: vars.colors.grey800
 });
 
 export const highlightText = style({
-  color: Colors.grey800,
+  color: vars.colors.grey800,
   fontWeight: 'bold',
   borderRadius: '2px',
   letterSpacing: '0em'
@@ -83,7 +83,7 @@ export const portfolioImage = style({
 
 export const captionStyle = style({
   fontSize: '13px',
-  color: Colors.grey800,
+  color: vars.colors.grey800,
   lineHeight: '1.2',
   margin: '0',
   marginTop: '6px',

@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const wrapper = style({
   width: '100%',
@@ -52,7 +52,7 @@ export const educationPeriod = style({
   position: 'relative',
   fontSize: '18px',
   fontWeight: '500',
-  color: Colors.grey500,
+  color: vars.colors.grey500,
   width: '130px',
   textAlign: 'right',
   display: 'flex',
@@ -70,7 +70,7 @@ export const educationDescription = style({
   marginTop: '10px',
   fontSize: '16px',
   lineHeight: '1.65',
-  color: Colors.grey500
+  color: vars.colors.grey500
 });
 
 // dot과 active-dot을 위한 별도 스타일
@@ -79,7 +79,7 @@ export const dot = style({
   width: '10px',
   height: '10px',
   borderRadius: '50%',
-  background: Colors.grey200,
+  background: vars.colors.grey200,
   transition: 'background 0.3s',
   marginRight: '6px'
 });

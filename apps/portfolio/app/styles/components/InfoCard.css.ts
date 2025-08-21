@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const card = style({
   display: 'flex',
@@ -38,11 +38,11 @@ export const cardContent = style({
 export const cardTitle = style({
   fontSize: '20px',
   fontWeight: '600',
-  color: Colors.grey800
+  color: vars.colors.grey800
 });
 
 export const cardDescription = style({
   fontSize: '15px',
   fontWeight: '400',
-  color: Colors.grey600
+  color: vars.colors.grey600
 });

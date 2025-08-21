@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const container = style({
   minHeight: '100vh',
@@ -24,7 +24,7 @@ export const title = style({
 
 export const subtitle = style({
   fontSize: '1.25rem',
-  color: Colors.grey700,
+  color: vars.colors.grey700,
   maxWidth: '42rem',
   margin: '0 auto',
   lineHeight: '1.6',
@@ -58,20 +58,20 @@ export const sectionTitle = style({
 
 export const paragraph = style({
   marginBottom: '1rem',
-  color: Colors.grey700,
+  color: vars.colors.grey700,
   lineHeight: '1.7',
   fontSize: '1rem',
 });
 
 export const quote = style({
-  backgroundColor: Colors.grey100,
+  backgroundColor: vars.colors.grey100,
   padding: '1.5rem',
   borderLeft: '4px solid #3182F6',
   margin: '1.5rem 0',
 });
 
 export const quoteText = style({
-  color: Colors.grey700,
+  color: vars.colors.grey700,
   fontStyle: 'italic',
   fontSize: '1.1rem',
   lineHeight: '1.6',
@@ -79,7 +79,7 @@ export const quoteText = style({
 });
 
 export const quoteAuthor = style({
-  color: Colors.grey700,
+  color: vars.colors.grey700,
   fontSize: '0.875rem',
   textAlign: 'right',
 });
