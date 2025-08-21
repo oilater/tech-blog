@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { Colors } from '../common/color-tokens';
+import { vars } from '../common/color-tokens.css';
 
 export const tag = style({
   display: 'flex',
@@ -11,5 +11,5 @@ export const tag = style({
   borderRadius: '16px',
   fontSize: '12.5px',
   fontWeight: '500',
-  backgroundColor: Colors.grey100
+  backgroundColor: vars.colors.grey100
 });
