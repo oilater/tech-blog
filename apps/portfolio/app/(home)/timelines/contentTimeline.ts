@@ -47,7 +47,7 @@ export function contentTimeline() {
         target: ".contentSection",
         motions: [
           {
-            duration: 0.8,
+            duration: 0.5,
             ease: "power2.out",
             translateY: { from: '5%' },
             opacity: { from: 0 }
