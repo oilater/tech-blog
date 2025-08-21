@@ -6,11 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from '@repo/interaction';
 import { progressBarContainer, progressBar } from '../styles/components/ScrollProgressBar.css';
 
-type ScrollProgressBarProps = {
-  trigger?: string;
-};
-
-export default function ScrollProgressBar({ trigger }: ScrollProgressBarProps) {
+export default function ScrollProgressBar({ trigger }: { trigger?: string }) {
   const progressBarRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
