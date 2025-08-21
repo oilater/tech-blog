@@ -29,29 +29,6 @@ export function Education() {
     });
   }, {scope: contentContainer});
 
-  useGSAP(() => {
-    const educationItems = contentContainer.current.querySelectorAll('.education-item');
-    educationItems.forEach((item, index) => {
-      const dotElement = item.querySelector('.dot');
-      if (!dotElement) return;
-  
-      animateScroll({
-        target: `.item-${index + 1}`,
-        timeline: gsap.timeline(),
-        options: {
-          start: 'top 70%',
-          end: 'bottom 40%',
-          onEnter: () => {
-            dotElement.classList.add(styles.activeDot);
-          },
-          onLeaveBack: () => {
-            dotElement.classList.remove(styles.activeDot);
-          },
-        },
-      });
-    });
-  }, {scope: contentContainer});
-
   return (
     <div ref={contentContainer} className={styles.wrapper}>
       <hr className={`topHr ${styles.hr}`} />

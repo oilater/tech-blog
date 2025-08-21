@@ -73,7 +73,6 @@ export const educationDescription = style({
   color: vars.colors.grey500
 });
 
-// dot과 active-dot을 위한 별도 스타일
 export const dot = style({
   display: 'inline-block',
   width: '10px',
@@ -82,8 +81,4 @@ export const dot = style({
   background: vars.colors.grey200,
   transition: 'background 0.3s',
   marginRight: '6px'
-});
-
-export const activeDot = style({
-  background: 'dodgerblue'
 });
