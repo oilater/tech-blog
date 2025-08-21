@@ -1,4 +1,4 @@
-import { CDN_IMAGES } from "../../cdn";
+import { CDN_IMAGES } from "../../constants/cdn";
 import * as styles from '../../styles/components/ArticleStyles.css';
 
 export function PortfolioArticle() {

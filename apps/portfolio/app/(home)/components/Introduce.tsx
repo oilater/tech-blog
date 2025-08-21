@@ -6,7 +6,7 @@ import { useAtom } from "jotai";
 import { animationPlayStateAtom } from "../../stores/timeline";
 import { introduceTimeline } from "../timelines/introduceTimeline";
 import { InfoCard } from "../../components/InfoCard";
-import { CDN_IMAGES } from "../../cdn";
+import { CDN_IMAGES } from "../../constants/cdn";
 import {
   introduceWrapper,
   infoSection,

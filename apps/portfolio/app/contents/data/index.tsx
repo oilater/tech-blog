@@ -1,4 +1,4 @@
-import { CDN_IMAGES } from "../../cdn";
+import { CDN_IMAGES } from "../../constants/cdn";
 import { LINK_URL } from "../../constants/url";
 import { ArticleData, ContentData } from "../types";
 import { PortfolioArticle } from "../articles/PortfolioArticle";
