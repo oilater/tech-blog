@@ -11,14 +11,12 @@ export const contentSection = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: '54px 16px',
-  padding: '0 16px'
 });
 
 export const mainDescription = style({
   fontSize: '1.2rem',
   fontWeight: '500',
   color: vars.colors.grey500,
-  padding: '0 16px',
   lineHeight: '1.65',
   marginBottom: '3.5rem'
 });

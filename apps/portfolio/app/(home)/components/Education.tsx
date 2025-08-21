@@ -7,19 +7,7 @@ import { useScrollTrigger } from "@repo/interaction";
 import { animationPlayStateAtom } from "../../stores/timeline";
 import { contentTimeline } from "../timelines/contentTimeline";
 import { Top } from "../../components/Top";
-import {
-  wrapper,
-  contentSection,
-  mainDescription,
-  hr,
-  educationItem,
-  educationContent,
-  educationHeader,
-  educationTitle,
-  educationDescription,
-  dot,
-  activeDot
-} from "../../styles/sections/Education.css";
+import * as styles from "../../styles/sections/Education.css";
 
 export function Education() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);
@@ -54,10 +42,10 @@ export function Education() {
           start: 'top 70%',
           end: 'bottom 40%',
           onEnter: () => {
-            dotElement.classList.add(activeDot);
+            dotElement.classList.add(styles.activeDot);
           },
           onLeaveBack: () => {
-            dotElement.classList.remove(activeDot);
+            dotElement.classList.remove(styles.activeDot);
           },
         },
       });
@@ -65,8 +53,8 @@ export function Education() {
   }, {scope: contentContainer});
 
   return (
-    <div ref={contentContainer} className={wrapper}>
-      <hr className={`topHr ${hr}`} />
+    <div ref={contentContainer} className={styles.wrapper}>
+      <hr className={`topHr ${styles.hr}`} />
       <Top.Root
         title={
           <Top.Paragraph>
@@ -74,20 +62,20 @@ export function Education() {
           </Top.Paragraph>
         }
       />
-      <div className={`mainDescription ${mainDescription}`} />
-      <div className={`contentSection ${contentSection}`}>
+      <div className={`mainDescription ${styles.mainDescription}`} />
+      <div className={`contentSection ${styles.contentSection}`}>
       
-      <div className={educationItem}>
+      <div className={styles.educationItem}>
       <div className="education-item item-1">
-        <span className={dot} />
+        <span className={styles.dot} />
         <span>23.06-24.07</span>
       </div>
-        <div className={educationContent}>
-          <div className={educationHeader}>
-            <span className={educationTitle}>삼성 청년 SW 아카데미 10기</span>
+        <div className={styles.educationContent}>
+          <div className={styles.educationHeader}>
+            <span className={styles.educationTitle}>삼성 청년 SW 아카데미 10기</span>
           </div>
           
-          <div className={educationDescription}>
+          <div className={styles.educationDescription}>
             <p>∙ 전공 Java 웹 개발 과정 수료, 삼성 SW 역량테스트 모의 A형 취득</p>
             <p>∙ 4번의 팀 프로젝트 경험 (1학기 최우수상, 2학기 우수상 2회)</p>
             <p>∙ React, Flutter, SwiftUI 등 다양한 프레임워크 경험</p>
@@ -96,33 +84,33 @@ export function Education() {
         </div>
       </div>
 
-      <div className={educationItem}>
+      <div className={styles.educationItem}>
       <div className="education-item item-2">
-        <span className={dot} />
+        <span className={styles.dot} />
         <span>2024.03.10</span>
       </div>
-        <div className={educationContent}>
-          <div className={educationHeader}>
-            <span className={educationTitle}>OPIc</span>
+        <div className={styles.educationContent}>
+          <div className={styles.educationHeader}>
+            <span className={styles.educationTitle}>OPIc</span>
           </div>
           
-          <div className={educationDescription}>
+          <div className={styles.educationDescription}>
             <p>∙ Intermediate Mid (IM1)</p>
           </div>
         </div>
       </div>
 
-      <div className={educationItem}>
+      <div className={styles.educationItem}>
       <div className="education-item item-3">
-        <span className={dot} />
+        <span className={styles.dot} />
         <span>2019.09.28</span>
       </div>
-        <div className={educationContent}>
-          <div className={educationHeader}> 
-            <span className={educationTitle}>TOEIC</span>
+        <div className={styles.educationContent}>
+          <div className={styles.educationHeader}> 
+            <span className={styles.educationTitle}>TOEIC</span>
           </div>
           
-          <div className={educationDescription}>
+          <div className={styles.educationDescription}>
             <p>∙ 820 점</p>
           </div>
         </div>

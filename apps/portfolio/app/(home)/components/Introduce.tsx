@@ -7,11 +7,7 @@ import { animationPlayStateAtom } from "../../stores/timeline";
 import { introduceTimeline } from "../timelines/introduceTimeline";
 import { InfoCard } from "../../components/InfoCard";
 import { CDN_IMAGES } from "../../constants/cdn";
-import {
-  introduceWrapper,
-  infoSection,
-  mainDescription
-} from "../../styles/sections/Introduce.css";
+import * as styles from "../../styles/sections/Introduce.css";
 
 export function Introduce() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);
@@ -24,13 +20,13 @@ export function Introduce() {
   }, { scope: introduceScope });
 
   return (
-    <div ref={introduceScope} className={introduceWrapper}>
-      <div className={mainDescription}>
+    <div ref={introduceScope} className={styles.introduceWrapper}>
+      <div className={styles.mainDescription}>
         <p>React를 중심으로 웹 프론트엔드를 개발합니다.</p>
         <p>UX/DX에 높은 가치를 두고 있습니다.</p>
       </div>
 
-      <div className={`info-section ${infoSection}`}>
+      <div className={`info-section ${styles.infoSection}`}>
         <div className="info-1">
         <InfoCard
           title="모던 프론트엔드 개발"

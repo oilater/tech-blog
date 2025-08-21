@@ -1,5 +1,6 @@
 import { style, globalStyle } from '@vanilla-extract/css';
 import { mediaQueries } from '../common/breakpoints.css';
+import { vars } from '../common/color-tokens.css';
 
 export const wrapper = style({
   width: '100%',
@@ -40,8 +41,7 @@ globalStyle(`${contentSection} > *:nth-of-type(3n)`, {
 export const mainDescription = style({
   fontSize: '1.2rem',
   fontWeight: '500',
-  color: '#7E7E87',
-  padding: '0 16px',
+  color: vars.colors.grey500,
   lineHeight: '1.65',
   marginBottom: '3.5rem'
 });

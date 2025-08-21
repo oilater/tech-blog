@@ -9,12 +9,7 @@ import { animationPlayStateAtom } from "../../stores/timeline";
 import { CONTENT_DATA } from "../data";
 import { Top } from "../../components/Top";
 import { ContentCard } from "./ContentCard";
-import {
-  wrapper,
-  contentSection,
-  mainDescription,
-  hr
-} from "../../styles/sections/Content.css";
+import * as styles from "../../styles/sections/Content.css";
 
 export function Content() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);
@@ -37,8 +32,8 @@ export function Content() {
   }, {scope: containerRef});
 
   return (
-    <div ref={containerRef} className={wrapper}>
-      <hr className={`topHr ${hr}`} />
+    <div ref={containerRef} className={styles.wrapper}>
+      <hr className={`topHr ${styles.hr}`} />
       <Top.Root 
         title={
           <Top.Paragraph>
@@ -47,11 +42,11 @@ export function Content() {
         }
       />
 
-      <div className={`mainDescription ${mainDescription}`}>
+      <div className={`mainDescription ${styles.mainDescription}`}>
         <p>새로운 것을 배우면 재밌는 서비스로 만들어봅니다.</p>
       </div>
 
-      <div className={`contentSection ${contentSection}`}>
+      <div className={`contentSection ${styles.contentSection}`}>
         {CONTENT_DATA.map((content) => (
           <ContentCard key={content.id} content={content}/>
         ))}
