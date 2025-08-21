@@ -10,6 +10,7 @@ export const card = style({
 });
 
 export const cardImageWrapper = style({
+  position: 'relative',
   width: '100%',
   aspectRatio: '1',
   borderRadius: '8px',

@@ -1,11 +1,5 @@
-import {
-  card,
-  cardImageWrapper,
-  cardImage,
-  cardContent,
-  cardTitle,
-  cardDescription
-} from "../styles/components/InfoCard.css";
+import Image from 'next/image';
+import * as styles from "../styles/components/InfoCard.css";
 
 type InfoCardProps = {
   title: string;
@@ -17,13 +11,21 @@ type InfoCardProps = {
 
 export function InfoCard({ title, description, image, onClick, isHighPriority }: InfoCardProps) {
   return (
-    <div className={card} onClick={onClick}>
-      <div className={cardImageWrapper}>
-        <img src={image} alt={title} className={cardImage} fetchPriority={isHighPriority ? 'high' : 'auto'} />
+    <div className={styles.card} onClick={onClick}>
+      <div className={styles.cardImageWrapper}>
+      <Image
+        src={image}
+        alt={title}
+        fill
+        className={styles.cardImage}
+        priority={isHighPriority}
+        quality={85}
+        fetchPriority={isHighPriority ? 'high' : 'auto'}
+      />
       </div>
-      <div className={cardContent}>
-        <p className={cardTitle}>{title}</p>
-        <p className={cardDescription}>{description}</p>
+      <div className={styles.cardContent}>
+        <p className={styles.cardTitle}>{title}</p>
+        <p className={styles.cardDescription}>{description}</p>
       </div>
     </div>
   );
