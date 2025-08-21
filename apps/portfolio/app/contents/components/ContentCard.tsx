@@ -1,4 +1,4 @@
-import type { ContentData } from "../data/index";
+import type { ContentData } from "../types";
 import { Card } from "../../components/Card";
 import { Tag } from "../../components/Tag";
 
@@ -14,7 +14,7 @@ export function ContentCard({ content }: ContentCardProps) {
         <Card.Title>{content.title}</Card.Title>
         <Card.Description>{content.description}</Card.Description>
         <Card.Tags>
-          {content.tags.map((tag) => (
+          {content.tags?.map((tag) => (
             <Tag key={tag} text={tag} />
           ))}
         </Card.Tags>

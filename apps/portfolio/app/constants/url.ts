@@ -4,9 +4,6 @@ export const VELOG_URL = 'https://velog.io/@oilater';
 export const LINK_URL = {
     GITHUB: 'https://github.com/oilater',
     VELOG: 'https://velog.io/@oilater',
-    FIVA: '/article/fiva',
-    PORTFOLIO: '/article/rally-portfolio',
-    RALLY_REFACTORING: '/article/rally-refactoring',
     INTERACTIVE_GRAPH: `${VELOG_URL}/interactive-graph`,
     PORTFOLIO_PERFORMANCE: `${VELOG_URL}/portfolio-performance`,
     MEDICAL_CHARTS: 'https://medical-chart.vercel.app/',

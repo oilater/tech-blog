@@ -5,13 +5,13 @@ export const progressBarContainer = style({
   top: 0,
   left: 0,
   width: '100%',
-  height: '3px',
+  height: '3.5px',
   background: 'rgba(0, 0, 0, 0.1)',
   zIndex: 9999
 });
 
 export const progressBar = style({
   height: '100%',
-  background: '#fff',
+  background: '#3182f6',
   width: '0%'
 });

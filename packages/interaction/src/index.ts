@@ -11,4 +11,4 @@ gsap.registerPlugin(
   SplitText
 );
 
-export { Timeline, Rally, useScrollTrigger };
+export { Timeline, Rally, useScrollTrigger, ScrollTrigger };

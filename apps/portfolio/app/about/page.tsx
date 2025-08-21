@@ -4,33 +4,26 @@ export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>
-          About Me
-        </h1>
+        <h1 className={styles.title}>About Me</h1>
         <p className={styles.subtitle}>
           생각을 표현하는 것을 좋아하고, 성장 욕구가 높은 개발자
         </p>
       </div>
 
       <div className={styles.content}>
-        
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            🎹 재즈에 입문하다
-          </h2>
+          <h2 className={styles.sectionTitle}>🎹 재즈에 입문하다</h2>
           <div>
             <p className={styles.paragraph}>
               저는 실용 음악을 전공하진 않았지만, 재즈를 좋아하고 잘 하고 싶었습니다.
-              '도 미 솔' 같은 기본적인 3화음 코드밖에 모르는 상태에서 알바를 하면서 재즈 레슨을 받았습니다. 
-              무언가를 열심히 해본 경험이 있냐고 묻는 질문에 당당히 대답할 수 있을 정도로 열심히 노력했던 것 같습니다. 
+              '도 미 솔' 같은 기본적인 3화음 코드밖에 모르는 상태에서 알바를 하면서 재즈 레슨을 받았습니다.
+              무언가를 열심히 해본 경험이 있냐고 묻는 질문에 당당히 대답할 수 있을 정도로 열심히 노력했던 것 같습니다.
             </p>
           </div>
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            📈 성장은 우상향일까
-          </h2>
+          <h2 className={styles.sectionTitle}>📈 성장은 우상향일까</h2>
           <div>
             <p className={styles.paragraph}>
               이렇게 약 2년이 흘렀고, 성장에 대한 나름의 인사이트를 얻을 수 있었습니다.
@@ -40,7 +33,6 @@ export default function About() {
               잘 치는 피아니스트들을 애매하게 따라하다보면 결국 의미 없는 솔로가 되어버렸고,
               반복하다보면 어느새 연습의 방향성을 잃어버렸습니다.
             </p>
-
             <p className={styles.paragraph}>
               어느 날, <i>'성공의 단계에 이르는 빌 에반스의 연습 방법'</i>이라는 빌 에반스의 인터뷰 영상을 보게 되었습니다.
             </p>
@@ -61,10 +53,7 @@ export default function About() {
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            🎺 합주 경험
-          </h2>
-          
+          <h2 className={styles.sectionTitle}>🎺 합주 경험</h2>
           <div>
             <p className={styles.paragraph}>
               서울 삼성동의 한 와인 바에서 피아노 연주 일을 하게 되었습니다.
@@ -74,33 +63,31 @@ export default function About() {
             </p>
           </div>
           <div className={styles.videoContainer}>
-          
-          <div className={styles.video}>
-            <video
-              className={styles.videoElement}
-              controls
-              preload="metadata"
-            >
-              <source src="/jazz.mov" type="video/mp4" />
-              비디오를 재생할 수 없습니다.
-            </video>
+            <div className={styles.video}>
+              <video
+                className={styles.videoElement}
+                controls
+                preload="metadata"
+              >
+                <source src="/videos/jazz.mp4" type="video/mp4" />
+                비디오를 재생할 수 없습니다.
+              </video>
+            </div>
           </div>
-        </div>
         </section>
+
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            👨🏼‍💻 성장하는 개발자
-          </h2>
+          <h2 className={styles.sectionTitle}>👨🏼‍💻 성장하는 개발자</h2>
           <div>
             <p className={styles.paragraph}>
               제품을 성장시키며, 함께 일하기 좋은 개발자가 되는 것이 저의 목표입니다.
             </p>
-            <p className={styles.paragraph}>  
-              저는 항상 스스로 ‘왜?’라는 질문을 던지며, 납득할 만한 이유가 있는 코드를 작성하고자 노력합니다. 
-              서비스의 첫인상이라 할 수 있는 UX/UI를 중요하게 생각하며, 최근에는 유지보수성이 높은 코드를 만드는 것에 
+            <p className={styles.paragraph}>
+              저는 항상 스스로 ‘왜?’라는 질문을 던지며, 납득할 만한 이유가 있는 코드를 작성하고자 노력합니다.
+              서비스의 첫인상이라 할 수 있는 UX/UI를 중요하게 생각하며, 최근에는 유지보수성이 높은 코드를 만드는 것에
               관심을 가지고 꾸준히 학습하고 있습니다.
             </p>
-            <p className={styles.paragraph}>  
+            <p className={styles.paragraph}>
               긴 글 읽어주셔서 감사합니다!
             </p>
           </div>

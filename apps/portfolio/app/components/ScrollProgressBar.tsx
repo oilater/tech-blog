@@ -1,7 +1,9 @@
+'use client';
+
 import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from '@repo/interaction';
 import { progressBarContainer, progressBar } from '../styles/components/ScrollProgressBar.css';
 
 type ScrollProgressBarProps = {
