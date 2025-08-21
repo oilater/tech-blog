@@ -11,11 +11,9 @@ export const contentSection = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: '54px 0',
-  padding: '0 16px',
   willChange: 'transform, opacity'
 });
 
-// 자식 요소들에 대한 스타일을 globalStyle로 정의
 globalStyle(`${contentSection} > *`, {
   '@media': {
     [mediaQueries.desktop]: {
@@ -31,7 +29,6 @@ globalStyle(`${contentSection} > *`, {
   }
 });
 
-// 3n번째 요소의 margin-right 제거
 globalStyle(`${contentSection} > *:nth-of-type(3n)`, {
   '@media': {
     [mediaQueries.desktop]: {

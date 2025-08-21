@@ -3,7 +3,7 @@ import { Colors } from '../common/color-tokens';
 
 export const rootStyle = style({
   width: '100%',
-  padding: '20px 16px 8px'
+  padding: '20px 0 8px'
 });
 
 export const paragraphStyle = style({

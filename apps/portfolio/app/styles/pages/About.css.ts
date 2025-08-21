@@ -8,7 +8,6 @@ export const container = style({
 export const header = style({
   textAlign: 'center',
   marginBottom: '4rem',
-  padding: '0 1.5rem',
 });
 
 export const title = style({
@@ -34,7 +33,6 @@ export const subtitle = style({
 export const content = style({
   maxWidth: '64rem',
   margin: '0 auto',
-  padding: '0 1.5rem',
 });
 
 export const section = style({

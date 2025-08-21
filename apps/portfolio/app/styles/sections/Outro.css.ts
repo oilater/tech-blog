@@ -17,7 +17,7 @@ export const outroSection = style({
   width: '30%',
   '@media': {
     [mediaQueries.mobile]: {
-      width: '50%'
+      width: '60%'
     }
   }
 });
@@ -25,7 +25,7 @@ export const outroSection = style({
 export const thankTitle = style({
   textAlign: 'center',
   marginTop: '3rem',
-  padding: '0 16px 32px',
+  padding: '0 0 32px',
   fontSize: '32px',
   color: Colors.grey700,
   fontWeight: '600'

@@ -11,8 +11,6 @@ export const introduceWrapper = style({
 
 export const infoSection = style({
   borderRadius: '16px',
-  padding: '10px',
-  margin: '0 16px',
   marginTop: '3rem',
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -20,8 +18,6 @@ export const infoSection = style({
   '@media': {
     [mediaQueries.mobile]: {
       gridTemplateColumns: '1fr',
-      padding: '8px',
-      margin: '0 12px',
       marginTop: '1.5rem'
     },
     [mediaQueries.desktop]: {

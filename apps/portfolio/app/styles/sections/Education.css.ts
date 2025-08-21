@@ -19,7 +19,6 @@ export const mainDescription = style({
   fontSize: '1.2rem',
   fontWeight: '500',
   color: '#7E7E87',
-  padding: '0 16px',
   lineHeight: '1.65',
   marginBottom: '2.5rem'
 });
@@ -35,7 +34,6 @@ export const educationItem = style({
   display: 'flex',
   alignItems: 'flex-start',
   gap: '16px',
-  padding: '0 16px',
   marginBottom: '3rem'
 });
 
