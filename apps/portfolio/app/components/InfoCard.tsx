@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import * as styles from "../styles/components/InfoCard.css";
 
 type InfoCardProps = {
@@ -13,15 +12,7 @@ export function InfoCard({ title, description, image, onClick, isHighPriority }:
   return (
     <div className={styles.card} onClick={onClick}>
       <div className={styles.cardImageWrapper}>
-      <Image
-        src={image}
-        alt={title}
-        fill
-        className={styles.cardImage}
-        priority={isHighPriority}
-        quality={85}
-        fetchPriority={isHighPriority ? 'high' : 'auto'}
-      />
+        <img src={image} alt={title} className={styles.cardImage} fetchPriority={isHighPriority ? 'high' : 'auto'} />
       </div>
       <div className={styles.cardContent}>
         <p className={styles.cardTitle}>{title}</p>
