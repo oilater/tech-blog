@@ -30,7 +30,6 @@ export function PortfolioArticle() {
             src={CDN_IMAGES.INTRO_ANIMATION} 
             alt="Intro 애니메이션" 
             className={styles.introImageCombined} 
-            loading="lazy" 
           />
           <figcaption className={styles.captionStyle}>Intro 애니메이션</figcaption>
         </figure>
@@ -47,7 +46,6 @@ export function PortfolioArticle() {
             src={CDN_IMAGES.INTRO_TIMELINE} 
             alt="Timeline 구현 이미지" 
             className={styles.timelineImageCombined} 
-            loading="lazy" 
           />
           <figcaption className={styles.captionStyle}>Intro 화면의 타임라인</figcaption>
         </figure>
@@ -64,7 +62,7 @@ export function PortfolioArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <img src={CDN_IMAGES.TIMELINE_LOGIC_REFACTOR} alt="Timeline 구현 이미지" className={styles.timelineImage} loading="lazy" />
+          <img src={CDN_IMAGES.TIMELINE_LOGIC_REFACTOR} alt="Timeline 구현 이미지" className={styles.timelineImage} />
           <figcaption className={styles.captionStyle}>Timeline.tsx</figcaption>
         </figure>
       </section>
@@ -83,7 +81,7 @@ export function PortfolioArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <img src={CDN_IMAGES.RALLY_LOGIC} alt="Rally 구현 이미지" className={styles.portfolioImage} loading="lazy" />
+          <img src={CDN_IMAGES.RALLY_LOGIC} alt="Rally 구현 이미지" className={styles.portfolioImage} />
           <figcaption className={styles.captionStyle}>Rally 구현 로직</figcaption>
         </figure>
       </section>
@@ -104,7 +102,7 @@ export function PortfolioArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <img src={CDN_IMAGES.MOTION_LOGIC} alt="Timeline 구현 이미지" className={styles.portfolioImage} loading="lazy" />
+          <img src={CDN_IMAGES.MOTION_LOGIC} alt="Timeline 구현 이미지" className={styles.portfolioImage} />
           <figcaption className={styles.captionStyle}>Motion 구현 로직</figcaption>
         </figure>
       </section>
@@ -128,7 +126,6 @@ export function PortfolioArticle() {
                 src={CDN_IMAGES.COMPONENT_COMPOSITION} 
                 alt="컴포넌트 합성 패턴 이미지" 
                 className={styles.containerImageCombined} 
-                loading="lazy" 
               />
             </figure>
 
@@ -137,7 +134,6 @@ export function PortfolioArticle() {
                 src={CDN_IMAGES.ARTICLE_MAP} 
                 alt="아티클 맵 이미지" 
                 className={styles.articleMapImageCombined} 
-                loading="lazy" 
               />
             </figure>
           </div>
@@ -184,7 +180,7 @@ export function PortfolioArticle() {
           <h4>이미지, GIF</h4>
           <p>
             모든 이미지 파일의 크기는 화질을 크게 해치지 않는 선에서 30-60% 가량 줄여 사용했습니다.
-            이미지를 AVIF로 변환하니 화질이 너무 떨어져서 JPG를 사용하였고, Lazy loading을 적용했습니다. 
+            이미지를 AVIF로 변환하니 화질이 너무 떨어져서 JPG를 사용하였습니다. 
           </p>
         </article>
         

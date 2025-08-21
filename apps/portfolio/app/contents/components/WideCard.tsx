@@ -10,7 +10,7 @@ export function WideCard({ value }: WideCardProps) {
   return (
     <Link href={`/contents/${value.id}`} className={styles.wideCard}>
       <div className={styles.cardImageWrapper}>
-        <img src={value.image} alt={value.title} className={styles.cardImage} loading="lazy" />
+        <img src={value.image} alt={value.title} className={styles.cardImage} />
       </div>
       <div className={styles.cardContent}>
         <span className={`${styles.categoryText} ${styles.categoryTextHover}`}>{value.subTitle}</span>
