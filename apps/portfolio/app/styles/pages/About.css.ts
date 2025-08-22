@@ -39,7 +39,6 @@ export const section = style({
   background: 'rgba(255, 255, 255, 0.1)',
   backdropFilter: 'blur(8px)',
   borderRadius: '1rem',
-  padding: '2rem',
   border: '1px solid rgba(255, 255, 255, 0.2)',
   transition: 'background-color 0.3s ease',
   ':hover': {

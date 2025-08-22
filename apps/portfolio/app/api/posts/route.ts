@@ -48,9 +48,7 @@ export async function GET(req: Request) {
     });
 
     if (!response.ok) {
-      console.error(
-        `Velog API error: ${response.status} ${response.statusText}`
-      );
+      console.error(`Velog API error: ${response.status} ${response.statusText}`);
       return NextResponse.json(
         { error: "Failed to fetch from Velog API" },
         { status: response.status }
