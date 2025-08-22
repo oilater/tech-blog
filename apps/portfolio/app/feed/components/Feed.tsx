@@ -6,7 +6,6 @@ import { ListSkeleton } from "../../velog/skeletons/ListSkeleton";
 import { postsStoreAtom } from "../../stores/post";
 import * as styles from "../styles/Feed.css";
 import { useVelog } from "../../velog/hooks/use-velog";
-import { useCallback } from "react";
 import { useInfiniteScroll } from "../hooks/use-infinite-scroll";
 
 export function Feed() {
