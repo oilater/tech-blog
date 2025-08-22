@@ -17,7 +17,7 @@ export function VelogPost({ post }: VelogPostProps) {
   useEffect(() => {
     getVelogStyleAsync(post.body)
     .then((res) => setStyledContent(res));
-  }, [post.body]);
+  }, [post.body, getVelogStyleAsync]);
 
   return (
     <Post>
