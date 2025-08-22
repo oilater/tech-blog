@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://tech-blog-portfolio.vercel.app/sitemap.xml
