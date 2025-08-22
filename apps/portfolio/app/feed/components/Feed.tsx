@@ -19,11 +19,11 @@ export function Feed() {
     cursor: nextCursor
   });
 
-  const onLoadMore = useCallback(() => {
+  const onLoadMore = () => {
     if (nextPosts) {
       setPosts([...posts, ...nextPosts]);
     }
-  }, [nextPosts]);
+  };
 
   const { observeRef } = useInfiniteScroll({
     onIntersect: onLoadMore,
