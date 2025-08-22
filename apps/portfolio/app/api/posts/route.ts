@@ -1,14 +1,5 @@
 import { NextResponse } from "next/server";
 
-const VELOG_API = {
-  METHOD: "POST",
-  ENDPOINT: "https://v2.velog.io/graphql",
-  HEADERS: {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-  },
-};
-
 const LIMIT_PER_REQUEST = 10;
 
 export async function GET(req: Request) {
@@ -44,9 +35,12 @@ export async function GET(req: Request) {
       limit: LIMIT_PER_REQUEST,
     };
 
-    const response = await fetch(VELOG_API.ENDPOINT, {
-      method: VELOG_API.METHOD,
-      headers: VELOG_API.HEADERS,
+    const response = await fetch("https://v2.velog.io/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({
         query,
         variables,
