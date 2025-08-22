@@ -16,7 +16,8 @@ export function VelogPost({ post }: VelogPostProps) {
 
   useEffect(() => {
     getVelogStyleAsync(post.body)
-    .then((res) => setStyledContent(res));
+      .then((res) => setStyledContent(res))
+      .catch((err) => console.error("❌ 포스트 스타일 적용 실패: ", err));
   }, [post.body, getVelogStyleAsync]);
 
   return (
