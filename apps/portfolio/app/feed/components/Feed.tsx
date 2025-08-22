@@ -10,32 +10,33 @@ import { useCallback } from "react";
 import { useInfiniteScroll } from "../hooks/use-infinite-scroll";
 
 export function Feed() {
-    const posts = useAtomValue(postsStoreAtom);
-    const setPosts = useSetAtom(postsStoreAtom);
-    const nextCursor = posts[posts.length - 1]?.id;
-    const { posts: nextPosts } = useVelog({ 
-        username: 'oilater', 
-        cursor: nextCursor 
-    });
+  const posts = useAtomValue(postsStoreAtom);
+  const setPosts = useSetAtom(postsStoreAtom);
+  const nextCursor = posts.at(-1)?.id;
 
-    const onLoadMore = useCallback(() => {
-      if (nextPosts) {
-        setPosts([...posts, ...nextPosts]);
-      }
-    }, [nextPosts]);
+  const { posts: nextPosts } = useVelog({
+    username: 'oilater',
+    cursor: nextCursor
+  });
 
-    const { observeRef } = useInfiniteScroll({
-        onIntersect: onLoadMore,
-        rootMargin: '0px',
-        threshold: 1.0
-    });
+  const onLoadMore = useCallback(() => {
+    if (nextPosts) {
+      setPosts([...posts, ...nextPosts]);
+    }
+  }, [nextPosts]);
 
-    if (posts.length === 0) return <ListSkeleton />;
-    
-    return (
-      <div className={styles.wrapper}>
-        <h1 className={styles.feedContainer}>Feed</h1>
-        <VelogPostList posts={posts} ref={observeRef} />
-      </div>
-    );
+  const { observeRef } = useInfiniteScroll({
+    onIntersect: onLoadMore,
+    rootMargin: '0px',
+    threshold: 1.0
+  });
+
+  if (posts.length === 0) return <ListSkeleton />;
+
+  return (
+    <div className={styles.wrapper}>
+      <h1 className={styles.feedContainer}>Feed</h1>
+      <VelogPostList posts={posts} ref={observeRef} />
+    </div>
+  );
 }
