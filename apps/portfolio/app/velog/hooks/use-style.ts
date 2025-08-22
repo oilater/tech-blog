@@ -11,7 +11,7 @@ const LANGUAGE_MAPPING: Record<string, string> = {
 };
 
 export function useVelogStyle() {
-  const getVelogStyleAsync = useCallback(async (html: string) => {
+  const addStyleAsync = useCallback(async (html: string) => {
     if (typeof window === "undefined" || !html) return html;
 
     const decodedHtml = html
@@ -70,5 +70,5 @@ export function useVelogStyle() {
     return doc.body.innerHTML;
   }, []);
 
-  return { getVelogStyleAsync };
+  return { addStyleAsync };
 }

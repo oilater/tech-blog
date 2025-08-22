@@ -12,13 +12,13 @@ type VelogPostProps = {
 
 export function VelogPost({ post }: VelogPostProps) {
   const [styledContent, setStyledContent] = useState<string>("");
-  const { getVelogStyleAsync } = useVelogStyle();
+  const { addStyleAsync } = useVelogStyle();
 
   useEffect(() => {
-    getVelogStyleAsync(post.body)
+    addStyleAsync(post.body)
       .then((res) => setStyledContent(res))
       .catch((err) => console.error("포스트 스타일 적용 실패: ", err));
-  }, [post.body, getVelogStyleAsync]);
+  }, [post.body, addStyleAsync]);
 
   return (
     <Post>
