@@ -1,10 +1,9 @@
 import { PostType } from '../types/post';
-import { useVelogFetch } from './use-fetch';
+import { useFetch } from './use-fetch';
 
 type UseVelogProps = {
   username: string;
   cursor?: string;
-  endpoint: "posts" | "post";
 };
 
 type UseVelogReturn = {
@@ -17,9 +16,16 @@ type UseVelogReturn = {
   isError: boolean;
 };
 
-export function useVelog({ username, cursor, endpoint }: UseVelogProps): UseVelogReturn {
-  const { data, isLoading, isError } = useVelogFetch({ endpoint, username, cursor });
-  
+export function useVelog({ username, cursor }: UseVelogProps): UseVelogReturn {
+  const params = new URLSearchParams({ username });
+  if (cursor) params.append("cursor", cursor);
+
+  const { data, isLoading, isError } = useFetch({ 
+    username, 
+    cursor, 
+    endpoint: `/api/posts?${params}`,
+  });
+
   if (isLoading) {
     return { posts: null, isLoading: true, isError: false };
   }

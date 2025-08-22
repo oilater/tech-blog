@@ -15,7 +15,6 @@ export function Feed() {
     const nextCursor = posts[posts.length - 1]?.id;
     const { posts: nextPosts } = useVelog({ 
         username: 'oilater', 
-        endpoint: 'posts', 
         cursor: nextCursor 
     });
 
