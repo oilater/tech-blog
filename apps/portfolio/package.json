@@ -13,7 +13,6 @@
   "dependencies": {
     "@fontsource/pretendard": "^5.2.5",
     "@gsap/react": "^2.1.2",
-    "@next/font": "^14.2.15",
     "@repo/interaction": "workspace:*",
     "@tanstack/react-query": "^5.85.5",
     "@tanstack/react-query-devtools": "^5.85.3",
