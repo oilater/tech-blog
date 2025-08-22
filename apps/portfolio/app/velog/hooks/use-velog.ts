@@ -7,11 +7,7 @@ type UseVelogProps = {
 };
 
 type UseVelogReturn = {
-  posts: PostType[];
-  isLoading: boolean;
-  isError: boolean;
-} | {
-  posts: null;
+  posts: PostType[] | null;
   isLoading: boolean;
   isError: boolean;
 };
