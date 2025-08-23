@@ -1,24 +1,24 @@
 export const PortfolioConfig = {
-  url: 'https://portfolio-amber-mu-57.vercel.app/',
+  url: 'https://tech-blog-portfolio.vercel.app/',
   title: '프론트엔드 개발자 김성현 포트폴리오',
   description: '프론트엔드 개발자 김성현 포트폴리오',
   keywords: ['프론트엔드 김성현 포트폴리오', '프론트엔드 포트폴리오', '프론트엔드 개발자 포트폴리오', '개발자 포트폴리오', '신입 개발자 포트폴리오'],
   velogId: 'oilater',
   menu: [
     {
-      label: '홈',
+      label: 'Home',
       path: '/',
-      icon: '/images/HomeIcon.png',
+      // icon: '/images/HomeIcon.png',
     },
     {
-      label: '피드',
+      label: 'Feed',
       path: '/feed',
-      icon: '/images/book.png',
+      // icon: '/images/book.png',
     },
     {
-      label: '음악',
+      label: 'About',
       path: '/about',
-      icon: '/images/music.png',
+      // icon: '/images/music.png',
     },
   ],
   author: {

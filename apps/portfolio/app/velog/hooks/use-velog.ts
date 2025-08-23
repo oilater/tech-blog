@@ -16,7 +16,7 @@ export function useVelog({ username, cursor }: UseVelogProps): UseVelogReturn {
   const params = new URLSearchParams({ username });
   if (cursor) params.append("cursor", cursor);
 
-  const { data, isLoading, isError } = useFetch({ 
+  const { data, isLoading, isError } = useFetch({
     username, 
     cursor, 
     endpoint: `/api/posts?${params}`,

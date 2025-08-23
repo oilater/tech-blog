@@ -8,7 +8,7 @@ type WideCardProps = {
 
 export function WideCard({ value }: WideCardProps) {
   return (
-    <Link href={`/contents/${value.id}`} className={styles.wideCard}>
+    <Link href={value.link} className={styles.wideCard}>
       <div className={styles.cardImageWrapper}>
         <img src={value.image} alt={value.title} className={styles.cardImage} />
       </div>

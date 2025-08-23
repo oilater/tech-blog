@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { useScrollTrigger } from "@repo/interaction";
 import { contentTimeline } from "../../(home)/timelines/contentTimeline";
 import { animationPlayStateAtom } from "../../stores/timeline";
-import { CONTENT_DATA } from "../data";
+import { CONTENTS } from "../data";
 import { Top } from "../../components/Top";
 import { ContentCard } from "./ContentCard";
 import * as styles from "../../styles/sections/Content.css";
@@ -47,7 +47,7 @@ export function Content() {
       </div>
 
       <div className={`contentSection ${styles.contentSection}`}>
-        {CONTENT_DATA.map((content) => (
+        {CONTENTS.map((content) => (
           <ContentCard key={content.id} content={content}/>
         ))}
       </div>

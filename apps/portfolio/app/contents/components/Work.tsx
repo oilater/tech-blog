@@ -9,7 +9,7 @@ import { contentTimeline } from "../../(home)/timelines/contentTimeline";
 import { animationPlayStateAtom } from "../../stores/timeline";
 import { Top } from "../../components/Top";
 import { WideCard } from "./WideCard";
-import { WORK_DATA } from "../data";
+import { ARTICLES } from "../data";
 
 export function Work() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);
@@ -37,17 +37,17 @@ export function Work() {
       <Top.Root 
         title={
           <Top.Paragraph>
-            <span className="topTitle">IN START-UP</span>
+            <span className="topTitle">ARTICLE</span>
           </Top.Paragraph>
         }
       />
 
       <div className={`mainDescription ${styles.mainDescription}`}>
-        <p>스타트업에서의 개발 경험을 공유합니다.</p>
+        <p>최근 개발 경험을 공유해요.</p>
       </div>
 
       <div className={`contentSection ${styles.contentSection}`}>
-        {WORK_DATA.map((work) => (
+        {ARTICLES.map((work) => (
             <WideCard 
               key={work.id} 
               value={work} />

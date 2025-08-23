@@ -33,7 +33,7 @@ export const innerNav = style({
 export const linkItem = style({
   fontSize: '17px',
   fontWeight: '500',
-  color: vars.colors.grey800,
+  color: vars.colors.grey600,
   cursor: 'pointer',
   transition: 'all 0.4s ease',
   padding: '6px 6px',
@@ -41,16 +41,15 @@ export const linkItem = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  willChange: 'transform',
-  msTransition: 'all 0.1s ease-out',
+  willChange: 'color',
+  msTransition: 'all 0.1s ease-in',
   ':hover': {
-    scale: '1.15',
+    color: vars.colors.grey900,
   },
 
   selectors: {
     '&.active': {
-      backgroundColor: 'white',
-      color: vars.colors.grey800,
+      color: vars.colors.grey900,
     }
   }
 });

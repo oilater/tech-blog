@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <FloatingNav>
           {PortfolioConfig.menu.map((link) => (
-            <NavIcon key={link.label} href={link.path} label={link.label} icon={link.icon || ''} />
+            <NavIcon key={link.label} href={link.path} label={link.label} />
           ))}
         </FloatingNav>
         <LayoutWrapper>{children}</LayoutWrapper>
