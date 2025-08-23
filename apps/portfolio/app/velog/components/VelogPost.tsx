@@ -11,7 +11,7 @@ type VelogPostProps = {
 };
 
 export function VelogPost({ post }: VelogPostProps) {
-  const [styledContent, setStyledContent] = useState<string>("");
+  const [styledContent, setStyledContent] = useState("");
   const { addStyleAsync } = useVelogStyle();
 
   useEffect(() => {
