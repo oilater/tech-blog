@@ -10,7 +10,7 @@ export const ARTICLES: ContentData[] = [
     subTitle: "포트폴리오 사이트",
     title: "커스텀 Velog를 만들어보자 📝",
     description: "포트폴리오에 Velog를 띄워보았어요",
-    image: "/images/velog.jpg",
+    image: CDN_IMAGES.VELOG,
     link: '/feed/포트폴리오에-Velog-글을-띄워보자',
     isInternal: true,
   },
