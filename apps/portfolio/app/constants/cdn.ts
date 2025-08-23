@@ -7,15 +7,15 @@ export const CDN_BASE_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USERNAME}/${RE
 export const CDN_IMAGES = {
     // 메인 썸네일
     PORTFOLIO: `${CDN_BASE_URL}/assets/images/portfolio.avif`,
-    LANGUAGES: `${CDN_BASE_URL}/assets/images/languages.jpg`,
-    MEDICAL_CHARTS: `${CDN_BASE_URL}/assets/images/medical-charts.jpg`,
-    PERFORMANCE: `${CDN_BASE_URL}/assets/images/performance.jpg`,
-    COMMUNICATION: `${CDN_BASE_URL}/assets/images/communication.jpg`,
+    LANGUAGES: `${CDN_BASE_URL}/assets/images/languages.avif`,
+    MEDICAL_CHARTS: `${CDN_BASE_URL}/assets/images/medical-charts.avif`,
+    PERFORMANCE: `${CDN_BASE_URL}/assets/images/performance.avif`,
+    COMMUNICATION: `${CDN_BASE_URL}/assets/images/communication.avif`,
     VELOG: `${CDN_BASE_URL}/assets/images/velog.avif`,
     HOMET_FRIEND: `${CDN_BASE_URL}/assets/images/hometfriend.avif`,
     HOMET_LOGO: `${CDN_BASE_URL}/assets/images/hometfriend-logo.jpg`,
     RALLY_LOGIC: `${CDN_BASE_URL}/assets/images/rally-logic.jpg`,
-    FIVA: `${CDN_BASE_URL}/assets/images/fiva_thumbnail.jpg`,
+    FIVA: `${CDN_BASE_URL}/assets/images/fiva_thumbnail.avif`,
     RALLY_REFACTORING: `${CDN_BASE_URL}/assets/images/typescript-refactoring.jpg`,
     
     // GIF
