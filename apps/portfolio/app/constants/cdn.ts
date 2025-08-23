@@ -11,7 +11,7 @@ export const CDN_IMAGES = {
     MEDICAL_CHARTS: `${CDN_BASE_URL}/assets/images/medical-charts.jpg`,
     PERFORMANCE: `${CDN_BASE_URL}/assets/images/performance.jpg`,
     COMMUNICATION: `${CDN_BASE_URL}/assets/images/communication.jpg`,
-    VELOG: `${CDN_BASE_URL}/assets/images/velog.jpg`,
+    VELOG: `${CDN_BASE_URL}/assets/images/velog.avif`,
     HOMET_FRIEND: `${CDN_BASE_URL}/assets/images/hometfriend.avif`,
     HOMET_LOGO: `${CDN_BASE_URL}/assets/images/hometfriend-logo.jpg`,
     RALLY_LOGIC: `${CDN_BASE_URL}/assets/images/rally-logic.jpg`,
