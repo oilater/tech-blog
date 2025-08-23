@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useSetAtom } from "jotai";
 import { postsStoreAtom } from "../../stores/post";
-import { useFetchPosts } from "../hooks/use-velog";
+import { useFetchPosts } from "../hooks/use-fetch-posts";
 
 export function VelogPostLoader() {
   const { data: posts } = useFetchPosts({ username: 'oilater' });
