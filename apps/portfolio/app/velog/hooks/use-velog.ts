@@ -1,34 +1,25 @@
-import { PostType } from '../types/post';
-import { useFetch } from './use-fetch';
+import { useQuery } from '@tanstack/react-query';
 
-type UseVelogProps = {
+type UseFetchPostsProps = {
   username: string;
   cursor?: string;
 };
 
-type UseVelogReturn = {
-  posts: PostType[] | null;
-  isLoading: boolean;
-  isError: boolean;
-};
-
-export function useVelog({ username, cursor }: UseVelogProps): UseVelogReturn {
+export function useFetchPosts({ username, cursor }: UseFetchPostsProps) {
   const params = new URLSearchParams({ username });
   if (cursor) params.append("cursor", cursor);
 
-  const { data, isLoading, isError } = useFetch({
-    username, 
-    cursor, 
-    endpoint: `/api/posts?${params}`,
+  const query = useQuery({
+    queryKey: ['posts', cursor],
+    queryFn: async () => {
+      const response = await fetch(`/api/posts?${params}`);
+      if (!response.ok) {
+        throw new Error("포스트를 불러오지 못했어요 🥲");
+      }
+      return response.json();
+    },
+    staleTime: 1000 * 60 * 5,
   });
 
-  if (isLoading) {
-    return { posts: null, isLoading: true, isError: false };
-  }
-  
-  if (isError || !data) {
-    return { posts: null, isLoading: false, isError: true };
-  }
-  
-  return { posts: data, isLoading: false, isError: false };
+  return query;
 }

@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 import { useSetAtom } from "jotai";
 import { postsStoreAtom } from "../../stores/post";
-import { useVelog } from "../hooks/use-velog";
+import { useFetchPosts } from "../hooks/use-velog";
 
 export function VelogPostLoader() {
-  const { posts } = useVelog({ username: 'oilater' });
+  const { data: posts } = useFetchPosts({ username: 'oilater' });
   const setPostMap = useSetAtom(postsStoreAtom);
 
   useEffect(() => {
