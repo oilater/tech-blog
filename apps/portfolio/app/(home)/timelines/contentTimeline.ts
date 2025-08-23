@@ -11,7 +11,7 @@ export function contentTimeline() {
         target: ".topHr",
         motions: [
           {
-            duration: 0.4,
+            duration: 0.3,
             ease: "power2.inOut",
             opacity: { from: 0 },
             translateY: { from: '20%' },
@@ -35,7 +35,7 @@ export function contentTimeline() {
         target: ".mainDescription",
         motions: [
           {
-            duration: 0.7,
+            duration: 0.5,
             ease: "power2.out",
             opacity: { from: 0 },
             translateY: { from: '20%' }
