@@ -7,7 +7,7 @@ import { FivaArticle } from "../articles/FivaArticle";
 export const ARTICLES: ContentData[] = [
   {
     id: "velog-article",
-    subTitle: "포트폴리오 사이트",
+    subTitle: "최근 포스트",
     title: "커스텀 Velog를 만들어보자 📝",
     description: "포트폴리오에 Velog를 띄워보았어요",
     image: CDN_IMAGES.VELOG,
