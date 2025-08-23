@@ -1,4 +1,4 @@
-import { ulid } from "ulid";
+import { nanoid } from "nanoid";
 import { Blog } from "./Blog";
 import { PostType } from "../types/post";
 
@@ -13,7 +13,7 @@ export function VelogPostList({ posts, ref }: VelogPostListProps) {
       <Blog.List>
         {posts?.map((post) => (
           <Blog.Row
-            key={ulid()}
+            key={nanoid()}
             post={post}
             link={`/feed/${post.url_slug}`}
           />
