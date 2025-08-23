@@ -11,7 +11,7 @@ export function introduceTimeline() {
         playCount: 1,
         motions: [
           { 
-            duration: 0.5, 
+            duration: 0.4, 
             ease: "power2.out",
             opacity: { from: 0 },
             translateY: { from: '15%' },
@@ -23,7 +23,7 @@ export function introduceTimeline() {
         playCount: 1,
         motions: [
           { 
-            duration: 0.5, 
+            duration: 0.4, 
             ease: "power2.out",
             opacity: { from: 0 },
             translateY: { from: '15%' },
@@ -35,7 +35,7 @@ export function introduceTimeline() {
         playCount: 1,
         motions: [
           { 
-            duration: 0.5, 
+            duration: 0.4, 
             ease: "power2.out",
             opacity: { from: 0 },
             translateY: { from: '15%' },

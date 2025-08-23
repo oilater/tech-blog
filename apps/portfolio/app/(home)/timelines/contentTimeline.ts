@@ -23,7 +23,7 @@ export function contentTimeline() {
         target: ".topTitle",
         motions: [
           {
-            duration: 0.6,
+            duration: 0.5,
             ease: "power2.out",
             opacity: { from: 0 },
             translateY: { from: '20%' }
@@ -47,7 +47,7 @@ export function contentTimeline() {
         target: ".contentSection",
         motions: [
           {
-            duration: 0.5,
+            duration: 0.4,
             ease: "power2.out",
             translateY: { from: '5%' },
             opacity: { from: 0 }
