@@ -3,15 +3,15 @@ import { Blog } from "./Blog";
 import { PostType } from "../types/post";
 
 type VelogPostListProps = {
-  posts: PostType[];
+  value: PostType[];
   ref?: React.RefObject<HTMLDivElement | null>;
 };
 
-export function VelogPostList({ posts, ref }: VelogPostListProps) {
+export function VelogPostList({ value, ref }: VelogPostListProps) {
   return (
     <Blog>
       <Blog.List>
-        {posts?.map((post) => (
+        {value?.map((post) => (
           <Blog.Row
             key={nanoid()}
             post={post}

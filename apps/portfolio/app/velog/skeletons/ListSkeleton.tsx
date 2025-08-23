@@ -4,7 +4,6 @@ export function ListSkeleton() {
   return (
     <>
     <div className={styles.wrapper}>
-      <h1 className={styles.sectionTitle}>Feed</h1>
       <div className={styles.blogList}>
         <div className={styles.cardHeader}>
           <div className={styles.cardTitle} />

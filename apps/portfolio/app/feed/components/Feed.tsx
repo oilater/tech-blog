@@ -9,32 +9,30 @@ import { useFetchPosts } from "../../velog/hooks/use-fetch-posts";
 import { useInfiniteScroll } from "../hooks/use-infinite-scroll";
 
 export function Feed() {
-  const posts = useAtomValue(postsStoreAtom);
+  const accumulatedPosts = useAtomValue(postsStoreAtom);
   const setPosts = useSetAtom(postsStoreAtom);
-  const nextCursor = posts.at(-1)?.id;
 
-  const { data: nextPosts } = useFetchPosts({
+  const { data: newPosts } = useFetchPosts({
     username: 'oilater',
-    cursor: nextCursor
+    cursor: accumulatedPosts?.at(-1)?.id
   });
-
-  const onLoadMore = () => {
-    if (!nextPosts) return;
-    setPosts([...posts, ...nextPosts]);
-  };
 
   const { observeRef } = useInfiniteScroll({
-    onIntersect: onLoadMore,
-    rootMargin: '0px',
-    threshold: 1.0
+    onIntersect: () => {
+      if (!newPosts) return;
+      setPosts([...accumulatedPosts, ...newPosts]);
+    }
   });
 
-  if (posts.length === 0) return <ListSkeleton />;
+  const hasPosts = accumulatedPosts.length > 0;
 
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.feedContainer}>Feed</h1>
-      <VelogPostList posts={posts} ref={observeRef} />
+      {hasPosts 
+        ? <VelogPostList value={accumulatedPosts} ref={observeRef} />
+        : <ListSkeleton /> 
+      }
     </div>
   );
 }
