@@ -1,7 +1,7 @@
 import './styles/common/global.css';
 import type { Metadata } from "next";
 import { LayoutWrapper } from "./components/LayoutWrapper";
-import { PortfolioConfig } from '../config';
+import { BlogConfig } from '../config';
 import { Footer } from './components/Footer';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -11,13 +11,13 @@ import { QueryProvider } from './components/providers/QueryProvider';
 import { VelogPostLoader } from './velog/components/VelogPostLoader';
 
 export const metadata: Metadata = {
-  title: PortfolioConfig.title,
-  description: PortfolioConfig.description,
-  keywords: PortfolioConfig.keywords,
-  authors: [{name: PortfolioConfig.author.name}],
-  creator: PortfolioConfig.author.name,
-  publisher: PortfolioConfig.author.name,
-  metadataBase: new URL(PortfolioConfig.url),
+  title: BlogConfig.title,
+  description: BlogConfig.description,
+  keywords: BlogConfig.keywords,
+  authors: [{name: BlogConfig.author.name}],
+  creator: BlogConfig.author.name,
+  publisher: BlogConfig.author.name,
+  metadataBase: new URL(BlogConfig.url),
   formatDetection: {
     email: false,
     address: false,
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko">
       <body>
         <FloatingNav>
-          {PortfolioConfig.menu.map((link) => (
+          {BlogConfig.menu.map((link) => (
             <NavIcon key={link.label} href={link.path} label={link.label} />
           ))}
         </FloatingNav>

@@ -1,4 +1,4 @@
-export const PortfolioConfig = {
+export const BlogConfig = {
   url: 'https://tech-blog-portfolio.vercel.app/',
   title: '프론트엔드 개발자 김성현 포트폴리오',
   description: '프론트엔드 개발자 김성현 포트폴리오',

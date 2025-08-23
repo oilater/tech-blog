@@ -1,6 +1,6 @@
 "use client";
 
-import { useAtomValue, useSetAtom } from "jotai";
+import { useAtom } from "jotai";
 import { VelogPostList } from "../../velog/components/VelogPostList";
 import { ListSkeleton } from "../../velog/skeletons/ListSkeleton";
 import { postsStoreAtom } from "../../stores/post";
@@ -9,28 +9,26 @@ import { useFetchPosts } from "../../velog/hooks/use-fetch-posts";
 import { useInfiniteScroll } from "../hooks/use-infinite-scroll";
 
 export function Feed() {
-  const accumulatedPosts = useAtomValue(postsStoreAtom);
-  const setPosts = useSetAtom(postsStoreAtom);
+  const [posts, setPosts] = useAtom(postsStoreAtom);
 
-  const { data: newPosts } = useFetchPosts({
+  const { data: fetchedPosts } = useFetchPosts({
     username: 'oilater',
-    cursor: accumulatedPosts?.at(-1)?.id
+    cursor: posts?.at(-1)?.id
   });
 
   const { observeRef } = useInfiniteScroll({
     onIntersect: () => {
-      if (!newPosts) return;
-      setPosts([...accumulatedPosts, ...newPosts]);
+      fetchedPosts && setPosts([...posts, ...fetchedPosts]);
     }
   });
 
-  const hasPosts = accumulatedPosts.length > 0;
+  const hasPosts = posts.length > 0;
 
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.feedContainer}>Feed</h1>
       {hasPosts 
-        ? <VelogPostList value={accumulatedPosts} ref={observeRef} />
+        ? <VelogPostList value={posts} ref={observeRef} />
         : <ListSkeleton /> 
       }
     </div>
