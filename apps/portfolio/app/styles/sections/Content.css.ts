@@ -38,6 +38,13 @@ globalStyle(`${contentSection} > *:nth-of-type(3n)`, {
   }
 });
 
+export const workSection = style({
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '54px 16px',
+});
+
+
 export const mainDescription = style({
   fontSize: '18px',
   fontWeight: '400',
@@ -50,5 +57,4 @@ export const hr = style({
   border: '0',
   height: '2px',
   background: 'rgba(222, 222, 255, 0.19)',
-  margin: '0 16px'
 });
