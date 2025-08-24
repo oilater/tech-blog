@@ -15,8 +15,8 @@ export const contentSection = style({
 
 export const mainDescription = style({
   fontSize: '1.2rem',
-  fontWeight: '500',
-  color: vars.themeColor.colors.subFontColor,
+  fontWeight: '400',
+  color: vars.themeColor.colors.contentFontColor,
   lineHeight: '1.65',
   marginBottom: '3.5rem'
 });

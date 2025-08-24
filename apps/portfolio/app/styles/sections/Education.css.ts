@@ -63,14 +63,14 @@ export const educationPeriod = style({
 export const educationTitle = style({
   fontSize: '20px',
   fontWeight: '600',
-  color: vars.themeColor.colors.mainFontColor
+  color: vars.themeColor.colors.cardTitleFontColor
 });
 
 export const educationDescription = style({
   marginTop: '10px',
   fontSize: '16px',
   lineHeight: '1.65',
-  color: vars.themeColor.colors.contentFontColor
+  color: vars.themeColor.colors.subFontColor
 });
 
 export const dot = style({
