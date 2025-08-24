@@ -30,7 +30,7 @@ export const mainDescription = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  fontSize: '1.3rem',
+  fontSize: '20px',
   fontWeight: '500',
   color: vars.themeColor.colors.contentFontColor,
   padding: '10px 16px',

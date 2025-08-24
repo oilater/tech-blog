@@ -3,7 +3,7 @@ import { vars } from '../globalTheme.css';
 
 export const rootStyle = style({
   width: '100%',
-  padding: '20px 0 8px',
+  padding: '20px 0 6px',
 });
 
 export const paragraphStyle = style({
@@ -11,7 +11,7 @@ export const paragraphStyle = style({
   justifyContent: 'flex-start',
   width: '100%',
   height: '100%',
-  fontSize: '36px',
+  fontSize: '34px',
   fontWeight: '700',
   color: vars.themeColor.colors.mainFontColor
 });

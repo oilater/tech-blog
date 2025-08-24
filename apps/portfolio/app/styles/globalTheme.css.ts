@@ -56,7 +56,7 @@ export const lightTheme = createTheme(themeColor, {
     initialTitleFontColor: global.colors.grey400,
     mainBackground: global.colors.white,
     contentBackground: global.colors.white,
-    cardBackground: global.colors.grey100,
+    cardBackground: global.colors.grey50,
     quoteBackground: global.colors.grey50,
     tagBackground: global.colors.grey100,
     tagItemColor: global.colors.grey700,
