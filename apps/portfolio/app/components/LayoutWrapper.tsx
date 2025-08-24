@@ -11,19 +11,22 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isArticle = pathname.includes('/contents/');
 
-  if (isArticle) {
-    return <div>{children}</div>;
-  }
-  
   return (
-    <SectionContainer>
+    <>
       <FloatingNav>
         {BlogConfig.menu.map((link) => (
           <NavIcon key={link.label} href={link.path} label={link.label} />
         ))}
       </FloatingNav>
-      {children}
-      <Footer />
-    </SectionContainer>
+
+      {isArticle ? (
+        <div>{children}</div>
+      ) : (
+        <SectionContainer>
+          {children}
+          <Footer />
+        </SectionContainer>
+      )}
+    </>
   );
 }
