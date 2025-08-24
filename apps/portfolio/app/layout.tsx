@@ -5,6 +5,8 @@ import { BlogConfig } from '../config';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { ThemeProvider } from './components/providers/ThemeProvider';
+import { QueryProvider } from './components/providers/QueryProvider';
+import { VelogPostLoader } from './velog/components/VelogPostLoader';
 
 export const metadata: Metadata = {
   title: BlogConfig.title,
@@ -44,6 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
         </ThemeProvider>
+        <QueryProvider>
+          <VelogPostLoader />
+        </QueryProvider>
         <Analytics />
         <SpeedInsights />
       </body>
