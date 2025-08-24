@@ -2,8 +2,9 @@ import { style } from "@vanilla-extract/css";
 import { vars } from '../../../styles/globalTheme.css'
 
 export const wrapper = style({
-  maxWidth: '768px',
   margin: '0 auto',
+  maxWidth: '768px',
+  minHeight: '100vh',
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
