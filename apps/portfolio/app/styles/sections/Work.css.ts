@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 
 export const wrapper = style({
   width: '100%',
@@ -16,7 +16,7 @@ export const contentSection = style({
 export const mainDescription = style({
   fontSize: '1.2rem',
   fontWeight: '500',
-  color: vars.colors.grey500,
+  color: vars.themeColor.colors.subFontColor,
   lineHeight: '1.65',
   marginBottom: '3.5rem'
 });

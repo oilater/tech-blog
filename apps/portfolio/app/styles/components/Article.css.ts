@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
 
 export const articleRoot = style({
@@ -8,7 +8,7 @@ export const articleRoot = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '20px',
-  color: vars.colors.grey800
+  color: vars.themeColor.colors.cardTitleFontColor
 });
 
 export const articleHeader = style({

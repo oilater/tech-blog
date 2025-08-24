@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 
 export const section = style({
   marginBottom: '4rem'
@@ -9,11 +9,11 @@ export const sectionTitle = style({
   margin: '36px 0 36px',
   fontSize: '25px',
   marginBottom: '20px',
-  color: vars.colors.grey800
+  color: vars.themeColor.colors.cardTitleFontColor
 });
 
 export const highlightText = style({
-  color: vars.colors.grey800,
+  color: vars.themeColor.colors.cardTitleFontColor,
   fontWeight: 'bold',
   borderRadius: '2px',
   letterSpacing: '0em'
@@ -59,7 +59,6 @@ export const slackImage = style({
   objectFit: 'contain'
 });
 
-// PortfolioArticle용 새로운 스타일들
 export const introImage = style({
   height: '600px',
   objectFit: 'contain'
@@ -75,7 +74,6 @@ export const articleMapImage = style({
   objectFit: 'contain'
 });
 
-// PortfolioArticle용 기본 이미지 스타일 (높이 자동)
 export const portfolioImage = style({
   width: '100%',
   borderRadius: '16px'
@@ -83,7 +81,7 @@ export const portfolioImage = style({
 
 export const captionStyle = style({
   fontSize: '13px',
-  color: vars.colors.grey800,
+  color: vars.themeColor.colors.cardTitleFontColor,
   lineHeight: '1.2',
   margin: '0',
   marginTop: '6px',
@@ -108,7 +106,6 @@ export const imagesSection = style({
   alignItems: 'center'
 });
 
-// 스타일 조합
 export const avatarImageCombined = style([image, avatarImage]);
 export const avatarMoveImageCombined = style([image, avatarMoveImage]);
 export const gameImageCombined = style([image, gameImage]);
@@ -117,7 +114,6 @@ export const commentImageCombined = style([image, commentImage]);
 export const slackImageCombined = style([image, slackImage]);
 export const containerImageCombined = style([image, containerImage]);
 
-// PortfolioArticle용 조합 스타일 (portfolioImage 사용)
 export const introImageCombined = style([portfolioImage, introImage]);
 export const timelineImageCombined = style([portfolioImage, timelineImage]);
 export const articleMapImageCombined = style([portfolioImage, articleMapImage]);
