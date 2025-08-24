@@ -13,9 +13,9 @@ export function WideCard({ value }: WideCardProps) {
         <img src={value.image} alt={value.title} className={styles.cardImage} />
       </div>
       <div className={styles.cardContent}>
-        <span className={`${styles.categoryText} ${styles.categoryTextHover}`}>{value.subTitle}</span>
-        <h3 className={`${styles.cardTitle} ${styles.cardTitleHover}`}>{value.title}</h3>
-        <p className={`${styles.cardDescription} ${styles.cardDescriptionHover}`}>{value.description}</p>
+        <span className={`${styles.categoryText}`}>{value.subTitle}</span>
+        <h3 className={`${styles.cardTitle}`}>{value.title}</h3>
+        <p className={`${styles.cardDescription}`}>{value.description}</p>
       </div>
     </Link>
   );

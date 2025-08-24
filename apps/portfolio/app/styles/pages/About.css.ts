@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 
 export const container = style({
   minHeight: '100vh',
@@ -14,7 +14,7 @@ export const title = style({
   fontSize: '3rem',
   fontWeight: '700',
   marginBottom: '1rem',
-  color: '#3182F6', 
+  color: vars.themeColor.colors.highLightFontColor, 
   '@media': {
     'screen and (max-width: 768px)': {
       fontSize: '2.5rem',
@@ -24,7 +24,7 @@ export const title = style({
 
 export const subtitle = style({
   fontSize: '1.25rem',
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.cardTitleFontColor,
   maxWidth: '42rem',
   margin: '0 auto',
   lineHeight: '1.6',
@@ -36,42 +36,36 @@ export const content = style({
 });
 
 export const section = style({
-  background: 'rgba(255, 255, 255, 0.1)',
   backdropFilter: 'blur(8px)',
   borderRadius: '1rem',
   padding: '2rem 0',
-  border: '1px solid rgba(255, 255, 255, 0.2)',
-  transition: 'background-color 0.3s ease',
-  ':hover': {
-    background: 'rgba(255, 255, 255, 0.15)',
-  }
 });
 
 export const sectionTitle = style({
   fontSize: '1.5rem',
   fontWeight: '700',
   marginBottom: '1.5rem',
-  color: '#3182F6',
+  color: vars.themeColor.colors.highLightFontColor,
   display: 'flex',
   alignItems: 'center',
 });
 
 export const paragraph = style({
   marginBottom: '1rem',
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.cardTitleFontColor,
   lineHeight: '1.7',
   fontSize: '1rem',
 });
 
 export const quote = style({
-  backgroundColor: vars.colors.grey100,
+  backgroundColor: vars.themeColor.colors.quoteBackground,
   padding: '1.5rem',
-  borderLeft: '4px solid #3182F6',
+  borderLeft: `4px solid ${vars.themeColor.colors.highLightFontColor}`,
   margin: '1.5rem 0',
 });
 
 export const quoteText = style({
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.cardTitleFontColor,
   fontStyle: 'italic',
   fontSize: '1.1rem',
   lineHeight: '1.6',
@@ -79,7 +73,7 @@ export const quoteText = style({
 });
 
 export const quoteAuthor = style({
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.cardTitleFontColor,
   fontSize: '0.875rem',
   textAlign: 'right',
 });

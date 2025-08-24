@@ -1,4 +1,5 @@
 import { Timeline, Rally } from "@repo/interaction";
+import { vars } from "../../styles/globalTheme.css";
 
 export function introTimeline() {
   const introTl = Timeline({
@@ -13,12 +14,12 @@ export function introTimeline() {
             splitDelay: 0.05,
             duration: 0.5,
             ease: "expo.in",
-            color: { from: "#3182f6"},
+            color: { from: "#3182f6", to: vars.themeColor.colors.cardTitleFontColor },
             opacity: { from: 0, to : 1, duration: 0.45, ease: "power2.inOut"},
-          },
-        ],
+          }
+        ]
       }),
-    ],
+    ]
   });
   return introTl;
 }

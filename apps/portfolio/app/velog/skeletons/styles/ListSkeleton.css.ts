@@ -1,4 +1,5 @@
 import { style, keyframes } from "@vanilla-extract/css";
+import { vars } from '../../../styles/globalTheme.css'
 
 const pulse = keyframes({
   '0%, 100%': {
@@ -37,7 +38,7 @@ export const card = style({
   cursor: 'default',
   paddingTop: '10px',
   paddingBottom: '40px',
-  borderBottom: `0.2px solid #e9ecef`,
+  borderBottom: `0.2px solid ${vars.themeColor.colors.skeletonColor}`,
 });
 
 export const cardHeader = style({
@@ -46,18 +47,18 @@ export const cardHeader = style({
 
 export const cardTitle = style({
   marginTop: '10px',
-  width: '74%',
+  width: '60%',
   height: '36px',
-  backgroundColor: '#f3f3f3',
+  backgroundColor: vars.themeColor.colors.skeletonColor,
   borderRadius: '8px',
   animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
   marginBottom: '8px',
 });
 
 export const cardDescription = style({
-  width: '100%',
+  width: '80%',
   height: '75px',
-  backgroundColor: '#f3f3f3',
+  backgroundColor: vars.themeColor.colors.skeletonColor,
   borderRadius: '6px',
   margin: '24px 0 0',
   animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
@@ -72,7 +73,7 @@ export const tags = style({
 export const tag = style({
   height: '32px',
   width: '75px',
-  backgroundColor: '#f3f3f3',
+  backgroundColor: vars.themeColor.colors.skeletonColor,
   borderRadius: '16px',
   animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
 });
@@ -86,7 +87,7 @@ export const cardFooter = style({
 export const cardDate = style({
   height: '18px',
   width: '40px',
-  backgroundColor: '#f3f3f3',
+  backgroundColor: vars.themeColor.colors.skeletonColor,
   borderRadius: '6px',
   animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
 });

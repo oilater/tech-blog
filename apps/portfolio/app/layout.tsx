@@ -1,20 +1,18 @@
-import './styles/common/global.css';
+import './styles/globalTheme.css';
 import type { Metadata } from "next";
 import { LayoutWrapper } from "./components/LayoutWrapper";
 import { BlogConfig } from '../config';
-import { Footer } from './components/Footer';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { FloatingNav } from './components/FloatingNav';
-import { NavIcon } from './components/NavIcon';
 import { QueryProvider } from './components/providers/QueryProvider';
 import { VelogPostLoader } from './velog/components/VelogPostLoader';
+import { ThemeProvider } from './components/providers/ThemeProvider';
 
 export const metadata: Metadata = {
   title: BlogConfig.title,
   description: BlogConfig.description,
   keywords: BlogConfig.keywords,
-  authors: [{name: BlogConfig.author.name}],
+  authors: [{ name: BlogConfig.author.name }],
   creator: BlogConfig.author.name,
   publisher: BlogConfig.author.name,
   metadataBase: new URL(BlogConfig.url),
@@ -39,19 +37,15 @@ export const metadata: Metadata = {
       url: '/favicon/favicon.ico',
     },
   },
-}
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
-        <FloatingNav>
-          {BlogConfig.menu.map((link) => (
-            <NavIcon key={link.label} href={link.path} label={link.label} />
-          ))}
-        </FloatingNav>
-        <LayoutWrapper>{children}</LayoutWrapper>
-        <Footer />
+        <ThemeProvider>
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </ThemeProvider>
         <QueryProvider>
           <VelogPostLoader />
         </QueryProvider>

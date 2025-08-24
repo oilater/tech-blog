@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 
 export const tag = style({
   display: 'flex',
@@ -11,5 +11,5 @@ export const tag = style({
   borderRadius: '16px',
   fontSize: '12.5px',
   fontWeight: '500',
-  backgroundColor: vars.colors.grey100
+  backgroundColor: vars.themeColor.colors.tagBackground
 });

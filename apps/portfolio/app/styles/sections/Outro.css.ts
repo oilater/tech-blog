@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
 
 export const wrapper = style({
@@ -27,14 +27,14 @@ export const thankTitle = style({
   marginTop: '3rem',
   padding: '0 0 32px',
   fontSize: '32px',
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.cardTitleFontColor,
   fontWeight: '600'
 });
 
 export const contactContainer = style({
   padding: '24px',
   margin: '0 auto',
-  backgroundColor: vars.colors.grey100,
+  backgroundColor: vars.themeColor.colors.quoteBackground,
   borderRadius: '16px'
 });
 
@@ -47,12 +47,12 @@ export const contactItem = style({
 export const contactLabel = style({
   fontSize: '1.1rem',
   fontWeight: '500',
-  color: vars.colors.grey600,
+  color: vars.themeColor.colors.cardTitleFontColor,
   minWidth: '80px'
 });
 
 export const contactValue = style({
   fontSize: '1rem',
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.cardTitleFontColor,
   wordBreak: 'break-all'
 });

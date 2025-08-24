@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { vars } from '../../../styles/globalTheme.css'
 
 export const wrapper = style({
   maxWidth: '768px',
@@ -17,7 +18,7 @@ export const header = style({
 export const title = style({
   width: '80%',
   height: '60px',
-  backgroundColor: '#f3f3f3',
+  backgroundColor: vars.themeColor.colors.skeletonColor,
   borderRadius: '8px',
   marginBottom: '10px',
   animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -26,7 +27,7 @@ export const title = style({
 export const description = style({
   width: '100px',
   height: '20px',
-  backgroundColor: '#f3f3f3',
+  backgroundColor: vars.themeColor.colors.skeletonColor,
   borderRadius: '6px',
   animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 });
@@ -34,7 +35,7 @@ export const description = style({
 export const author = style({
   width: '100%',
   height: '24px',
-  backgroundColor: '#f3f3f3',
+  backgroundColor: vars.themeColor.colors.skeletonColor,
   borderRadius: '6px',
   animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 });
@@ -48,7 +49,7 @@ export const tags = style({
 export const tag = style({
   height: '32px',
   width: '75px',
-  backgroundColor: '#f3f3f3',
+  backgroundColor: vars.themeColor.colors.skeletonColor,
   borderRadius: '16px',
   animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 });

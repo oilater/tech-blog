@@ -39,7 +39,7 @@ globalStyle(`${contentSection} > *:nth-of-type(3n)`, {
 });
 
 export const mainDescription = style({
-  fontSize: '1.2rem',
+  fontSize: '18px',
   fontWeight: '500',
   color: vars.colors.grey500,
   lineHeight: '1.65',

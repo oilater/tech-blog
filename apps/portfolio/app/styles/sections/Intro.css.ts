@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
 
 export const introWrapper = style({
@@ -12,7 +12,7 @@ export const introTitleSection = style({
   height: '100%',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
 });
 
 export const baseTitle = style({
@@ -44,14 +44,10 @@ export const baseTitle = style({
 });
 
 export const titleOrigin = style({
-  color: vars.colors.grey400
+  color: vars.themeColor.colors.initialTitleFontColor
 });
 
 export const title = style({
-  color: '#292929',
+  color: vars.themeColor.colors.titleFontColor, 
   willChange: 'opacity'
-});
-
-export const subTitle = style({
-  color: vars.colors.blue500
 });

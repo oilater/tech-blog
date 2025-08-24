@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
 
 export const wideCard = style({
@@ -7,8 +7,6 @@ export const wideCard = style({
   width: '100%',
   height: 'auto',
   background: 'inherit',
-  color: vars.colors.grey700,
-  transition: 'background 0.2s ease',
   cursor: 'pointer',
   overflow: 'hidden',
   '@media': {
@@ -41,8 +39,10 @@ export const cardImage = style({
   objectFit: 'cover',
   transition: 'transform 0.2s ease-out',
   transform: 'translateZ(0)',
-  ':hover': {
-    transform: 'scale(1.05)'
+  selectors: {
+    [`${wideCard}:hover &`]: {
+      transform: 'scale(1.05)'
+    }
   },
   '@media': {
     [mediaQueries.mobile]: {
@@ -75,7 +75,7 @@ export const cardContent = style({
 export const categoryText = style({
   fontSize: '20px',
   fontWeight: '500',
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.contentFontColor,
   margin: 0,
   lineHeight: '1.2',
   transition: 'color 0.2s ease',
@@ -89,7 +89,7 @@ export const categoryText = style({
 export const cardTitle = style({
   fontSize: '32px',
   fontWeight: '600',
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.mainFontColor,
   margin: 0,
   lineHeight: '1.3',
   transition: 'color 0.2s ease',
@@ -97,43 +97,24 @@ export const cardTitle = style({
     [mediaQueries.mobile]: {
       fontSize: '1.5rem'
     }
+  },
+  selectors: {
+    [`${wideCard}:hover &`]: {
+      color: vars.themeColor.colors.highLightFontColor
+    }
   }
 });
 
 export const cardDescription = style({
   fontSize: '1.1rem',
   fontWeight: '400',
-  color: vars.colors.grey700,
+  color: vars.themeColor.colors.contentFontColor,
   margin: 0,
   lineHeight: '1.6',
   transition: 'color 0.2s ease',
   '@media': {
     [mediaQueries.mobile]: {
       fontSize: '1rem'
-    }
-  }
-});
-
-export const categoryTextHover = style({
-  selectors: {
-    [`${wideCard}:hover &`]: {
-      color: vars.colors.blue500
-    }
-  }
-});
-
-export const cardTitleHover = style({
-  selectors: {
-    [`${wideCard}:hover &`]: {
-      color: vars.colors.blue500
-    }
-  }
-});
-
-export const cardDescriptionHover = style({
-  selectors: {
-    [`${wideCard}:hover &`]: {
-      color: vars.colors.blue500
     }
   }
 });

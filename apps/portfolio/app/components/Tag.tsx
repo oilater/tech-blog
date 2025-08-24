@@ -1,4 +1,7 @@
-import { vars } from "../styles/common/color-tokens.css";
+"use client";
+
+import { useTheme } from "next-themes";
+import { vars } from "../styles/globalTheme.css";
 import { tag } from "../styles/components/Tag.css";
 
 type TagProps = {
@@ -6,16 +9,20 @@ type TagProps = {
 };
 
 export function Tag({ text }: TagProps) {
-  const tagColor = getTagColor(text);
+  
+  const { theme } = useTheme();
+  const tagColor = getTagColor(theme, text);
 
   return (
-    <div className={tag}>
-      <span style={{ color: tagColor }}>{text}</span>
+    <div className={tag} style={{ backgroundColor: vars.themeColor.colors.tagBackground }}>
+      <span suppressHydrationWarning style={{ color: tagColor }}>{text}</span>
     </div>
   );
 }
 
-const getTagColor = (text: string) => {
+const getTagColor = (theme: string | undefined, text: string) => {
+  if (!theme || theme === 'dark') return vars.themeColor.colors.tagItemColor;
+  
   switch (text) {
     case "React":
       return vars.colors.blue300;

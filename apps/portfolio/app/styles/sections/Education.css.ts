@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 
 export const wrapper = style({
   width: '100%',
@@ -18,7 +18,7 @@ export const contentSection = style({
 export const mainDescription = style({
   fontSize: '1.2rem',
   fontWeight: '500',
-  color: '#7E7E87',
+  color: vars.themeColor.colors.contentFontColor,
   lineHeight: '1.65',
   marginBottom: '2.5rem'
 });
@@ -63,14 +63,14 @@ export const educationPeriod = style({
 export const educationTitle = style({
   fontSize: '20px',
   fontWeight: '600',
-  color: '#333'
+  color: vars.themeColor.colors.mainFontColor
 });
 
 export const educationDescription = style({
   marginTop: '10px',
   fontSize: '16px',
   lineHeight: '1.65',
-  color: vars.colors.grey500
+  color: vars.themeColor.colors.contentFontColor
 });
 
 export const dot = style({
@@ -78,7 +78,7 @@ export const dot = style({
   width: '10px',
   height: '10px',
   borderRadius: '50%',
-  background: vars.colors.grey200,
+  background: vars.themeColor.colors.borderColor,
   transition: 'background 0.3s',
   marginRight: '6px'
 });

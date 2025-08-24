@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../common/color-tokens.css';
+import { vars } from '../globalTheme.css';
 
 export const header = style({
   zIndex: 100,
@@ -33,7 +33,7 @@ export const innerNav = style({
 export const linkItem = style({
   fontSize: '17px',
   fontWeight: '500',
-  color: vars.colors.grey600,
+  color: vars.themeColor.colors.subFontColor,
   cursor: 'pointer',
   transition: 'all 0.4s ease',
   padding: '6px 6px',
@@ -44,12 +44,12 @@ export const linkItem = style({
   willChange: 'color',
   msTransition: 'all 0.1s ease-in',
   ':hover': {
-    color: vars.colors.grey900,
+    color: vars.themeColor.colors.titleFontColor,
   },
 
   selectors: {
     '&.active': {
-      color: vars.colors.grey900,
+      color: vars.themeColor.colors.titleFontColor,
     }
   }
 });

@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '../../styles/globalTheme.css';
 
 export const tags = style({
     display: 'flex',
@@ -12,8 +13,8 @@ export const tags = style({
     alignItems: 'center',
     justifyContent: 'center',
     height: '32px',
-    backgroundColor: '#f8f9fa',
-    color: '#007bff',
+    backgroundColor: vars.themeColor.colors.tagBackground,
+    color: vars.themeColor.colors.tagItemColor,
     fontSize: '16px',
     fontWeight: '500',
     padding: '2px 16px',
