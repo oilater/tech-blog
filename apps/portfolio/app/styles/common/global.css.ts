@@ -13,15 +13,6 @@ globalStyle('body', {
   MozOsxFontSmoothing: 'grayscale',
 });
 
-globalStyle('article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section', {
-  display: 'block',
-});
-
-globalStyle('table', {
-  borderCollapse: 'collapse',
-  borderSpacing: 0,
-});
-
 globalStyle('img', {
   maxWidth: '100%',
   height: 'auto',
