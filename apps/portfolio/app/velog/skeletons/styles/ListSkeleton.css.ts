@@ -23,7 +23,7 @@ export const wrapper = style({
 
 export const sectionTitle = style({
   height: '48px',
-  width: '10%',
+  width: '100%',
   borderRadius: '8px',
   marginBottom: '32px',
 });

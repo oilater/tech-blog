@@ -3,6 +3,7 @@ import { style } from "@vanilla-extract/css";
 export const wrapper = style({
   margin: '0 auto',
   maxWidth: '768px',
+  minHeight: '100vh',
   width: '100%',
 });
 

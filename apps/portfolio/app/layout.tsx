@@ -4,8 +4,6 @@ import { LayoutWrapper } from "./components/LayoutWrapper";
 import { BlogConfig } from '../config';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { QueryProvider } from './components/providers/QueryProvider';
-import { VelogPostLoader } from './velog/components/VelogPostLoader';
 import { ThemeProvider } from './components/providers/ThemeProvider';
 
 export const metadata: Metadata = {
@@ -46,9 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
         </ThemeProvider>
-        <QueryProvider>
-          <VelogPostLoader />
-        </QueryProvider>
         <Analytics />
         <SpeedInsights />
       </body>

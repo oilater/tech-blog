@@ -1,36 +1,36 @@
 "use client";
 
+import * as styles from "../styles/Feed.css";
 import { useAtom } from "jotai";
 import { VelogPostList } from "../../velog/components/VelogPostList";
 import { ListSkeleton } from "../../velog/skeletons/ListSkeleton";
 import { postsStoreAtom } from "../../stores/post";
-import * as styles from "../styles/Feed.css";
 import { useFetchPosts } from "../../velog/hooks/use-fetch-posts";
 import { useInfiniteScroll } from "../hooks/use-infinite-scroll";
 
 export function Feed() {
   const [posts, setPosts] = useAtom(postsStoreAtom);
 
-  const { data: fetchedPosts } = useFetchPosts({
+  const { data: fetchedPosts, isLoading } = useFetchPosts({
     username: 'oilater',
     cursor: posts?.at(-1)?.id
   });
 
+  console.log(fetchedPosts);
+
   const { observeRef } = useInfiniteScroll({
     onIntersect: () => {
-      fetchedPosts && setPosts([...posts, ...fetchedPosts]);
+      if(fetchedPosts) setPosts([...posts, ...fetchedPosts]);
     }
   });
 
-  const hasPosts = posts.length > 0;
+  if (isLoading && posts.length === 0) return <ListSkeleton />;
+  
 
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.feedContainer}>Feed</h1>
-      {hasPosts 
-        ? <VelogPostList value={posts} ref={observeRef} />
-        : <ListSkeleton /> 
-      }
+      <VelogPostList value={posts} ref={observeRef} />
     </div>
   );
 }

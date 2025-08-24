@@ -12,12 +12,11 @@ export const tags = style({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '32px',
     backgroundColor: vars.themeColor.colors.tagBackground,
     color: vars.themeColor.colors.tagItemColor,
-    fontSize: '16px',
+    fontSize: '14px',
     fontWeight: '500',
-    padding: '2px 16px',
-    borderRadius: '16px',
+    padding: '6px 13px',
+    borderRadius: '14px',
   });
   
