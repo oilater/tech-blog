@@ -1,5 +1,3 @@
-"use client";
-
 import { ContentSection } from "./ContentSection";
 import { ContentCard } from "./ContentCard";
 import { CONTENTS } from "../data";
