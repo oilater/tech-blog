@@ -16,16 +16,15 @@ export function Feed() {
     cursor: posts?.at(-1)?.id
   });
 
-  console.log(fetchedPosts);
-
   const { observeRef } = useInfiniteScroll({
     onIntersect: () => {
       if(fetchedPosts) setPosts([...posts, ...fetchedPosts]);
     }
   });
 
-  if (isLoading && posts.length === 0) return <ListSkeleton />;
-  
+  if (isLoading && posts.length === 0) {
+    return <ListSkeleton />;
+  }
 
   return (
     <div className={styles.wrapper}>
