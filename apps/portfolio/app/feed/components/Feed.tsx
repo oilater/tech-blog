@@ -29,7 +29,7 @@ export function Feed() {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.feedContainer}>Feed</h1>
-      <VelogPostList value={posts} ref={observeRef} />
+      <VelogPostList posts={posts} ref={observeRef} />
     </div>
   );
 }

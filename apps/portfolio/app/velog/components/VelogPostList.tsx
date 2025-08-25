@@ -1,25 +1,23 @@
 import { nanoid } from "nanoid";
-import { Blog } from "./Blog";
 import { PostType } from "../types/post";
+import { ListRow } from "./ListRow";
 
 type VelogPostListProps = {
-  value: PostType[];
+  posts: PostType[];
   ref?: React.RefObject<HTMLDivElement | null>;
 };
 
-export function VelogPostList({ value, ref }: VelogPostListProps) {
+export function VelogPostList({ posts, ref }: VelogPostListProps) {
   return (
-    <Blog>
-      <Blog.List>
-        {value?.map((post) => (
-          <Blog.Row
-            key={nanoid()}
-            post={post}
-            link={`/feed/${post.url_slug}`}
-          />
-        ))}
-        {ref && <div ref={ref} />}
-      </Blog.List>
-    </Blog>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}> 
+      {posts?.map((post) => (
+        <ListRow
+          key={nanoid()}
+          post={post}
+          link={`/feed/${post.url_slug}`}
+        />
+      ))}
+      {ref && <div ref={ref} />}
+    </div>
   );
 }
