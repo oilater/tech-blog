@@ -96,5 +96,3 @@ export default function About() {
     </div>
   );
 }
-
-export const revalidate = false;
