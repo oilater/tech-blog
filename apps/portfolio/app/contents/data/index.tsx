@@ -11,8 +11,8 @@ export const ARTICLES: ContentData[] = [
     title: "커스텀 Velog를 만들어보자 📝",
     description: "포트폴리오에 Velog를 띄워보았어요",
     image: CDN_IMAGES.VELOG,
-    link: '/feed/포트폴리오에-Velog-글을-띄워보자',
-    isInternal: true,
+    link: 'https://velog.io/@oilater/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%EC%97%90-Velog-%EA%B8%80%EC%9D%84-%EB%9D%84%EC%9B%8C%EB%B3%B4%EC%9E%90',
+    isInternal: false,
   },
 ];
 
