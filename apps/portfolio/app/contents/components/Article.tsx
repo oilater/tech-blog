@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { lazy, Suspense, useEffect } from 'react';
 import { Button } from '../../components/Button';
@@ -61,9 +60,9 @@ function ArticleHeader({
         </time>
       </div>
       <div className={styles.imageContainer}>
-        <Image
+        <img
           src={imageUrl}
-          alt={`${title}이미지`}
+          alt={`${title} 이미지`}
           className={styles.articleHeaderImage}
           loading="lazy"
         />
