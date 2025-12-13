@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { CDN_IMAGES } from '../../constants/cdn';
 import * as styles from '../../styles/components/ArticleStyles.css';
 
@@ -37,7 +36,7 @@ export function PortfolioArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.INTRO_ANIMATION}
             alt="Intro 애니메이션"
             className={styles.introImageCombined}
@@ -57,7 +56,7 @@ export function PortfolioArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.INTRO_TIMELINE}
             alt="Timeline 구현 이미지"
             className={styles.timelineImageCombined}
@@ -80,7 +79,7 @@ export function PortfolioArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.TIMELINE_LOGIC_REFACTOR}
             alt="Timeline 구현 이미지"
             className={styles.timelineImage}
@@ -109,7 +108,7 @@ export function PortfolioArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.RALLY_LOGIC}
             alt="Rally 구현 이미지"
             className={styles.portfolioImage}
@@ -142,7 +141,7 @@ export function PortfolioArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.MOTION_LOGIC}
             alt="Timeline 구현 이미지"
             className={styles.portfolioImage}
@@ -176,7 +175,7 @@ export function PortfolioArticle() {
         <div className={styles.imagesSection}>
           <div className={styles.imageContainer}>
             <figure className={styles.figure}>
-              <Image
+              <img
                 src={CDN_IMAGES.COMPONENT_COMPOSITION}
                 alt="컴포넌트 합성 패턴 이미지"
                 className={styles.containerImageCombined}
@@ -184,7 +183,7 @@ export function PortfolioArticle() {
             </figure>
 
             <figure className={styles.figure}>
-              <Image
+              <img
                 src={CDN_IMAGES.ARTICLE_MAP}
                 alt="아티클 맵 이미지"
                 className={styles.articleMapImageCombined}

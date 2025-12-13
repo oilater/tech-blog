@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { CDN_IMAGES } from '../../constants/cdn';
 import * as styles from '../../styles/components/ArticleStyles.css';
 
@@ -45,7 +44,7 @@ export function FivaArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.FIVA_AVATAR}
             alt="FIVA 아바타 이미지"
             className={styles.avatarImageCombined}
@@ -82,7 +81,7 @@ export function FivaArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.FIVA_AVATAR_MOVE}
             alt="FIVA 움직이는 아바타"
             className={styles.avatarMoveImageCombined}
@@ -120,7 +119,7 @@ export function FivaArticle() {
         <div className={styles.imagesSection}>
           <div className={styles.imageContainer}>
             <figure className={styles.figure}>
-              <Image
+              <img
                 src={CDN_IMAGES.FIVA_EXERCISE}
                 alt="운동 탭 이미지"
                 className={styles.containerImageCombined}
@@ -128,7 +127,7 @@ export function FivaArticle() {
             </figure>
 
             <figure className={styles.figure}>
-              <Image
+              <img
                 src={CDN_IMAGES.FIVA_CHALLENGE_CALENDAR}
                 alt="챌린지 달력 이미지"
                 className={styles.containerImageCombined}
@@ -136,7 +135,7 @@ export function FivaArticle() {
             </figure>
 
             <figure className={styles.figure}>
-              <Image
+              <img
                 src={CDN_IMAGES.FIVA_CHALLENGE_LIST}
                 alt="챌린지 목록 이미지"
                 className={styles.containerImageCombined}
@@ -148,7 +147,7 @@ export function FivaArticle() {
         <div className={styles.imagesSection}>
           <div className={styles.imageContainer}>
             <figure className={styles.figure}>
-              <Image
+              <img
                 src={CDN_IMAGES.FIVA_CHALLENGE_POPUP}
                 alt="챌린지 팝업 이미지"
                 className={styles.containerImageCombined}
@@ -156,7 +155,7 @@ export function FivaArticle() {
             </figure>
 
             <figure className={styles.figure}>
-              <Image
+              <img
                 src={CDN_IMAGES.FIVA_COIN_POPUP}
                 alt="코인 팝업 이미지"
                 className={styles.containerImageCombined}
@@ -164,7 +163,7 @@ export function FivaArticle() {
             </figure>
 
             <figure className={styles.figure}>
-              <Image
+              <img
                 src={CDN_IMAGES.FIVA_COLLABORATION}
                 alt="콜라보레이션 팝업 이미지"
                 className={styles.containerImageCombined}
@@ -201,7 +200,7 @@ export function FivaArticle() {
         </p>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.FIVA_SKI_GAME}
             alt="스쿼트 스키 게임 이미지"
             className={styles.gameImageCombined}
@@ -212,7 +211,7 @@ export function FivaArticle() {
         </figure>
 
         <figure className={styles.figure}>
-          <Image
+          <img
             src={CDN_IMAGES.FIVA_ARM_GAME}
             alt="팔 운동 비행 게임 이미지"
             className={styles.gameImageCombined}
@@ -250,7 +249,7 @@ export function FivaArticle() {
           </p>
 
           <figure className={styles.figure}>
-            <Image
+            <img
               src={CDN_IMAGES.FIVA_CODE_REVIEW}
               alt="한 코드 리뷰"
               className={styles.codeReviewImageCombined}
@@ -261,7 +260,7 @@ export function FivaArticle() {
           </figure>
 
           <figure className={styles.figure}>
-            <Image
+            <img
               src={CDN_IMAGES.FIVA_CODE_REVIEW_COMMENT}
               alt="코드 리뷰 코멘트 이미지"
               className={styles.commentImageCombined}
@@ -289,7 +288,7 @@ export function FivaArticle() {
           </p>
 
           <figure className={styles.figure}>
-            <Image
+            <img
               src={CDN_IMAGES.FIVA_SLACK_MESSAGE}
               alt="FIVA 슬랙 메시지"
               className={styles.slackImageCombined}
