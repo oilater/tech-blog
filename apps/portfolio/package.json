@@ -4,14 +4,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3000",
+    "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@fontsource/pretendard": "^5.2.5",
     "@gsap/react": "^2.1.2",
     "@repo/interaction": "workspace:*",
     "@tanstack/react-query": "^5.85.5",

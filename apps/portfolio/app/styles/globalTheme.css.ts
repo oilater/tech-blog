@@ -109,7 +109,7 @@ globalStyle('*', {
 
 globalStyle('body', {
   backgroundColor: vars.themeColor.colors.mainBackground,
-  fontFamily: '"Pretendard", -apple-system, sans-serif',
+  fontFamily: '"Pretendard Variable", -apple-system, sans-serif',
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
   transition: 'background-color 0.2s ease-out',
