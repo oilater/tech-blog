@@ -8,17 +8,14 @@ export const BlogConfig = {
     {
       label: 'Home',
       path: '/',
-      // icon: '/images/HomeIcon.png',
     },
     {
       label: 'Feed',
       path: '/feed',
-      // icon: '/images/book.png',
     },
     {
       label: 'About',
       path: '/about',
-      // icon: '/images/music.png',
     },
   ],
   author: {
