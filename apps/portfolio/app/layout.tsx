@@ -44,6 +44,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko" suppressHydrationWarning>
       <head>
       <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+      <link 
+        rel="preload" 
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/fonts/PretendardVariable.woff2" 
+        as="font" 
+        type="font/woff2" 
+        crossOrigin="" 
+      />
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
