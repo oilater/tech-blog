@@ -35,7 +35,7 @@ export function Card({ link, isInternal, children }: CardProps) {
 function CardImage({ image }: CardImageProps) {
   return (
     <div className={styles.cardImageWrapper}>
-      <img src={image} alt="content image" className={styles.cardImage} />
+      <img src={image} alt="content image" className={styles.cardImage} loading="lazy" />
     </div>
   );
 }

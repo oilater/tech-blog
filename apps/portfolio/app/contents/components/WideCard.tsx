@@ -9,8 +9,8 @@ type WideCardProps = {
 export function WideCard({ value }: WideCardProps) {
   return (
     <Link href={value.link} className={styles.wideCard} target="_blank" rel="noopener noreferrer">
-      <div className={styles.cardImageWrapper}>
-        <img src={value.image} alt={value.title} className={styles.cardImage} />
+      <div className={styles.cardImageWrapper}> 
+        <img src={value.image} alt={value.title} className={styles.cardImage} loading="lazy" />
       </div>
       <div className={styles.cardContent}>
         <span className={`${styles.categoryText}`}>{value.subTitle}</span>
