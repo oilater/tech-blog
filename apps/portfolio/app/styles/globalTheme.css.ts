@@ -1,8 +1,8 @@
 import {
-  globalStyle,
-  createThemeContract,
   createGlobalTheme,
   createTheme,
+  createThemeContract,
+  globalStyle,
 } from '@vanilla-extract/css';
 import { colorTokens } from './tokens/color.css';
 

@@ -1,5 +1,5 @@
-import { style } from "@vanilla-extract/css";
-import { vars } from '../../../styles/globalTheme.css'
+import { style } from '@vanilla-extract/css';
+import { vars } from '../../../styles/globalTheme.css';
 
 export const wrapper = style({
   margin: '0 auto',

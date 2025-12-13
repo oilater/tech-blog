@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
+import { vars } from '../globalTheme.css';
 
 export const introWrapper = style({
   width: '100%',
@@ -28,26 +28,26 @@ export const baseTitle = style({
     '(max-width: 480px)': {
       fontSize: '1.2rem',
       width: '95vw',
-      maxWidth: '350px'
+      maxWidth: '350px',
     },
     [mediaQueries.mobile]: {
       fontSize: '2.5rem',
       width: '90vw',
-      maxWidth: '500px'
+      maxWidth: '500px',
     },
     [mediaQueries.tablet]: {
       fontSize: '2.5rem',
       width: '85vw',
-      maxWidth: '600px'
-    }
-  }
+      maxWidth: '600px',
+    },
+  },
 });
 
 export const titleOrigin = style({
-  color: vars.themeColor.colors.initialTitleFontColor
+  color: vars.themeColor.colors.initialTitleFontColor,
 });
 
 export const title = style({
-  color: vars.themeColor.colors.titleFontColor, 
-  willChange: 'opacity'
+  color: vars.themeColor.colors.titleFontColor,
+  willChange: 'opacity',
 });

@@ -1,27 +1,32 @@
 'use client';
 
-import type { ReactNode } from "react";
-import type { ArticleData } from "../types";
+import Image from 'next/image';
+import type { ReactNode } from 'react';
 import { lazy, Suspense, useEffect } from 'react';
-import { Button } from "../../components/Button";
-import { ArrowDownIcon } from "../../components/icons/ArrowDown";
-import * as styles from "../../styles/components/Article.css";
+import { Button } from '../../components/Button';
+import { ArrowDownIcon } from '../../components/icons/ArrowDown';
+import * as styles from '../../styles/components/Article.css';
+import type { ArticleData } from '../types';
 
 type ArticleRootProps = {
   header: ReactNode;
   content: ReactNode;
-}
+};
 
 type ArticleHeaderProps = {
   title: string;
   imageUrl: string;
   date: string;
-}
+};
 
 function ArticleRoot({ header, content }: ArticleRootProps) {
-  useEffect(() => { window.scrollTo(0, 0) }, []);
-  const ScrollProgressBar = lazy(() => import('../../components/ScrollProgressBar'));
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  const ScrollProgressBar = lazy(
+    () => import('../../components/ScrollProgressBar'),
+  );
+
   return (
     <>
       <Suspense fallback={null}>
@@ -35,11 +40,15 @@ function ArticleRoot({ header, content }: ArticleRootProps) {
   );
 }
 
-function ArticleHeader({ title, date, imageUrl }: ArticleHeaderProps) {
+function ArticleHeader({
+  title,
+  date,
+  imageUrl,
+}: ArticleHeaderProps) {
   const onScrollDown = () => {
     window.scrollTo({
       top: window.innerHeight - 100,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
@@ -52,15 +61,18 @@ function ArticleHeader({ title, date, imageUrl }: ArticleHeaderProps) {
         </time>
       </div>
       <div className={styles.imageContainer}>
-        <img 
-          src={imageUrl} 
-          alt={title + "이미지"} 
-          className={styles.articleHeaderImage} 
-          loading="lazy" 
+        <Image
+          src={imageUrl}
+          alt={`${title}이미지`}
+          className={styles.articleHeaderImage}
+          loading="lazy"
         />
         <div className={styles.imageGradient} />
       </div>
-      <Button className={styles.scrollDownButton} onClick={onScrollDown}>
+      <Button
+        className={styles.scrollDownButton}
+        onClick={onScrollDown}
+      >
         <ArrowDownIcon />
       </Button>
     </div>
@@ -75,8 +87,7 @@ const Article = {
   Root: ArticleRoot,
   Header: ArticleHeader,
   Content: ArticleContent,
-}
-
+};
 
 export function createArticle(article: ArticleData) {
   if (!article) return null;
@@ -90,11 +101,7 @@ export function createArticle(article: ArticleData) {
           imageUrl={article.imageUrl}
         />
       }
-      content={
-        <Article.Content>
-          {article.content}
-        </Article.Content>
-      }
+      content={<Article.Content>{article.content}</Article.Content>}
     />
   );
 }

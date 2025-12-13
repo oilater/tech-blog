@@ -1,7 +1,7 @@
-import { ContentSection } from "./ContentSection";
-import { WideCard } from "./WideCard";
-import { ARTICLES } from "../data";
-import * as styles from "../../styles/sections/Content.css";
+import * as styles from '../../styles/sections/Content.css';
+import { ARTICLES } from '../data';
+import { ContentSection } from './ContentSection';
+import { WideCard } from './WideCard';
 
 export function Work() {
   return (

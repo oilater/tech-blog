@@ -1,5 +1,8 @@
 import { type ReactNode } from 'react';
-import { rootStyle, paragraphStyle } from '../styles/components/Top.css';
+import {
+  paragraphStyle,
+  rootStyle,
+} from '../styles/components/Top.css';
 
 type TopRootProps = {
   title: ReactNode;
@@ -15,7 +18,7 @@ type TopParagraphProps = {
 
 function TopParagraph({ children }: TopParagraphProps) {
   return (
-      <p className={`topParagraph ${paragraphStyle}`}>{children}</p>
+    <p className={`topParagraph ${paragraphStyle}`}>{children}</p>
   );
 }
 
@@ -23,4 +26,3 @@ export const Top = {
   Root: TopRoot,
   Paragraph: TopParagraph,
 };
-  

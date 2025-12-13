@@ -1,13 +1,17 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { SectionContainer } from './SectionContainer';
-import { FloatingNav } from './FloatingNav';
 import { BlogConfig } from '../../config';
-import { NavIcon } from './NavIcon';
+import { FloatingNav } from './FloatingNav';
 import { Footer } from './Footer';
+import { NavIcon } from './NavIcon';
+import { SectionContainer } from './SectionContainer';
 
-export function LayoutWrapper({ children }: { children: React.ReactNode }) {
+export function LayoutWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
   const isArticle = pathname.includes('/contents/');
 
@@ -15,7 +19,11 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
     <>
       <FloatingNav>
         {BlogConfig.menu.map((link) => (
-          <NavIcon key={link.label} href={link.path} label={link.label} />
+          <NavIcon
+            key={link.label}
+            href={link.path}
+            label={link.label}
+          />
         ))}
       </FloatingNav>
 

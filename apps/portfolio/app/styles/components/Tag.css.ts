@@ -11,5 +11,5 @@ export const tag = style({
   borderRadius: '16px',
   fontSize: '12.5px',
   fontWeight: '500',
-  backgroundColor: vars.themeColor.colors.tagBackground
+  backgroundColor: vars.themeColor.colors.tagBackground,
 });

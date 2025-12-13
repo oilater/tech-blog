@@ -1,31 +1,30 @@
-import { Timeline, Rally } from "@repo/interaction";
+import { Rally, Timeline } from '@repo/interaction';
 
 export function outroTimeline() {
-
   const outroTl = Timeline({
-    playback: "stagger",
+    playback: 'stagger',
     staggerDelay: 0.05,
     playables: [
       Rally({
-        target: ".outroTitle",
+        target: '.outroTitle',
         motions: [
           {
             duration: 0.4,
-            ease: "power2.inOut",
+            ease: 'power2.inOut',
             opacity: { from: 0 },
             translateY: { from: '20%' },
-          }
+          },
         ],
       }),
       Rally({
-        target: ".outroSection",
+        target: '.outroSection',
         motions: [
           {
             duration: 0.7,
-            ease: "power2.out",
+            ease: 'power2.out',
             opacity: { from: 0 },
-            translateY: { from: '20%' }
-          }
+            translateY: { from: '20%' },
+          },
         ],
       }),
     ],

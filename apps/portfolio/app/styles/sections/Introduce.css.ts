@@ -1,12 +1,12 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
+import { vars } from '../globalTheme.css';
 
 export const introduceWrapper = style({
   width: '100%',
   height: 'auto',
   paddingBottom: '5rem',
-  marginTop: '1rem'
+  marginTop: '1rem',
 });
 
 export const infoSection = style({
@@ -18,12 +18,12 @@ export const infoSection = style({
   '@media': {
     [mediaQueries.mobile]: {
       gridTemplateColumns: '1fr',
-      marginTop: '1.5rem'
+      marginTop: '1.5rem',
     },
     [mediaQueries.desktop]: {
-      gap: '1.5rem'
-    }
-  }
+      gap: '1.5rem',
+    },
+  },
 });
 
 export const mainDescription = style({
@@ -34,5 +34,5 @@ export const mainDescription = style({
   fontWeight: '500',
   color: vars.themeColor.colors.contentFontColor,
   padding: '10px 16px',
-  lineHeight: '1.4'
+  lineHeight: '1.4',
 });

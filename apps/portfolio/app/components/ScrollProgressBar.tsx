@@ -1,21 +1,26 @@
 'use client';
 
-import { useRef } from 'react';
-import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from '@repo/interaction';
-import { progressBarContainer, progressBar } from '../styles/components/ScrollProgressBar.css';
+import { gsap } from 'gsap';
+import { useRef } from 'react';
+import {
+  progressBar,
+  progressBarContainer,
+} from '../styles/components/ScrollProgressBar.css';
 
 type ScrollProgressBarProps = {
   trigger?: string;
 };
 
-export default function ScrollProgressBar({ trigger }: ScrollProgressBarProps) {
+export default function ScrollProgressBar({
+  trigger,
+}: ScrollProgressBarProps) {
   const progressBarRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const progressBar = progressBarRef.current;
-    
+
     if (progressBar) {
       ScrollTrigger.create({
         trigger: trigger,
@@ -25,9 +30,9 @@ export default function ScrollProgressBar({ trigger }: ScrollProgressBarProps) {
           gsap.to(progressBar, {
             width: `${self.progress * 100}%`,
             duration: 0.1,
-            ease: 'none'
+            ease: 'none',
           });
-        }
+        },
       });
     }
   }, [trigger]);

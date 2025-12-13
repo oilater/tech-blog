@@ -1,18 +1,18 @@
-import { style, globalStyle } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { mediaQueries } from '../common/breakpoints.css';
 import { vars } from '../globalTheme.css';
 
 export const wrapper = style({
   width: '100%',
   height: '100%',
-  paddingBottom: '6rem'
+  paddingBottom: '6rem',
 });
 
 export const contentSection = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: '54px 0',
-  willChange: 'transform, opacity'
+  willChange: 'transform, opacity',
 });
 
 globalStyle(`${contentSection} > *`, {
@@ -21,21 +21,21 @@ globalStyle(`${contentSection} > *`, {
       flexBasis: 'calc((100% - 40px) / 3)',
       maxWidth: 'calc((100% - 40px) / 3)',
       height: '480px',
-      marginRight: '20px'
+      marginRight: '20px',
     },
     [mediaQueries.mobile]: {
       width: '100%',
-      marginRight: '0'
-    }
-  }
+      marginRight: '0',
+    },
+  },
 });
 
 globalStyle(`${contentSection} > *:nth-of-type(3n)`, {
   '@media': {
     [mediaQueries.desktop]: {
-      marginRight: '0'
-    }
-  }
+      marginRight: '0',
+    },
+  },
 });
 
 export const workSection = style({
@@ -44,13 +44,12 @@ export const workSection = style({
   gap: '54px 16px',
 });
 
-
 export const mainDescription = style({
   fontSize: '18px',
   fontWeight: '400',
   color: vars.themeColor.colors.contentFontColor,
   lineHeight: '1.65',
-  marginBottom: '3.5rem'
+  marginBottom: '3.5rem',
 });
 
 export const hr = style({

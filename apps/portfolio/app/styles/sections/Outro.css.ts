@@ -1,13 +1,13 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
+import { vars } from '../globalTheme.css';
 
 export const wrapper = style({
   width: '100%',
   height: '100%',
   paddingBottom: '6rem',
   position: 'relative',
-  overflow: 'hidden'
+  overflow: 'hidden',
 });
 
 export const outroSection = style({
@@ -17,9 +17,9 @@ export const outroSection = style({
   width: '30%',
   '@media': {
     [mediaQueries.mobile]: {
-      width: '60%'
-    }
-  }
+      width: '60%',
+    },
+  },
 });
 
 export const thankTitle = style({
@@ -28,31 +28,31 @@ export const thankTitle = style({
   padding: '0 0 32px',
   fontSize: '32px',
   color: vars.themeColor.colors.cardTitleFontColor,
-  fontWeight: '600'
+  fontWeight: '600',
 });
 
 export const contactContainer = style({
   padding: '24px',
   margin: '0 auto',
   backgroundColor: vars.themeColor.colors.quoteBackground,
-  borderRadius: '16px'
+  borderRadius: '16px',
 });
 
 export const contactItem = style({
   display: 'flex',
   alignItems: 'center',
-  padding: '8px 0'
+  padding: '8px 0',
 });
 
 export const contactLabel = style({
   fontSize: '1.1rem',
   fontWeight: '500',
   color: vars.themeColor.colors.cardTitleFontColor,
-  minWidth: '80px'
+  minWidth: '80px',
 });
 
 export const contactValue = style({
   fontSize: '1rem',
   color: vars.themeColor.colors.cardTitleFontColor,
-  wordBreak: 'break-all'
+  wordBreak: 'break-all',
 });

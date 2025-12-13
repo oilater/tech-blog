@@ -11,12 +11,12 @@ export const iconWrapper = style({
   cursor: 'pointer',
   transition: 'transform 0.2s ease-in-out',
   ':hover': {
-    transform: 'scale(1.2)'
-  }
+    transform: 'scale(1.2)',
+  },
 });
 
 export const icon = style({
   width: '20px',
   height: '20px',
-  color: '#121417'
+  color: '#121417',
 });

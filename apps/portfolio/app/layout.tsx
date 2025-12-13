@@ -1,10 +1,10 @@
 import './styles/globalTheme.css';
-import type { Metadata } from "next";
-import { LayoutWrapper } from "./components/LayoutWrapper";
+import { Analytics } from '@vercel/analytics/react';
+import type { Metadata } from 'next';
 import { BlogConfig } from '../config';
-import { Analytics } from "@vercel/analytics/react";
-import { ThemeProvider } from './components/providers/ThemeProvider';
+import { LayoutWrapper } from './components/LayoutWrapper';
 import { QueryProvider } from './components/providers/QueryProvider';
+import { ThemeProvider } from './components/providers/ThemeProvider';
 import { VelogPostLoader } from './velog/components/VelogPostLoader';
 
 export const metadata: Metadata = {
@@ -38,23 +38,31 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
-      <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
-      <link 
-        rel="preload" 
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/fonts/PretendardVariable.woff2" 
-        as="font" 
-        type="font/woff2" 
-        crossOrigin="" 
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
-      />
-      <link rel="dns-prefetch" href="https://v2.velog.io" />
+        <link
+          rel="preconnect"
+          href="https://cdn.jsdelivr.net"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/fonts/PretendardVariable.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+        <link rel="dns-prefetch" href="https://v2.velog.io" />
       </head>
       <body>
         <ThemeProvider>

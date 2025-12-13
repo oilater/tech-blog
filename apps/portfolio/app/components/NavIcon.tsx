@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import { linkItem } from "../styles/components/FloatingNav.css";
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { linkItem } from '../styles/components/FloatingNav.css';
 
 type NavIconProps = {
   href: string;

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { QueryProvider } from "../components/providers/QueryProvider";
-import { Feed } from "./components/Feed";
+import { QueryProvider } from '../components/providers/QueryProvider';
+import { Feed } from './components/Feed';
 
 export default function FeedWrapper() {
   return (

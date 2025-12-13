@@ -1,7 +1,7 @@
-import { ContentSection } from "./ContentSection";
-import { ContentCard } from "./ContentCard";
-import { CONTENTS } from "../data";
-import * as styles from "../../styles/sections/Content.css";
+import * as styles from '../../styles/sections/Content.css';
+import { CONTENTS } from '../data';
+import { ContentCard } from './ContentCard';
+import { ContentSection } from './ContentSection';
 
 export function Content() {
   return (

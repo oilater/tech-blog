@@ -18,18 +18,26 @@ type AnimateScrollProps = {
 };
 
 export function useScrollTrigger() {
-  function animateScroll(
-    {
-      target,
-      timeline,
-      options = {
-      start: "top 80%",
-      end: "bottom 20%",
+  function animateScroll({
+    target,
+    timeline,
+    options = {
+      start: 'top 80%',
+      end: 'bottom 20%',
       scrub: false,
       markers: false,
-    }
+    },
   }: AnimateScrollProps) {
-    const { start, end, scrub, markers, onEnter, onLeave, onEnterBack, onLeaveBack } = options;
+    const {
+      start,
+      end,
+      scrub,
+      markers,
+      onEnter,
+      onLeave,
+      onEnterBack,
+      onLeaveBack,
+    } = options;
 
     return ScrollTrigger.create({
       trigger: target,

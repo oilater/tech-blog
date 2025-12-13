@@ -1,6 +1,6 @@
-import { nanoid } from "nanoid";
-import { PostType } from "../types/post";
-import { ListRow } from "./ListRow";
+import { nanoid } from 'nanoid';
+import { PostType } from '../types/post';
+import { ListRow } from './ListRow';
 
 type VelogPostListProps = {
   posts: PostType[];
@@ -9,7 +9,13 @@ type VelogPostListProps = {
 
 export function VelogPostList({ posts, ref }: VelogPostListProps) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}> 
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '24px',
+      }}
+    >
       {posts?.map((post) => (
         <ListRow
           key={nanoid()}

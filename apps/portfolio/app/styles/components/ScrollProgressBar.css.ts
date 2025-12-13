@@ -7,11 +7,11 @@ export const progressBarContainer = style({
   width: '100%',
   height: '3.5px',
   background: 'rgba(0, 0, 0, 0.1)',
-  zIndex: 9999
+  zIndex: 9999,
 });
 
 export const progressBar = style({
   height: '100%',
   background: '#3182f6',
-  width: '0%'
+  width: '0%',
 });

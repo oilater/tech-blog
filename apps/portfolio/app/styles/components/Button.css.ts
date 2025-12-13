@@ -9,5 +9,5 @@ export const button = style({
   fontWeight: '500',
   background: 'none',
   border: 'none',
-  cursor: 'pointer'
+  cursor: 'pointer',
 });

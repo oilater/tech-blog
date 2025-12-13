@@ -6,4 +6,4 @@ export type PostType = {
   body: string;
   tags: string[];
   released_at: string;
-}
+};

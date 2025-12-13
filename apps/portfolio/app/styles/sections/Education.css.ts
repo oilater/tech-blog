@@ -6,13 +6,13 @@ export const wrapper = style({
   height: '100%',
   paddingBottom: '6rem',
   position: 'relative',
-  overflow: 'hidden'
+  overflow: 'hidden',
 });
 
 export const contentSection = style({
   position: 'relative',
   width: '100%',
-  height: '100%'
+  height: '100%',
 });
 
 export const mainDescription = style({
@@ -20,32 +20,32 @@ export const mainDescription = style({
   fontWeight: '500',
   color: vars.themeColor.colors.contentFontColor,
   lineHeight: '1.65',
-  marginBottom: '2.5rem'
+  marginBottom: '2.5rem',
 });
 
 export const hr = style({
   border: '0',
   height: '2px',
   background: 'rgba(222, 222, 255, 0.19)',
-  margin: '0 16px'
+  margin: '0 16px',
 });
 
 export const educationItem = style({
   display: 'flex',
   alignItems: 'flex-start',
   gap: '16px',
-  marginBottom: '3rem'
+  marginBottom: '3rem',
 });
 
 export const educationContent = style({
-  flex: '1'
+  flex: '1',
 });
 
 export const educationHeader = style({
   display: 'flex',
   alignItems: 'center',
   gap: '8px',
-  marginBottom: '4px'
+  marginBottom: '4px',
 });
 
 export const educationPeriod = style({
@@ -57,20 +57,20 @@ export const educationPeriod = style({
   textAlign: 'right',
   display: 'flex',
   alignItems: 'center',
-  gap: '8px'
+  gap: '8px',
 });
 
 export const educationTitle = style({
   fontSize: '20px',
   fontWeight: '600',
-  color: vars.themeColor.colors.cardTitleFontColor
+  color: vars.themeColor.colors.cardTitleFontColor,
 });
 
 export const educationDescription = style({
   marginTop: '10px',
   fontSize: '16px',
   lineHeight: '1.65',
-  color: vars.themeColor.colors.subFontColor
+  color: vars.themeColor.colors.subFontColor,
 });
 
 export const dot = style({
@@ -80,5 +80,5 @@ export const dot = style({
   borderRadius: '50%',
   background: vars.themeColor.colors.borderColor,
   transition: 'background 0.3s',
-  marginRight: '6px'
+  marginRight: '6px',
 });

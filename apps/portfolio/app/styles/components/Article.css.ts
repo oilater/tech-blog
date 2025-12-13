@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
+import { vars } from '../globalTheme.css';
 
 export const articleRoot = style({
   width: '100%',
@@ -8,7 +8,7 @@ export const articleRoot = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '20px',
-  color: vars.themeColor.colors.cardTitleFontColor
+  color: vars.themeColor.colors.cardTitleFontColor,
 });
 
 export const articleHeader = style({
@@ -19,38 +19,38 @@ export const articleHeader = style({
   flexDirection: 'column',
   alignItems: 'center',
   marginBottom: '120px',
-  color: '#fff'
+  color: '#fff',
 });
 
 export const articleHeaderTitleSection = style({
   position: 'absolute',
   bottom: '20%',
   textAlign: 'center',
-  zIndex: 2
+  zIndex: 2,
 });
 
 export const articleHeaderTitle = style({
   fontSize: 'calc(1rem + 2vw)',
   fontWeight: '600',
   lineHeight: '1.4',
-  marginBottom: '20px'
+  marginBottom: '20px',
 });
 
 export const articleHeaderDate = style({
   fontSize: '18px',
-  fontWeight: '400'
+  fontWeight: '400',
 });
 
 export const imageContainer = style({
   position: 'relative',
   width: '100%',
-  height: '100%'
+  height: '100%',
 });
 
 export const articleHeaderImage = style({
   width: '100%',
   height: '100%',
-  objectFit: 'cover'
+  objectFit: 'cover',
 });
 
 export const imageGradient = style({
@@ -59,9 +59,10 @@ export const imageGradient = style({
   left: 0,
   right: 0,
   height: '80%',
-  background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.8) 100%)',
+  background:
+    'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.8) 100%)',
   pointerEvents: 'none',
-  zIndex: 1
+  zIndex: 1,
 });
 
 export const articleContent = style({
@@ -76,9 +77,9 @@ export const articleContent = style({
   '@media': {
     [mediaQueries.mobile]: {
       padding: '0 16px',
-      fontSize: '18px'
-    }
-  }
+      fontSize: '18px',
+    },
+  },
 });
 
 export const scrollDownButton = style({
@@ -97,6 +98,6 @@ export const scrollDownButton = style({
   zIndex: 3,
   ':hover': {
     background: 'rgba(255, 255, 255, 0.2)',
-    transform: 'scale(1.05)'
-  }
+    transform: 'scale(1.05)',
+  },
 });

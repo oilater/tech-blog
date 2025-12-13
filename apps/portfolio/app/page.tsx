@@ -1,4 +1,11 @@
-import { Intro, Introduce, Content, Work, Education, Outro } from './(home)/components';
+import {
+  Content,
+  Education,
+  Intro,
+  Introduce,
+  Outro,
+  Work,
+} from './(home)/components';
 
 export default function Home() {
   return (

@@ -14,12 +14,12 @@ export const title = style({
   fontSize: '3rem',
   fontWeight: '700',
   marginBottom: '1rem',
-  color: vars.themeColor.colors.highLightFontColor, 
+  color: vars.themeColor.colors.highLightFontColor,
   '@media': {
     'screen and (max-width: 768px)': {
       fontSize: '2.5rem',
-    }
-  }
+    },
+  },
 });
 
 export const subtitle = style({
@@ -92,7 +92,6 @@ export const videoElement = style({
   objectFit: 'contain',
   borderRadius: '0.75rem',
   width: '50%',
-  
 });
 
 export const highlightText = style({

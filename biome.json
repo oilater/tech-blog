@@ -6,7 +6,8 @@
     "useIgnoreFile": false
   },
   "files": {
-    "ignoreUnknown": true
+    "ignoreUnknown": true,
+    "includes": ["**", "!!**/dist"]
   },
   "formatter": {
     "enabled": true,
@@ -31,6 +32,9 @@
       "a11y": {
         "useButtonType": "off",
         "useSemanticElements": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtmlWithChildren": "warn"
       },
       "correctness": {
         "noUnusedVariables": "off",

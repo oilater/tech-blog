@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
-import * as styles from "../styles/components/Card.css";
-import Link from "next/link";
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+import * as styles from '../styles/components/Card.css';
 
 type CardProps = {
   link: string;
@@ -26,7 +26,11 @@ type CardTagsProps = {
 
 export function Card({ link, isInternal, children }: CardProps) {
   return (
-    <Link href={link} className={styles.card} target={isInternal ? undefined : "_blank"}>
+    <Link
+      href={link}
+      className={styles.card}
+      target={isInternal ? undefined : '_blank'}
+    >
       {children}
     </Link>
   );
@@ -35,7 +39,12 @@ export function Card({ link, isInternal, children }: CardProps) {
 function CardImage({ image }: CardImageProps) {
   return (
     <div className={styles.cardImageWrapper}>
-      <img src={image} alt="content image" className={styles.cardImage} loading="lazy" />
+      <img
+        src={image}
+        alt="content"
+        className={styles.cardImage}
+        loading="lazy"
+      />
     </div>
   );
 }

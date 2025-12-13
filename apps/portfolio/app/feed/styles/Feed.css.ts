@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style } from '@vanilla-extract/css';
 
 export const wrapper = style({
   margin: '0 auto',
@@ -8,6 +8,6 @@ export const wrapper = style({
 });
 
 export const feedContainer = style({
-  marginBottom: "20px",
-  fontSize: "32px",
+  marginBottom: '20px',
+  fontSize: '32px',
 });

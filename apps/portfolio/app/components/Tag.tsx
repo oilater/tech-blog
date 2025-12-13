@@ -1,64 +1,71 @@
-"use client";
+'use client';
 
-import { useTheme } from "next-themes";
-import { vars } from "../styles/globalTheme.css";
-import { tag } from "../styles/components/Tag.css";
+import { useTheme } from 'next-themes';
+import { tag } from '../styles/components/Tag.css';
+import { vars } from '../styles/globalTheme.css';
 
 type TagProps = {
   text: string;
 };
 
 export function Tag({ text }: TagProps) {
-  
   const { theme } = useTheme();
   const tagColor = getTagColor(theme, text);
 
   return (
-    <div className={tag} style={{ backgroundColor: vars.themeColor.colors.tagBackground }}>
-      <span suppressHydrationWarning style={{ color: tagColor }}>{text}</span>
+    <div
+      className={tag}
+      style={{
+        backgroundColor: vars.themeColor.colors.tagBackground,
+      }}
+    >
+      <span suppressHydrationWarning style={{ color: tagColor }}>
+        {text}
+      </span>
     </div>
   );
 }
 
 const getTagColor = (theme: string | undefined, text: string) => {
-  if (!theme || theme === 'dark') return vars.themeColor.colors.tagItemColor;
-  
+  if (!theme || theme === 'dark')
+    return vars.themeColor.colors.tagItemColor;
+
   switch (text) {
-    case "React":
+    case 'React':
       return vars.colors.blue300;
-    case "TypeScript":
+    case 'TypeScript':
       return vars.colors.blue500;
-    case "HTML5":
+    case 'HTML5':
       return vars.colors.red300;
-    case "CSS3":
+    case 'CSS3':
       return vars.colors.orange500;
-    case "JavaScript":
+    case 'JavaScript':
       return vars.colors.teal500;
-    case "NextJS":
+    case 'NextJS':
       return vars.colors.grey700;
-    case "Emotion":
+    case 'Emotion':
       return vars.colors.pink400;
-    case "GSAP":
+    case 'GSAP':
       return vars.colors.green300;
-    case "Jotai":
+    case 'Jotai':
       return vars.colors.purple300;
-    case "SCSS":
+    case 'SCSS':
       return vars.colors.green500;
-    case "Firebase":
+    case 'Firebase':
       return vars.colors.red400;
-    case "SocketIO":
+    case 'SocketIO':
       return vars.colors.purple400;
-    case "SwiftUI":
-        return vars.colors.blue900;
-    case "SwiftData":
+    case 'SwiftUI':
+      return vars.colors.blue900;
+    case 'SwiftData':
       return vars.colors.blue800;
-    case "Recoil":
+    case 'Recoil':
       return vars.colors.purple400;
-    case "Lighthouse":
+    case 'Lighthouse':
       return vars.colors.red300;
-    case "Performance Tab":
+    case 'Performance Tab':
       return vars.colors.orange500;
-    case "WebPageTest":
+    case 'WebPageTest':
       return vars.colors.teal500;
     default:
       return vars.colors.grey500;

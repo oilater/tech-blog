@@ -3,8 +3,8 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Theme } from '../constants/theme';
-import Sun from './icons/theme/Sun';
 import Moon from './icons/theme/Moon';
+import Sun from './icons/theme/Sun';
 
 export function ThemeSwitch() {
   const { theme, setTheme } = useTheme();
@@ -20,7 +20,11 @@ export function ThemeSwitch() {
   };
 
   if (!mounted) {
-    return <button><Moon /></button>;
+    return (
+      <button>
+        <Moon />
+      </button>
+    );
   }
 
   return (

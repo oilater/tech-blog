@@ -6,7 +6,7 @@ export const card = style({
   flexDirection: 'column',
   background: 'inherit',
   borderRadius: '8px',
-  willChange: 'transform, opacity'
+  willChange: 'transform, opacity',
 });
 
 export const cardImageWrapper = style({
@@ -15,7 +15,7 @@ export const cardImageWrapper = style({
   aspectRatio: '1',
   borderRadius: '8px',
   overflow: 'hidden',
-  padding: 0
+  padding: 0,
 });
 
 export const cardImage = style({
@@ -24,25 +24,25 @@ export const cardImage = style({
   objectFit: 'cover',
   transition: 'transform 0.2s ease-out',
   ':hover': {
-    transform: 'scale(1.08) translateZ(0)'
-  }
+    transform: 'scale(1.08) translateZ(0)',
+  },
 });
 
 export const cardContent = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '14px',
-  paddingTop: '10px'
+  paddingTop: '10px',
 });
 
 export const cardTitle = style({
   fontSize: '20px',
   fontWeight: '600',
-  color: vars.themeColor.colors.cardTitleFontColor
+  color: vars.themeColor.colors.cardTitleFontColor,
 });
 
 export const cardDescription = style({
   fontSize: '15px',
   fontWeight: '400',
-  color: vars.themeColor.colors.cardDescriptionFontColor
+  color: vars.themeColor.colors.cardDescriptionFontColor,
 });

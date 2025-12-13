@@ -1,37 +1,37 @@
-"use client";
+'use client';
 
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { useAtom } from "jotai";
-import { useScrollTrigger } from "@repo/interaction";
-import { animationPlayStateAtom } from "../../stores/timeline";
-import { contentTimeline } from "../timelines/contentTimeline";
-import { Top } from "../../components/Top";
-import * as styles from "../../styles/sections/Education.css";
+import { useGSAP } from '@gsap/react';
+import { useScrollTrigger } from '@repo/interaction';
+import { useAtom } from 'jotai';
+import { useRef } from 'react';
+import { Top } from '../../components/Top';
+import { animationPlayStateAtom } from '../../stores/timeline';
+import * as styles from '../../styles/sections/Education.css';
+import { contentTimeline } from '../timelines/contentTimeline';
 
 export function Education() {
   const [isPlayed, setIsPlayed] = useAtom(animationPlayStateAtom);
   const { animateScroll } = useScrollTrigger();
-  const contentContainer = useRef<HTMLDivElement>(null!);
+  const contentContainer = useRef<HTMLDivElement>(null);
   let contentTl: gsap.core.Timeline;
 
   useGSAP(
     () => {
-      if (isPlayed("content")) return;
-      contentTl = contentTimeline().eventCallback("onComplete", () =>
-        setIsPlayed("content")
+      if (isPlayed('content')) return;
+      contentTl = contentTimeline().eventCallback('onComplete', () =>
+        setIsPlayed('content'),
       );
 
       animateScroll({
-        target: ".topHr",
+        target: '.topHr',
         timeline: contentTl,
         options: {
-          start: "top 85%",
-          end: "bottom 100%",
+          start: 'top 85%',
+          end: 'bottom 100%',
         },
       });
     },
-    { scope: contentContainer }
+    { scope: contentContainer },
   );
 
   return (
@@ -59,10 +59,12 @@ export function Education() {
             </div>
             <div className={styles.educationDescription}>
               <p>
-                ∙ 전공 Java 웹 개발 과정 수료, 삼성 SW 역량테스트 모의 A형 취득
+                ∙ 전공 Java 웹 개발 과정 수료, 삼성 SW 역량테스트 모의
+                A형 취득
               </p>
               <p>
-                ∙ 4번의 팀 프로젝트 경험 (1학기 최우수상, 2학기 우수상 2회)
+                ∙ 4번의 팀 프로젝트 경험 (1학기 최우수상, 2학기 우수상
+                2회)
               </p>
               <p>
                 ∙ React, Flutter, SwiftUI 등 다양한 프레임워크 경험

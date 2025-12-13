@@ -9,8 +9,19 @@ function Title({ title }: { title: string }) {
   return <p className={styles.postTitle}>{title}</p>;
 }
 
-function Description({ author, postedAt }: { author: string; postedAt: string }) {
-  return <p className={styles.description}><span className={styles.author}>{author}</span> ∙ <span className={styles.postedAt}>{postedAt}</span></p>;
+function Description({
+  author,
+  postedAt,
+}: {
+  author: string;
+  postedAt: string;
+}) {
+  return (
+    <p className={styles.description}>
+      <span className={styles.author}>{author}</span> ∙{' '}
+      <span className={styles.postedAt}>{postedAt}</span>
+    </p>
+  );
 }
 
 function Tags({ tags }: { tags: string[] }) {
@@ -18,7 +29,12 @@ function Tags({ tags }: { tags: string[] }) {
 }
 
 function Content({ body }: { body: string }) {
-  return <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: body }} />;
+  return (
+    <div
+      className={styles.postContent}
+      dangerouslySetInnerHTML={{ __html: body }}
+    />
+  );
 }
 
 Post.Title = Title;

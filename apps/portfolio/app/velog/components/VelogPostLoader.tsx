@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { useSetAtom } from "jotai";
-import { postsStoreAtom } from "../../stores/post";
-import { useFetchPosts } from "../hooks/use-fetch-posts";
+import { useSetAtom } from 'jotai';
+import { useEffect } from 'react';
+import { postsStoreAtom } from '../../stores/post';
+import { useFetchPosts } from '../hooks/use-fetch-posts';
 
 export function VelogPostLoader() {
   const { data: posts } = useFetchPosts({ username: 'oilater' });

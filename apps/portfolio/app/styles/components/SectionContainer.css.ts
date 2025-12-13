@@ -7,7 +7,7 @@ export const container = style({
   display: 'flex',
   flexDirection: 'column',
   minHeight: '90vh',
-  
+
   '@media': {
     '(min-width: 640px)': {
       padding: '0 24px',
@@ -22,7 +22,7 @@ export const container = style({
 export const postContainer = style({
   maxWidth: '768px',
   margin: '0 auto',
-  
+
   '@media': {
     '(min-width: 640px)': {
       padding: '0 24px',

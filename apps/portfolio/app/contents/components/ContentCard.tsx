@@ -1,9 +1,9 @@
-import type { ContentData } from "../types";
-import { Card } from "../../components/Card";
-import { Tag } from "../../components/Tag";
+import { Card } from '../../components/Card';
+import { Tag } from '../../components/Tag';
+import type { ContentData } from '../types';
 
 type ContentCardProps = {
-  content: ContentData; 
+  content: ContentData;
 };
 
 export function ContentCard({ content }: ContentCardProps) {

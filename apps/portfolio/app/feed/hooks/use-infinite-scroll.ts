@@ -1,31 +1,34 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 type UseInfiniteScrollProps = {
   onIntersect: () => void;
   rootMargin?: string;
   threshold?: number | number[];
-}
+};
 
 export function useInfiniteScroll({
   onIntersect,
   rootMargin = '150px',
-  threshold = 0.1
+  threshold = 0.1,
 }: UseInfiniteScrollProps) {
   const targetRef = useRef<HTMLDivElement>(null);
 
-  const handleObserver = useCallback((entries: IntersectionObserverEntry[]) => {
-    const [target] = entries;
-    
-    if (target?.isIntersecting) {
-      onIntersect();
-    }
-  }, [onIntersect]);
+  const handleObserver = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      const [target] = entries;
+
+      if (target?.isIntersecting) {
+        onIntersect();
+      }
+    },
+    [onIntersect],
+  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleObserver, {
       root: null,
       rootMargin,
-      threshold
+      threshold,
     });
 
     if (targetRef.current) {

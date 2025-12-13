@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../globalTheme.css';
 import { mediaQueries } from '../common/breakpoints.css';
+import { vars } from '../globalTheme.css';
 
 export const wideCard = style({
   display: 'flex',
@@ -13,9 +13,9 @@ export const wideCard = style({
     [mediaQueries.mobile]: {
       flexDirection: 'column',
       height: 'auto',
-      minHeight: '400px'
-    }
-  }
+      minHeight: '400px',
+    },
+  },
 });
 
 export const cardImageWrapper = style({
@@ -28,9 +28,9 @@ export const cardImageWrapper = style({
       width: '100%',
       aspectRatio: '7/5',
       position: 'relative',
-      borderRadius: '16px'
-    }
-  }
+      borderRadius: '16px',
+    },
+  },
 });
 
 export const cardImage = style({
@@ -41,8 +41,8 @@ export const cardImage = style({
   transform: 'translateZ(0)',
   selectors: {
     [`${wideCard}:hover &`]: {
-      transform: 'scale(1.05)'
-    }
+      transform: 'scale(1.05)',
+    },
   },
   '@media': {
     [mediaQueries.mobile]: {
@@ -50,9 +50,9 @@ export const cardImage = style({
       top: 0,
       left: 0,
       width: '100%',
-      height: '100%'
-    }
-  }
+      height: '100%',
+    },
+  },
 });
 
 export const cardContent = style({
@@ -67,9 +67,9 @@ export const cardContent = style({
     [mediaQueries.mobile]: {
       justifyContent: 'flex-start',
       padding: '24px',
-      gap: '16px'
-    }
-  }
+      gap: '16px',
+    },
+  },
 });
 
 export const categoryText = style({
@@ -81,9 +81,9 @@ export const categoryText = style({
   transition: 'color 0.2s ease',
   '@media': {
     [mediaQueries.mobile]: {
-      fontSize: '18px'
-    }
-  }
+      fontSize: '18px',
+    },
+  },
 });
 
 export const cardTitle = style({
@@ -95,14 +95,14 @@ export const cardTitle = style({
   transition: 'color 0.2s ease',
   '@media': {
     [mediaQueries.mobile]: {
-      fontSize: '1.5rem'
-    }
+      fontSize: '1.5rem',
+    },
   },
   selectors: {
     [`${wideCard}:hover &`]: {
-      color: vars.themeColor.colors.highLightFontColor
-    }
-  }
+      color: vars.themeColor.colors.highLightFontColor,
+    },
+  },
 });
 
 export const cardDescription = style({
@@ -114,7 +114,7 @@ export const cardDescription = style({
   transition: 'color 0.2s ease',
   '@media': {
     [mediaQueries.mobile]: {
-      fontSize: '1rem'
-    }
-  }
+      fontSize: '1rem',
+    },
+  },
 });

@@ -13,5 +13,5 @@ export const paragraphStyle = style({
   height: '100%',
   fontSize: '34px',
   fontWeight: '700',
-  color: vars.themeColor.colors.mainFontColor
+  color: vars.themeColor.colors.mainFontColor,
 });

@@ -18,9 +18,9 @@ export const header = style({
   transition: 'opacity 0.3s ease-in-out',
   selectors: {
     'body.active-border &': {
-      borderBottom: `1px solid ${vars.colors.grey300}`
-    }
-  }
+      borderBottom: `1px solid ${vars.colors.grey300}`,
+    },
+  },
 });
 
 export const innerNav = style({
@@ -50,6 +50,6 @@ export const linkItem = style({
   selectors: {
     '&.active': {
       color: vars.themeColor.colors.titleFontColor,
-    }
-  }
+    },
+  },
 });
